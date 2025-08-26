@@ -37,9 +37,12 @@ export function Welcome() {
                   <div>Team Leader</div>
                   <div>Full-stack Developer</div>
                 </span>
-                <p className="text-xs text-center">
+                <p className="text-xs text-center opacity-50">
+                  <hr className="w-40 inline-block center" />
                   <div>React</div>
-                  <div></div>
+                  <div>CCS3</div>
+                  <div>JavaScript (ES6+)</div>
+                  <div>MySQL</div>
                 </p>
             </div>
           </div>
@@ -62,6 +65,12 @@ export function Welcome() {
                   <div>Project Leader</div>
                   <div>Frontend Developer</div>
                 </span>
+                <p className="text-xs text-center opacity-50">
+                  <hr className="w-40 inline-block center" />
+                  <div>HTML5</div>
+                  <div>CSS3</div>
+                  <div>JavaScript (ES6+)</div>
+                </p>
             </div>
           </div>
           {/* Ordering System Application  */}
@@ -82,6 +91,10 @@ export function Welcome() {
                 <span className="text-xs text-blue-700 text-center leading-relaxed">
                   <div>UI/UX Designer</div>
                 </span>
+                <p className="text-xs text-center opacity-50">
+                  <hr className="w-40 inline-block center" />
+                  <div>Flutter (Dart)</div>
+                </p>
             </div>
           </div>
           {/* DaMath Educational Game */}
@@ -102,6 +115,12 @@ export function Welcome() {
                 <span className="text-xs text-blue-700 text-center leading-relaxed">
                   <div>Frontend 3D Designer</div>
                 </span>
+                <p className="text-xs text-center opacity-50">
+                  <hr className="w-40 inline-block center" />
+                  <div>Unity</div>
+                  <div>C#</div>
+                  <div>Blender3D</div>
+                </p>
             </div>
           </div>
 
@@ -131,6 +150,7 @@ export function Welcome() {
           </nav>
         </div>
       </div>
+      
     </main>
   );
 }
