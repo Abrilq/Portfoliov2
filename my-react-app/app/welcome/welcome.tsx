@@ -1,7 +1,36 @@
+import { useState } from 'react';
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
+import { ProjectCard } from './ProjectCard';
 
 export function Welcome() {
+  const projects = [
+    {
+      title: "Lost and Found WebApp",
+      roles: ["Team Leader", "Full-stack Developer"],
+      technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
+      imageUrl: "/images/1.jpeg"
+    },
+    {
+      title: "E-commerce Website",
+      roles: ["Project Leader", "Frontend Developer"],
+      technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
+      imageUrl: "/images/2.jpeg" // Add your image
+    },
+    {
+      title: "Ordering System Mobile Application",
+      roles: ["UI/UX Designer"],
+      technologies: ["Flutter (Dart)"],
+      imageUrl: "/images/3.jpeg" // Add your image
+    },
+    {
+      title: "DaMath Educational Game",
+      roles: ["Frontend 3D Designer"],
+      technologies: ["Unity", "C#", "Blender3D"],
+      imageUrl: "/images/4.jpeg" // Add your image
+    }
+  ];
+
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
 
@@ -18,113 +47,15 @@ export function Welcome() {
         </header>
 
         <div className="flex gap-10 inline-flex flex-wrap justify-center">
-          {/* Lost and Found WebApp */}
-          <div className="bg-gray-900 w-48 h-64 rounded-lg">
-              <div className="flex p-2 gap-1">
-              <div className="">
-                <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-            </div>
-            <div className="card__content">
-              <h1 className="text-sm text-center leading-relaxed">Lost and Found WebApp</h1>
-                <span className="text-xs text-blue-700 text-center leading-relaxed">
-                  <div>Team Leader</div>
-                  <div>Full-stack Developer</div>
-                </span>
-                <p className="text-xs text-center opacity-50">
-                  <hr className="w-40 inline-block center" />
-                  <div>React</div>
-                  <div>CCS3</div>
-                  <div>JavaScript (ES6+)</div>
-                  <div>MySQL</div>
-                </p>
-            </div>
-          </div>
-          {/* E-commerce Website */}
-          <div className="bg-gray-900 w-48 h-64 rounded-lg">
-              <div className="flex p-2 gap-1">
-              <div className="">
-                <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-            </div>
-            <div className="card__content">
-              <h1 className="text-sm text-center leading-relaxed">E-commerce Website</h1>
-                <span className="text-xs text-blue-700 text-center leading-relaxed">
-                  <div>Project Leader</div>
-                  <div>Frontend Developer</div>
-                </span>
-                <p className="text-xs text-center opacity-50">
-                  <hr className="w-40 inline-block center" />
-                  <div>HTML5</div>
-                  <div>CSS3</div>
-                  <div>JavaScript (ES6+)</div>
-                </p>
-            </div>
-          </div>
-          {/* Ordering System Application  */}
-          <div className="bg-gray-900 w-48 h-64 rounded-lg">
-              <div className="flex p-2 gap-1">
-              <div className="">
-                <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-            </div>
-            <div className="card__content">
-              <h1 className="text-sm text-center leading-relaxed">Ordering System Mobile Application </h1>
-                <span className="text-xs text-blue-700 text-center leading-relaxed">
-                  <div>UI/UX Designer</div>
-                </span>
-                <p className="text-xs text-center opacity-50">
-                  <hr className="w-40 inline-block center" />
-                  <div>Flutter (Dart)</div>
-                </p>
-            </div>
-          </div>
-          {/* DaMath Educational Game */}
-          <div className="bg-gray-900 w-48 h-64 rounded-lg">
-            <div className="flex p-2 gap-1">
-              <div className="">
-                <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="circle">
-                <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
-              </div>
-            </div>
-            <div className="card__content">
-              <h1 className="text-sm text-center leading-relaxed">DaMath Educational Game</h1>
-                <span className="text-xs text-blue-700 text-center leading-relaxed">
-                  <div>Frontend 3D Designer</div>
-                </span>
-                <p className="text-xs text-center opacity-50">
-                  <hr className="w-40 inline-block center" />
-                  <div>Unity</div>
-                  <div>C#</div>
-                  <div>Blender3D</div>
-                </p>
-            </div>
-          </div>
-
-
+          {projects.map((project, index) => (
+            <ProjectCard 
+              key={index}
+              title={project.title}
+              roles={project.roles}
+              technologies={project.technologies}
+              imageUrl={project.imageUrl}
+            />
+          ))}
         </div>
 
         <div className="max-w-[300px] w-full space-y-6 px-4">
