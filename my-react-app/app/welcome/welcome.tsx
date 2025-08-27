@@ -1,34 +1,63 @@
 import { useState } from 'react';
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
-import { ProjectCard } from './ProjectCard';
+import { ProjectCardDark } from './ProjectCard';
+import { ProjectCardLight } from './ProjectCard';
+
 
 export function Welcome() {
-  const projects = [
+  const professionalProjects = [
     {
       title: "Lost and Found WebApp",
       roles: ["Team Leader", "Full-stack Developer"],
       technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
-      imageUrl: "/images/1.jpeg"
+      imageUrl: "/images/lnf.PNG"
+    },
+    {
+      title: "Pre-advising System",
+      roles: ["UI/UX Designer", "Frontend Developer"],
+      technologies: ["HTML5", "CSS3", "JavaScript (ES6+)", "Firebase"],
+      imageUrl: "/images/dycguide.PNG"
     },
     {
       title: "E-commerce Website",
       roles: ["Project Leader", "Frontend Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
-      imageUrl: "/images/2.jpeg" // Add your image
+      imageUrl: "/images/catpeas.PNG"
     },
     {
       title: "Ordering System Mobile Application",
       roles: ["UI/UX Designer"],
       technologies: ["Flutter (Dart)"],
-      imageUrl: "/images/3.jpeg" // Add your image
+      imageUrl: "/images/orderingsystem.PNG"
     },
     {
       title: "DaMath Educational Game",
       roles: ["Frontend 3D Designer"],
       technologies: ["Unity", "C#", "Blender3D"],
-      imageUrl: "/images/4.jpeg" // Add your image
+      imageUrl: "/images/damath.PNG"
+    },
+    {
+      title: "AR Project",
+      roles: ["Frontend 3D Designer"],
+      technologies: ["Unity", "C#", "Blender3D"],
+      imageUrl: "/images/evoar.PNG" 
     }
+  ];
+
+  const personalProjects = [
+    {
+      title: "Drinking Session",
+      roles: ["Full-stack Developer"],
+      technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
+      imageUrl: "/images/drinking.PNG"
+    },
+    {
+      title: "SRT Renamer",
+      roles: ["Full-stack Developer"],
+      technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
+      imageUrl: "/images/srt.PNG"
+    },
   ];
 
   return (
@@ -46,17 +75,37 @@ export function Welcome() {
           </div>
         </header>
 
-        <div className="flex gap-10 inline-flex flex-wrap justify-center">
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={index}
-              title={project.title}
-              roles={project.roles}
-              technologies={project.technologies}
-              imageUrl={project.imageUrl}
-            />
-          ))}
-        </div>
+        <section>
+          <h2 className="text-2xl font-bold mb-8 text-center dark:text-white">Professional Experience</h2>
+          <div className="flex gap-10 inline-flex flex-wrap justify-center">
+            {professionalProjects.map((project, index) => (
+              <ProjectCardDark
+                key={index}
+                title={project.title}
+                roles={project.roles}
+                technologies={project.technologies}
+                imageUrl={project.imageUrl}
+              />
+            ))}
+          </div>
+        </section>
+
+        <hr className="w-150 inline-block center" />
+
+        <section>
+          <h2 className="text-2xl font-bold mb-8 text-center dark:text-white">Personal Projects</h2>
+          <div className="flex gap-10 inline-flex flex-wrap justify-center">
+            {personalProjects.map((project, index) => (
+              <ProjectCardLight
+                key={index}
+                title={project.title}
+                roles={project.roles}
+                technologies={project.technologies}
+                imageUrl={project.imageUrl}
+              />
+            ))}
+          </div>
+        </section>
 
         <div className="max-w-[300px] w-full space-y-6 px-4">
           <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
