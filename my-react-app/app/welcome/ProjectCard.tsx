@@ -1,20 +1,24 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 interface ProjectCardProps {
   title: string;
   roles: string[];
   technologies: string[];
   imageUrl: string;
+  route: string;
 }
 
-export function ProjectCardDark({ title, roles, technologies, imageUrl }: ProjectCardProps) {
+export function ProjectCardDark({ title, roles, technologies, imageUrl, route }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div 
       className="bg-gray-900 w-48 h-64 rounded-lg transition-all duration-500 ease-in-out hover:scale-110 relative cursor-pointer overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => navigate(route)}
     >
       <div className="flex p-2 gap-1">
         <div className="">

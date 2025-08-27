@@ -11,37 +11,43 @@ export function Welcome() {
       title: "Lost and Found WebApp",
       roles: ["Team Leader", "Full-stack Developer"],
       technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
-      imageUrl: "/images/lnf.PNG"
+      imageUrl: "/images/lnf.PNG",
+      route: "/projects/lost-and-found"
     },
     {
       title: "Pre-advising System",
       roles: ["UI/UX Designer", "Frontend Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)", "Firebase"],
-      imageUrl: "/images/dycguide.PNG"
+      imageUrl: "/images/dycguide.PNG",
+      route: "/projects/pre-advising"
     },
     {
       title: "E-commerce Website",
       roles: ["Project Leader", "Frontend Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
-      imageUrl: "/images/catpeas.PNG"
+      imageUrl: "/images/catpeas.PNG",
+      route: "/projects/ecommerce"
     },
     {
       title: "Ordering System Mobile Application",
       roles: ["UI/UX Designer"],
       technologies: ["Flutter (Dart)"],
-      imageUrl: "/images/orderingsystem.PNG"
+      imageUrl: "/images/orderingsystem.PNG",
+      route: "/projects/ordering-system"
     },
     {
       title: "DaMath Educational Game",
       roles: ["Frontend 3D Designer"],
       technologies: ["Unity", "C#", "Blender3D"],
-      imageUrl: "/images/damath.PNG"
+      imageUrl: "/images/damath.PNG",
+      route: "/projects/damath"
     },
     {
       title: "AR Project",
       roles: ["Frontend 3D Designer"],
       technologies: ["Unity", "C#", "Blender3D"],
-      imageUrl: "/images/evoar.PNG" 
+      imageUrl: "/images/evoar.PNG",
+      route: "/projects/ar-project"
     }
   ];
 
@@ -50,13 +56,15 @@ export function Welcome() {
       title: "Drinking Session",
       roles: ["Full-stack Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
-      imageUrl: "/images/drinking.PNG"
+      imageUrl: "/images/drinking.PNG",
+      route: "/projects/drinking-session"
     },
     {
       title: "SRT Renamer",
       roles: ["Full-stack Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
-      imageUrl: "/images/srt.PNG"
+      imageUrl: "/images/srt.PNG",
+      route: "/projects/srt-renamer"
     },
   ];
 
@@ -85,6 +93,7 @@ export function Welcome() {
                 roles={project.roles}
                 technologies={project.technologies}
                 imageUrl={project.imageUrl}
+                route={project.route}
               />
             ))}
           </div>
@@ -102,6 +111,7 @@ export function Welcome() {
                 roles={project.roles}
                 technologies={project.technologies}
                 imageUrl={project.imageUrl}
+                route={project.route}
               />
             ))}
           </div>
