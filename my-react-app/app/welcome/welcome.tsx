@@ -90,7 +90,8 @@ export function Welcome() {
               </p>
             </div>
           </header>
-            <h2 className="text-2xl font-bold mt-8 text-center dark:text-white">Professional Experience</h2>
+          <hr className="w-150 inline-block center"/>
+            <h2 className="text-2xl font-bold text-center dark:text-white">Professional Experience</h2>
               <section>
                   <div className="flex gap-10 inline-flex flex-wrap justify-center">
                     {professionalProjects.map((project, index) => (

@@ -1,7 +1,14 @@
 import type { ReactElement } from 'react';
+import FadeContent from 'app/welcome/FadeContent'
 
 export default function LostAndFound(): ReactElement {
   return (
+    <FadeContent
+      blur={true}
+      duration={500}
+      easing="ease-in-out"
+      initialOpacity={1}
+    >
     <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Lost and Found WebApp</h1>
@@ -42,5 +49,7 @@ export default function LostAndFound(): ReactElement {
         </div>
       </div>
     </div>
+  </FadeContent>
+
   );
 }

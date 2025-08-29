@@ -72,14 +72,18 @@ export function ProjectCardDark({ title, roles, technologies, imageUrl, route }:
   );
 }
 
-export function ProjectCardLight({ title, roles, technologies, imageUrl }: ProjectCardProps) {
+export function ProjectCardLight({ title, roles, technologies, imageUrl, route }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
 
   return (
     <div 
       className="bg-slate-800 w-48 h-64 rounded-lg transition-all duration-500 ease-in-out hover:scale-110 relative cursor-pointer overflow-hidden shadow-lg"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => navigate(route)}
+
     >
         <div className="flex p-2 gap-1">
           <div className="">
