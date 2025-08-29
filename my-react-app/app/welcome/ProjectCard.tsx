@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import FadeContent from './FadeContent';
 
 interface ProjectCardProps {
   title: string;
@@ -20,17 +21,18 @@ export function ProjectCardDark({ title, roles, technologies, imageUrl, route }:
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => navigate(route)}
     >
-      <div className="flex p-2 gap-1">
-        <div className="">
-          <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
+
+        <div className="flex p-2 gap-1">
+          <div className="">
+            <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
+          </div>
+          <div className="circle">
+            <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
+          </div>
+          <div className="circle">
+            <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
+          </div>
         </div>
-        <div className="circle">
-          <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
-        </div>
-        <div className="circle">
-          <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
-        </div>
-      </div>
       <div className="card__content relative">
         <div className={`transition-all duration-500 ${isHovered ? 'slide-up' : 'slide-down'}`}>
           <h1 className="text-sm text-center leading-relaxed">{title}</h1>
@@ -50,16 +52,20 @@ export function ProjectCardDark({ title, roles, technologies, imageUrl, route }:
           className={`absolute inset-0 transition-all duration-500 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ 
-            transform: `translateY(${isHovered ? '0' : '100%'})`,
-            transition: 'transform 0.5s ease-in-out'
-          }}
+        >
+        <FadeContent
+          blur={true}
+          duration={500}
+          easing="ease-in-out"
+          initialOpacity={1}
+          inView={isHovered}
         >
           <img 
             src={imageUrl}
             alt={title}
             className="w-full h-40 object-cover rounded-xl"
           />
+        </FadeContent>
         </div>
       </div>
     </div>
@@ -75,17 +81,17 @@ export function ProjectCardLight({ title, roles, technologies, imageUrl }: Proje
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex p-2 gap-1">
-        <div className="">
-          <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
+        <div className="flex p-2 gap-1">
+          <div className="">
+            <span className="bg-red-500 inline-block center w-3 h-3 rounded-full"></span>
+          </div>
+          <div className="circle">
+            <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
+          </div>
+          <div className="circle">
+            <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
+          </div>
         </div>
-        <div className="circle">
-          <span className="bg-yellow-500 inline-block center w-3 h-3 rounded-full"></span>
-        </div>
-        <div className="circle">
-          <span className="bg-green-500 box inline-block center w-3 h-3 rounded-full"></span>
-        </div>
-      </div>
       <div className="card__content relative">
         <div className={`transition-all duration-500 ${isHovered ? 'slide-up' : 'slide-down'}`}>
           <h1 className="text-sm text-center leading-relaxed">{title}</h1>
@@ -105,16 +111,20 @@ export function ProjectCardLight({ title, roles, technologies, imageUrl }: Proje
           className={`absolute inset-0 transition-all duration-500 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ 
-            transform: `translateY(${isHovered ? '0' : '100%'})`,
-            transition: 'transform 0.5s ease-in-out'
-          }}
+        >
+        <FadeContent
+          blur={true}
+          duration={500}
+          easing="ease-in-out"
+          initialOpacity={1}
+          inView={isHovered}
         >
           <img 
             src={imageUrl}
             alt={title}
             className="w-full h-40 object-cover rounded-b-lg"
           />
+        </FadeContent>
         </div>
       </div>
     </div>

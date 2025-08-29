@@ -3,7 +3,9 @@ import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 import { ProjectCardDark } from './ProjectCard';
 import { ProjectCardLight } from './ProjectCard';
-
+import SplashCursor from './SplashCursor'
+import DarkVeil from './DarkVeil';
+import FadeContent from './FadeContent'
 
 export function Welcome() {
   const professionalProjects = [
@@ -82,22 +84,25 @@ export function Welcome() {
             </p>
           </div>
         </header>
-
-        <section>
           <h2 className="text-2xl font-bold mb-8 text-center dark:text-white">Professional Experience</h2>
-          <div className="flex gap-10 inline-flex flex-wrap justify-center">
-            {professionalProjects.map((project, index) => (
-              <ProjectCardDark
-                key={index}
-                title={project.title}
-                roles={project.roles}
-                technologies={project.technologies}
-                imageUrl={project.imageUrl}
-                route={project.route}
-              />
-            ))}
-          </div>
-        </section>
+            <section>
+              <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                {
+                <div className="flex gap-10 inline-flex flex-wrap justify-center">
+                  {professionalProjects.map((project, index) => (
+                    <ProjectCardDark
+                      key={index}
+                      title={project.title}
+                      roles={project.roles}
+                      technologies={project.technologies}
+                      imageUrl={project.imageUrl}
+                      route={project.route} />
+                  ))}
+                </div>
+                }
+              </FadeContent>
+            </section>
+
 
         <hr className="w-150 inline-block center" />
 
@@ -111,8 +116,7 @@ export function Welcome() {
                 roles={project.roles}
                 technologies={project.technologies}
                 imageUrl={project.imageUrl}
-                route={project.route}
-              />
+                route={project.route} />
             ))}
           </div>
         </section>
@@ -140,7 +144,7 @@ export function Welcome() {
           </nav>
         </div>
       </div>
-      
+
     </main>
   );
 }
