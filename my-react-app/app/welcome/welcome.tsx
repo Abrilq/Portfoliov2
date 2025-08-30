@@ -80,16 +80,46 @@ export function Welcome() {
   return (
     <div className="min-h-screen">
       <main className="flex items-center justify-center pt-16 pb-4">
-        <div className="flex-1 flex flex-col items-center gap-10 min-h-0">
+        <div className="flex flex flex-col gap-10 min-h-0">
           <section>
             <div className='w-full mt-16 mb-24'>
               <BlurText
-                text="Hi, I'm Clarence. A Software Developer."
+                text="Hi, I'm Clarence."
+                delay={300}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-5xl h-screen font-extrabold justify-start dark:text-white"
+              />
+            </div>
+            <div className='w-full mt-16 mb-24'>
+              <BlurText
+                text="A Software Developer."
+                delay={300}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-5xl h-screen font-extrabold justify-end dark:text-white"
+              />
+            </div>
+            <div className='w-full mt-16 mb-24'>
+              <BlurText
+                text="I specialize in creating efficient and scalable web applications."
                 delay={300}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
                 className="text-5xl h-screen font-extrabold text-center dark:text-white"
+              />
+            </div>
+            <div className='w-full mt-16 mb-24'>
+              <BlurText
+                text="But I focus more on the frontend."
+                delay={300}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-5xl h-screen font-extrabold justify-end dark:text-white [&_span:nth-child(7)]:bg-gradient-to-r [&_span:nth-child(7)]:from-blue-500 [&_span:nth-child(7)]:via-purple-500 [&_span:nth-child(7)]:to-pink-500 [&_span:nth-child(7)]:text-transparent [&_span:nth-child(7)]:bg-clip-text"
               />
             </div>
           </section>

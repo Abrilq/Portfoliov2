@@ -2,9 +2,10 @@ import { motion } from 'motion/react';
 import type { Transition } from 'motion/react';
 import type { EasingFunction } from 'motion-utils';
 import { useEffect, useRef, useState, useMemo } from 'react';
+import type { ReactNode } from 'react';
 
 type BlurTextProps = {
-  text?: string;
+  text?: string | ReactNode; // Changed this line to accept ReactNode
   delay?: number;
   className?: string;
   animateBy?: 'words' | 'letters';
@@ -48,7 +49,14 @@ const BlurText: React.FC<BlurTextProps> = ({
   onAnimationComplete,
   stepDuration = 0.35,
 }) => {
-  const elements = animateBy === 'words' ? text.split(' ') : text.split('');
+  // Add type check for string
+  const elements =
+    typeof text === 'string'
+      ? animateBy === 'words'
+        ? text.split(' ')
+        : text.split('')
+      : [text]; // Handle ReactNode as single element
+
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLParagraphElement>(null);
 
