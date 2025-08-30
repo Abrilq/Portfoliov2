@@ -6,6 +6,9 @@ import { ProjectCardLight } from './ProjectCard';
 import SplashCursor from './SplashCursor'
 import DarkVeil from './DarkVeil';
 import FadeContent from './FadeContent'
+import BlurText from './BlurText';
+import LightRays from './LightRays';
+import ScrollReveal from './ScrollReveal';
 
 export function Welcome() {
   const professionalProjects = [
@@ -70,84 +73,101 @@ export function Welcome() {
     },
   ];
 
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
+
   return (
     <div className="min-h-screen">
-      <FadeContent
-        blur={true}
-        duration={500}
-        easing="ease-in-out"
-        initialOpacity={1}
-      >
-        <main className="flex items-center justify-center pt-16 pb-4">
-          <div className="flex-1 flex flex-col items-center gap-10 min-h-0">
-          <header className="flex flex-col items-center gap-9">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold mb-4 dark:text-white">
-                John Doe
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Full Stack Web Developer
-              </p>
-            </div>
-          </header>
-          <hr className="w-150 inline-block center"/>
-            <h2 className="text-2xl font-bold text-center dark:text-white">Professional Experience</h2>
-              <section>
-                  <div className="flex gap-10 inline-flex flex-wrap justify-center">
-                    {professionalProjects.map((project, index) => (
-                      <ProjectCardDark
-                        key={index}
-                        title={project.title}
-                        roles={project.roles}
-                        technologies={project.technologies}
-                        imageUrl={project.imageUrl}
-                        route={project.route} />
-                    ))}
-                  </div>
-              </section>
-
-          <hr className="w-150 inline-block center" />
-
+      <main className="flex items-center justify-center pt-16 pb-4">
+        <div className="flex-1 flex flex-col items-center gap-10 min-h-0">
           <section>
-            <h2 className="text-2xl font-bold mb-8 text-center dark:text-white">Personal Projects</h2>
-            <div className="flex gap-10 inline-flex flex-wrap justify-center">
-              {personalProjects.map((project, index) => (
-                <ProjectCardLight
-                  key={index}
-                  title={project.title}
-                  roles={project.roles}
-                  technologies={project.technologies}
-                  imageUrl={project.imageUrl}
-                  route={project.route} />
-              ))}
+            <div className='w-full mt-16 mb-24'>
+              <BlurText
+                text="Hi, I'm Clarence. A Software Developer."
+                delay={300}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-5xl h-screen font-extrabold text-center dark:text-white"
+              />
             </div>
           </section>
 
-          <div className="max-w-[300px] w-full space-y-6 px-4">
-            <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-              <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-                Connect With Me
-              </p>
-              <ul>
-                {resources.map(({ href, text, icon }) => (
-                  <li key={href}>
-                    <a
-                      className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {icon}
-                      {text}
-                    </a>
-                  </li>
+          <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={2}
+          >
+            <div className="w-full text-center mb-12">
+              <hr className='w-full mb-10'/>
+              <h2 className="text-2xl font-bold text-center dark:text-white mb-8">
+                Professional Experience
+              </h2>
+              <div className="flex gap-10 inline-flex flex-wrap justify-center">
+                {professionalProjects.map((project, index) => (
+                  <ProjectCardDark
+                    key={index}
+                    title={project.title}
+                    roles={project.roles}
+                    technologies={project.technologies}
+                    imageUrl={project.imageUrl}
+                    route={project.route}
+                  />
                 ))}
-              </ul>
-            </nav>
-          </div>
-          </div>
-        </main>
-      </FadeContent>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={2}
+          >
+            <div className="w-full text-center mb-12">
+              <hr className='w-full mb-10'/>
+              <h2 className="text-2xl font-bold text-center dark:text-white mb-8">
+                Personal Projects
+              </h2>
+              <div className="flex gap-10 inline-flex flex-wrap justify-center">
+                {personalProjects.map((project, index) => (
+                  <ProjectCardLight
+                    key={index}
+                    title={project.title}
+                    roles={project.roles}
+                    technologies={project.technologies}
+                    imageUrl={project.imageUrl}
+                    route={project.route}
+                  />
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+            <div className="w-full inline-flex justify-center">
+              <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
+                <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
+                  Connect With Me
+                </p>
+                <ul>
+                  {resources.map(({ href, text, icon }) => (
+                    <li key={href}>
+                      <a
+                        className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {icon}
+                        {text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+        </div>
+      </main>
     </div>
   );
 }
