@@ -10,6 +10,7 @@ import BlurText from './BlurText';
 import LightRays from './LightRays';
 import ScrollReveal from './ScrollReveal';
 
+
 export function Welcome() {
   const professionalProjects = [
     {
