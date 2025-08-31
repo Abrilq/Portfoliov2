@@ -78,11 +78,11 @@ export function Welcome() {
     console.log('Animation completed!');
   };
   const demoItems = [
-  { link: '', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
-  { link: '#', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
-  { link: '/projects/projectpage', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' }, // Fixed path
-  { link: '#', text: 'My Links', image: './images/flowingmenu/Links-nobg.PNG' }
-];
+    { link: '', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
+    { link: '#', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
+    { link: '/projects/projectpage', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' }, // Fixed path
+    { link: '#', text: 'My Links', image: './images/flowingmenu/Links-nobg.PNG' }
+  ];
 
   return (
     <div className="min-h-screen m-5">

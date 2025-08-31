@@ -1,9 +1,13 @@
 import type { ReactElement } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import FadeContent from "app/welcome/FadeContent";
 import CardSwap, { Card } from '../../welcome/CardSwap'
 import { div } from "motion/react-client";
 
 export default function ProjectPage(): ReactElement {
+  const navigate = useNavigate();
+  
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
 
@@ -36,6 +40,18 @@ export default function ProjectPage(): ReactElement {
               />
             </Card>
           </CardSwap>
+
+          <div className='absolute left-20 mt-10'>
+            <button 
+              onClick={() => navigate(-1)}
+              className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
+              title="Go Back"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" className="stroke-blue-300">
+                <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
+              </svg>
+            </button>
+          </div>
           <div className="flex-col absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
             <div>
               <h1 className="text-9xl bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent font-black z-40">Findr.</h1>
