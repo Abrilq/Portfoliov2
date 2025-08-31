@@ -63,7 +63,7 @@ export function Welcome() {
       title: "Drinking Session",
       roles: ["Full-stack Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
-      imageUrl: "/images/psd/drinking.png",
+      imageUrl: "/images/psd/drinking1.png",
       route: "/projects/drinking-session"
     },
     {
@@ -80,10 +80,10 @@ export function Welcome() {
   };
 
   const demoItems = [
-  { link: '#', text: 'Resume', image: 'https://picsum.photos/600/400?random=1' },
-  { link: '#', text: 'Certifications', image: 'https://picsum.photos/600/400?random=2' },
-  { link: '#', text: 'Projects', image: 'https://picsum.photos/600/400?random=3' },
-  // { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
+  { link: '#', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
+  { link: '#', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
+  { link: '#', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' },
+  { link: '#', text: 'My Links', image: './images/flowingmenu/Links-nobg.PNG' }
 ];
 
   return (

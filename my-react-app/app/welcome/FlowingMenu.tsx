@@ -84,7 +84,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
           {text}
         </span>
         <div
-          className="w-[200px] h-[7vh] my-[2em] mx-[2vw] p-[1em_0] rounded-[50px] bg-cover bg-center"
+          className="w-[200px] h-[15vh] my-[2em] mx-[2vw] p-[1em_0] rounded-[50px] bg-cover bg-center"
           style={{ backgroundImage: `url(${image})` }}
         />
       </React.Fragment>
