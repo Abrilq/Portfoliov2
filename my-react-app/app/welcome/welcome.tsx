@@ -6,11 +6,10 @@ import { ProjectCardLight } from './ProjectCard';
 import SplashCursor from './SplashCursor'
 import DarkVeil from './DarkVeil';
 import FadeContent from './FadeContent'
-import BlurText from './BlurText';
 import LightRays from './LightRays';
 import ScrollReveal from './ScrollReveal';
 import FlowingMenu from './FlowingMenu';
-
+import BlurText from './BlurText';
 
 export function Welcome() {
   const professionalProjects = [
@@ -78,57 +77,56 @@ export function Welcome() {
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
   };
-
   const demoItems = [
-  { link: '#', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
+  { link: '', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
   { link: '#', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
-  { link: '#', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' },
+  { link: '/projects/projectpage', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' }, // Fixed path
   { link: '#', text: 'My Links', image: './images/flowingmenu/Links-nobg.PNG' }
 ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen m-5">
       <main className="flex items-center justify-center pt-16 pb-4">
-        <div className="flex flex flex-col gap-10 min-h-0">
+        <div className="">
           <section>
-            <div className='w-full mt-16 mb-24'>
+            <div className='w-full'>
               <BlurText
                 text="Hi, I'm Clarence."
                 delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
-                className="text-5xl h-screen font-extrabold justify-start dark:text-white"
+                className="sm:text-lg md:text-3xl lg:text-5xl h-screen font-extrabold justify-start dark:text-white"
               />
             </div>
-            <div className='w-full mt-16 mb-24'>
+            <div className=''>
               <BlurText
                 text="A Software Developer."
                 delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
-                className="text-5xl h-screen font-extrabold justify-end dark:text-white"
+                className="sm:text-lg md:text-3xl lg:text-5xl h-screen font-extrabold justify-end dark:text-white"
               />
             </div>
-            <div className='w-full mt-16 mb-24'>
+            <div className='w-full'>
               <BlurText
                 text="I specialize in creating efficient and scalable web applications."
                 delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
-                className="text-5xl h-screen font-extrabold text-center dark:text-white"
+                className="sm:text-xs md:text-3xl lg:text-5xl h-screen font-extrabold text-center dark:text-white text-center"
               />
             </div>
-            <div className='w-full mt-16 mb-24'>
+            <div className='w-full'>
               <BlurText
                 text="But I focus more on the frontend."
                 delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
-                className="text-5xl h-40 font-extrabold justify-end dark:text-white [&_span:nth-child(7)]:bg-gradient-to-r [&_span:nth-child(7)]:from-blue-500 [&_span:nth-child(7)]:via-purple-500 [&_span:nth-child(7)]:to-pink-500 [&_span:nth-child(7)]:text-transparent [&_span:nth-child(7)]:bg-clip-text"
+                className="sm:text-lg md:text-3xl lg:text-5xl h-40 font-extrabold justify-end dark:text-white [&_span:nth-child(7)]:bg-gradient-to-r [&_span:nth-child(7)]:from-blue-500 [&_span:nth-child(7)]:via-purple-500 [&_span:nth-child(7)]:to-pink-500 [&_span:nth-child(7)]:text-transparent [&_span:nth-child(7)]:bg-clip-text"
               />
             </div>
           </section>
@@ -140,56 +138,6 @@ export function Welcome() {
           >
             <div style={{ height: '600px', position: 'relative' }}>
               <FlowingMenu items={demoItems} />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal
-            baseOpacity={0}
-            enableBlur={true}
-            baseRotation={2}
-          >
-            <div className="w-full text-center mb-12">
-              <hr className='w-full mb-10'/>
-              <h2 className="text-2xl font-bold text-center dark:text-white mb-8">
-                Professional Experience
-              </h2>
-              <div className="flex gap-10 inline-flex flex-wrap justify-center">
-                {professionalProjects.map((project, index) => (
-                  <ProjectCardDark
-                    key={index}
-                    title={project.title}
-                    roles={project.roles}
-                    technologies={project.technologies}
-                    imageUrl={project.imageUrl}
-                    route={project.route}
-                  />
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal
-            baseOpacity={0}
-            enableBlur={true}
-            baseRotation={2}
-          >
-            <div className="w-full text-center mb-12">
-              <hr className='w-full mb-10'/>
-              <h2 className="text-2xl font-bold text-center dark:text-white mb-8">
-                Personal Projects
-              </h2>
-              <div className="flex gap-10 inline-flex flex-wrap justify-center">
-                {personalProjects.map((project, index) => (
-                  <ProjectCardLight
-                    key={index}
-                    title={project.title}
-                    roles={project.roles}
-                    technologies={project.technologies}
-                    imageUrl={project.imageUrl}
-                    route={project.route}
-                  />
-                ))}
-              </div>
             </div>
           </ScrollReveal>
 

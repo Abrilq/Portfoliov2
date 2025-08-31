@@ -10,4 +10,5 @@ export default [
   route("projects/ar-project", "routes/projects/ar-project.tsx"),
   route("projects/drinking-session", "routes/projects/drinking-session.tsx"),
   route("projects/srt-renamer", "routes/projects/srt-renamer.tsx"),
+  route("projects/projectpage", "routes/projects/projectpage.tsx"),
 ] satisfies RouteConfig;
