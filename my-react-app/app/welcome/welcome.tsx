@@ -9,6 +9,7 @@ import FadeContent from './FadeContent'
 import BlurText from './BlurText';
 import LightRays from './LightRays';
 import ScrollReveal from './ScrollReveal';
+import FlowingMenu from './FlowingMenu';
 
 
 export function Welcome() {
@@ -78,6 +79,13 @@ export function Welcome() {
     console.log('Animation completed!');
   };
 
+  const demoItems = [
+  { link: '#', text: 'Resume', image: 'https://picsum.photos/600/400?random=1' },
+  { link: '#', text: 'Certifications', image: 'https://picsum.photos/600/400?random=2' },
+  { link: '#', text: 'Projects', image: 'https://picsum.photos/600/400?random=3' },
+  // { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
+];
+
   return (
     <div className="min-h-screen">
       <main className="flex items-center justify-center pt-16 pb-4">
@@ -86,7 +94,7 @@ export function Welcome() {
             <div className='w-full mt-16 mb-24'>
               <BlurText
                 text="Hi, I'm Clarence."
-                delay={300}
+                delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
@@ -96,7 +104,7 @@ export function Welcome() {
             <div className='w-full mt-16 mb-24'>
               <BlurText
                 text="A Software Developer."
-                delay={300}
+                delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
@@ -106,7 +114,7 @@ export function Welcome() {
             <div className='w-full mt-16 mb-24'>
               <BlurText
                 text="I specialize in creating efficient and scalable web applications."
-                delay={300}
+                delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
@@ -116,14 +124,24 @@ export function Welcome() {
             <div className='w-full mt-16 mb-24'>
               <BlurText
                 text="But I focus more on the frontend."
-                delay={300}
+                delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
-                className="text-5xl h-screen font-extrabold justify-end dark:text-white [&_span:nth-child(7)]:bg-gradient-to-r [&_span:nth-child(7)]:from-blue-500 [&_span:nth-child(7)]:via-purple-500 [&_span:nth-child(7)]:to-pink-500 [&_span:nth-child(7)]:text-transparent [&_span:nth-child(7)]:bg-clip-text"
+                className="text-5xl h-40 font-extrabold justify-end dark:text-white [&_span:nth-child(7)]:bg-gradient-to-r [&_span:nth-child(7)]:from-blue-500 [&_span:nth-child(7)]:via-purple-500 [&_span:nth-child(7)]:to-pink-500 [&_span:nth-child(7)]:text-transparent [&_span:nth-child(7)]:bg-clip-text"
               />
             </div>
           </section>
+          
+          <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={2}
+          >
+            <div style={{ height: '600px', position: 'relative' }}>
+              <FlowingMenu items={demoItems} />
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal
             baseOpacity={0}
