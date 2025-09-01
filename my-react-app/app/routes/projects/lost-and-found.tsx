@@ -4,6 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import FadeContent from "app/welcome/FadeContent";
 import CardSwap, { Card } from '../../welcome/CardSwap'
 import ScrollReveal from '../../welcome/ScrollReveal';
+import MagicBento from '../../welcome/MagicBento'
+import ScrollVelocity from '../../welcome/ScrollVelocity'
+import DecryptedText from '../../welcome/DecryptedText';
+import PixelTransition from '../../welcome/PixelTransition';
+
 import { div } from "motion/react-client";
 
 export default function ProjectPage(): ReactElement {
@@ -115,16 +120,17 @@ export default function ProjectPage(): ReactElement {
           </div>
 
         </div>
-          <ScrollReveal
+
+        <ScrollReveal
             baseOpacity={0}
             enableBlur={true}
             baseRotation={2}
           >
           {/* What the project is about */}
-          <section className="w-screen h-screen py-20 px-6 bg-slate-950 mt-25 mb-25">
+          <section className="w-screen h-screen py-20 px-6 bg-slate-950 mt-25 mb-5">
             <div className="text-center">
               <h2 className="text-3xl font-bold">Lost and Found Web Application</h2>
-              <p className="pl-20 pr-20 mt-10 text-sm/8">
+              <p className="pl-30 pr-30 mt-10 mb-5 text-md/1">
                 The Lost and Found Web Application is a service-focused platform designed to help
                 students, faculty, and administrators manage lost and found items within a school or institution.
                 The system ensures that lost items are efficiently tracked, securely stored, and properly claimed by rightful owners.
@@ -132,31 +138,161 @@ export default function ProjectPage(): ReactElement {
                 to manage reports, claims, and item archiving in a streamlined and structured way.
               </p>
             </div>
+            <div className="flex justify-center">
+              <MagicBento 
+                textAutoHide={true}
+                enableStars={true}
+                enableSpotlight={true}
+                enableBorderGlow={true}
+                enableTilt={true}
+                enableMagnetism={true}
+                clickEffect={true}
+                spotlightRadius={300}
+                particleCount={12}
+                glowColor="132, 0, 255"
+              />
+            </div>
+
           </section>
-          <section>
-              <div className="mt-20 mb-20 text-sm/8">
-                <h2 className="text-2xl font-bold text-center mb-6">Objectives</h2>
-                <ul className="list-disc list-inside max-w-3xl mx-auto text-justify space-y-2">
-                  <li>Provide students with a simple way to view lost items online.</li>
-                  <li>Allow faculty to record, update, and manage lost items.</li>
-                  <li>Enable administrators to oversee the entire process, including account and item management.</li>
-                  <li>Maintain a clear item lifecycle: Reported → Verified → Claimed → Archived.</li>
-                  <li>Reduce manual paperwork and increase efficiency in handling lost and found items.</li>
-                  <li>Provide students with a simple way to view lost items online.</li>
-                </ul>
-              </div>
+        </ScrollReveal>
+        <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={2}
+          >
+          <section className="w-screen h-screen py-5 px-6 bg-slate-950 mt-10 mb-5">
+            <div className="mt-20 mb-20 text-sm/8">
+              <ScrollVelocity
+                texts={['Project Objectives', 'Lost and Found WebApp']} 
+                velocity={10} 
+                className="custom-scroll-text"
+              />
+            <ul className="flex flex-col justify-center list-disc list-inside space-y-4 text-2xl max-w-6xl mx-auto my-10 text-justify">
+              {[
+                "Provide students with a simple way to view lost items online.",
+                "Allow faculty to record, update, and manage lost items.",
+                "Enable administrators to oversee the entire process, including account and item management.",
+                "Maintain a clear item lifecycle: Reported → Verified → Claimed → Archived.",
+                "Reduce manual paperwork and increase efficiency in handling lost and found items."
+              ].map((line, idx) => (
+                <li key={idx}>
+                  <DecryptedText
+                    text={line}
+                    animateOn="view"
+                    sequential={true}
+                    revealDirection="start"
+                    speed={40}
+                    className="text-gray-200"
+                    encryptedClassName="text-purple-400"
+                  />
+                </li>
+              ))}
+            </ul>
+            </div>
+            <div className="flex justify-center items-center opacity-10 text-6xl font-extrabold italic uppercase">
+              <h1 className="">Scroll Down For More</h1>
+            </div>
           </section>
         </ScrollReveal>
 
-        {/* What I Did */}
-        <section className="py-20 px-6 bg-white-50 text-center">
-          <h2 className="text-2xl font-semibold mb-6">My Role</h2>
-          <ul className="space-y-3 text-lg text-gray-700">
-            <li>✔ Full-Stack Developer</li>
-            <li>✔ Team Leader</li>
-            <li>✔ UI/UX Designer</li>
-          </ul>
-        </section>
+        <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={2}
+          >
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-3xl uppercase font-extrabold mb-6 mt-20">My Roles</h2>
+            <p className=" font-extrabold mb-6 opacity-20">Hover over the cards!</p>
+          </div>
+        </ScrollReveal>
+
+
+        <div className="flex justify-center items-center gap-5">
+          <PixelTransition
+            firstContent={
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "grid",
+                  placeItems: "center",
+                  backgroundColor: "#111",
+                }}
+              >
+                <p style={{ fontWeight: 900, fontSize: "1rem", color: "#ffffff" }}>
+                  Full-Stack Developer
+                </p>
+              </div>
+            }
+            secondContent={
+              <img
+                src="/images/roles/fullstack.PNG"
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            }
+            gridSize={12}
+            pixelColor="#ffffff"
+            animationStepDuration={0.4}
+            className="custom-pixel-card"
+          />
+          <PixelTransition
+            firstContent={
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "grid",
+                  placeItems: "center",
+                  backgroundColor: "#111",
+                }}
+              >
+                <p style={{ fontWeight: 900, fontSize: "1rem", color: "#ffffff" }}>
+                  Team Leader
+                </p>
+              </div>
+            }
+            secondContent={
+              <img
+                src="/images/roles/teamleader.PNG"
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            }
+            gridSize={12}
+            pixelColor="#ffffff"
+            animationStepDuration={0.4}
+            className="custom-pixel-card"
+          />
+          <PixelTransition
+            firstContent={
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "grid",
+                  placeItems: "center",
+                  backgroundColor: "#111",
+                }}
+              >
+                <p style={{ fontWeight: 900, fontSize: "1rem", color: "#ffffff" }}>
+                  UI/UX Designer
+                </p>
+              </div>
+            }
+            secondContent={
+              <img
+                src="/images/roles/designer.PNG"
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            }
+            gridSize={12}
+            pixelColor="#ffffff"
+            animationStepDuration={0.4}
+            className="custom-pixel-card"
+          />
+        </div>
 
         {/* Features */}
         <section className="py-20 px-6 max-w-4xl mx-auto text-center">
