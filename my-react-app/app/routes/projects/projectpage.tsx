@@ -16,7 +16,7 @@ export default function ARProject(): ReactElement {
   const professionalProjects = [
     {
       title: "Lost and Found WebApp",
-      roles: ["Team Leader", "Full-stack Developer"],
+      roles: ["Full-stack Developer", "Team Leader", "UI/UX Designer"],
       technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
       imageUrl: "/images/psd/lnf.png",
       route: "/projects/lost-and-found"
