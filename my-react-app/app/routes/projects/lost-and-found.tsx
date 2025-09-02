@@ -9,7 +9,7 @@ import ScrollVelocity from '../../welcome/ScrollVelocity'
 import DecryptedText from '../../welcome/DecryptedText';
 import PixelTransition from '../../welcome/PixelTransition';
 import SpotlightCard from '../../welcome/SpotlightCard';
-import GlareHover from '../../welcome/GlareHover'
+import BlurText from '../../welcome/BlurText'
 
 import { FaReact, FaNodeJs, FaDocker } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiExpress, SiMysql } from "react-icons/si";
@@ -17,6 +17,10 @@ import { FaCss3Alt, FaJava, FaHtml5 } from "react-icons/fa";
 
 export default function ProjectPage(): ReactElement {
   const navigate = useNavigate();
+
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
   
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
@@ -154,7 +158,7 @@ export default function ProjectPage(): ReactElement {
                       animateOn="view"
                       sequential={true}
                       revealDirection="start"
-                      speed={40}
+                      speed={35}
                       className="text-gray-200 text-sm sm:text-base lg:text-2xl leading-relaxed lg:leading-loose"
                       encryptedClassName="text-purple-400"
                     />
@@ -164,7 +168,6 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-
 
         {/* Features */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
@@ -208,6 +211,39 @@ export default function ProjectPage(): ReactElement {
           </section>
         </ScrollReveal>
 
+        {/* Expected Impact Section */}
+        <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
+          <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-12 text-center">Expected Impact</h2>
+
+              <div className="grid grid-cols-2 grid-rows-2 gap-x-6 gap-y-10 text-end">
+                {[
+                  "Faster and more reliable lost item recovery.",
+                  "","",
+                  "Reduced manual errors in recording/claiming items.",
+                  "Increased student confidence in the institution’s handling of lost property.",
+                  "","",
+                  "A scalable digital solution that can be extended to multiple campuses."
+                ].map((text, idx) => (
+                  <div
+                    key={idx}
+                    className={idx % 2 === 0 ? "justify-self-start" : "justify-self-end"}
+                  >
+                    <BlurText
+                      text={text}
+                      delay={150}
+                      animateBy="words"
+                      direction="top"
+                      onAnimationComplete={handleAnimationComplete}
+                      className="text-2xl"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
 
         {/* My Roles */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
@@ -281,7 +317,6 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-
 
         {/* Technologies */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
