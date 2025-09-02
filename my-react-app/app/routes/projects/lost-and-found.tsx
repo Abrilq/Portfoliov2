@@ -21,25 +21,34 @@ export default function ProjectPage(): ReactElement {
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
   };
-  
+
+  const cardImages = [
+  "/images/heroes/lnf.PNG",
+  "/images/heroes/lnf.PNG",
+  "/images/heroes/lnf.PNG",
+  "/images/heroes/lnf.PNG",
+  "/images/heroes/lnf.PNG",
+  "/images/heroes/lnf.PNG",
+];
+
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
       <div className="overflow-hidden bg-slate-950">
 
         {/* Hero Section */}
         <section>
-          <div className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[700px] mb-20">
+          <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
             <CardSwap
-              cardDistance={40}
-              verticalDistance={100}
+              cardDistance={80}
+              verticalDistance={150}
               delay={3000}
               pauseOnHover={false}
             >
-              {[1, 2, 3, 4, 5].map((n, i) => (
+              {cardImages.map((src, i) => (
                 <Card key={i}>
                   <img
-                    src={`/images/heroes/lnf.PNG`}
-                    alt="Project Preview"
+                    src={src}
+                    alt={`Project Preview ${i + 1}`}
                     className="w-full sm:w-3/4 lg:w-[1080px] h-full object-cover rounded-xl shadow-lg mb-8 mx-auto"
                   />
                 </Card>
@@ -60,7 +69,7 @@ export default function ProjectPage(): ReactElement {
             </div>
 
             {/* Hero Text */}
-            <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-y-1/2 text-left px-4">
+            <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-right px-4">
               <h1 className="text-6xl sm:text-8xl lg:text-[14rem] leading-none bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent font-black">
                 Findr.
               </h1>
@@ -68,27 +77,25 @@ export default function ProjectPage(): ReactElement {
                 claim what is once lost.
               </h2>
 
-            {/* Explore Button */}
-            <div className="relative group mt-6 flex">
-              <button
-                onClick={() => {
-                  // Select the current hero section
-                  const currentSection = document.querySelector('section');
-                  // Scroll to the next section sibling
-                  const nextSection = currentSection?.nextElementSibling;
-                  nextSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="relative inline-block px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white bg-gray-800 shadow-2xl rounded-xl cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-              >
-                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span className="transition-all duration-500 group-hover:translate-x-1">Explore</span>
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" />
-                  </svg>
-                </span>
-              </button>
-            </div>
+              {/* Explore Button */}
+              <div className="relative group mt-6 flex flex-col items-end">
+                <button
+                  onClick={() => {
+                    const currentSection = document.querySelector("section");
+                    const nextSection = currentSection?.nextElementSibling;
+                    nextSection?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="relative inline-block px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white bg-gray-800 shadow-2xl rounded-xl cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+                >
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <span className="transition-all duration-500 group-hover:translate-x-1">Explore</span>
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </section>

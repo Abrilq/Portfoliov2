@@ -34,7 +34,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       {...rest}
-      className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] ${customClass ?? ""} ${rest.className ?? ""}`.trim()}
+      className={`absolute top-1 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] ${customClass ?? ""} ${rest.className ?? ""}`.trim()}
     />
   )
 );
@@ -88,12 +88,12 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const config =
     easing === "elastic"
       ? {
-          ease: "elastic.out(0.6,0.9)",
-          durDrop: 2,
-          durMove: 2,
-          durReturn: 2,
-          promoteOverlap: 0.9,
-          returnDelay: 0.05,
+          ease: "power3.out", // Changed from elastic.out to power3.out
+          durDrop: 1.5,       // Reduced from 2
+          durMove: 1.5,       // Reduced from 2
+          durReturn: 1.2,     // Reduced from 2
+          promoteOverlap: 0.7,// Reduced from 0.9
+          returnDelay: 0.1,   // Increased from 0.05
         }
       : {
           ease: "power1.inOut",
@@ -140,10 +140,12 @@ const CardSwap: React.FC<CardSwapProps> = ({
       tlRef.current = tl;
 
       tl.to(elFront, {
-        y: "+=500",
+        y: 500,
         duration: config.durDrop,
         ease: config.ease,
       });
+
+
 
       tl.addLabel("promote", `-=${config.durDrop * config.promoteOverlap}`);
       rest.forEach((idx, i) => {
@@ -184,11 +186,11 @@ const CardSwap: React.FC<CardSwapProps> = ({
           y: backSlot.y,
           z: backSlot.z,
           duration: config.durReturn,
-          ease: config.ease,
+          ease: "power3.inOut",
         },
         "return"
       );
-
+      
       tl.call(() => {
         order.current = [...rest, front];
       });
