@@ -4,10 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ProjectCardDark } from 'app/welcome/ProjectCard';
 import { ProjectCardLight } from 'app/welcome/ProjectCard';
 
-import FadeContent from 'app/welcome/FadeContent'
+import FadeContent from 'app/welcome/FadeContent';
 import ScrollReveal from 'app/welcome/ScrollReveal';
-import FlowingMenu from 'app/welcome/FlowingMenu';
-import BlurText from 'app/welcome/BlurText';
 import TextPressure from 'app/welcome/TextPressure';
 
 export default function ARProject(): ReactElement {
@@ -74,21 +72,14 @@ export default function ARProject(): ReactElement {
       route: "/projects/srt-renamer"
     },
   ];
-  return (
-    <FadeContent
-        blur={true}
-        duration={500}
-        easing="ease-in-out"
-        initialOpacity={1}
-    >
-      <ScrollReveal
-        baseOpacity={0}
-        enableBlur={true}
-        baseRotation={0}
-      >
-        <div className="w-full text-center mb-12">
 
-          <div style={{position: 'relative', height: '300px', margin: '20px'}}>
+  return (
+    <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
+      <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={0}>
+
+        {/* Header Section */}
+        <section className="w-full text-center mb-12 relative px-4 sm:px-6">
+          <div className="flex justify-center mt-10 mb-6">
             <TextPressure
               text="Hello there!"
               flex={true}
@@ -102,30 +93,43 @@ export default function ARProject(): ReactElement {
               minFontSize={36}
             />
           </div>
-
-          <div className='relative flex justify-center'>
-            <hr className='w-250 mb-10 mt-10'/>
+          <div className="flex justify-center mb-8">
+            <hr className="w-60 sm:w-80 border-t-2 border-gray-600" />
           </div>
+        </section>
 
-          <div className='absolute left-25'>
-            <button 
+        {/* Professional Projects Section */}
+        <section className="w-full text-center mb-12 px-4 sm:px-6 relative">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8">
+            {/* Back Button */}
+            <button
               onClick={() => navigate(-1)}
-              className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
+              className="cursor-pointer duration-200 hover:scale-110 active:scale-95"
               title="Go Back"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" className="stroke-blue-300">
-                <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40px"
+                height="40px"
+                viewBox="0 0 24 24"
+                className="stroke-blue-300"
+              >
+                <path
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                  d="M11 6L5 12M5 12L11 18M5 12H19"
+                ></path>
               </svg>
             </button>
-          </div>
 
-          <div className="flex flex-col justify-center">
-            <h2 className="text-2xl font-bold text-center dark:text-white mb-8">
+            {/* Section Title */}
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white">
               Professional Experience
             </h2>
           </div>
 
-          <div className="flex gap-10 inline-flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
             {professionalProjects.map((project, index) => (
               <ProjectCardDark
                 key={index}
@@ -137,18 +141,20 @@ export default function ARProject(): ReactElement {
               />
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="w-full text-center mb-12">
+        {/* Divider */}
+        <section className="flex justify-center mb-12 px-4 sm:px-6">
+          <hr className="w-60 sm:w-80 border-t-2 border-gray-600" />
+        </section>
 
-          <div className='relative flex justify-center'>
-            <hr className='w-250 mb-10 mt-10'/>
-          </div>
-          
-          <h2 className="text-2xl font-bold text-center dark:text-white mb-8">
+        {/* Personal Projects Section */}
+        <section className="w-full text-center mb-12 px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white mb-8">
             Personal Projects
           </h2>
-          <div className="flex gap-10 inline-flex flex-wrap justify-center">
+
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
             {personalProjects.map((project, index) => (
               <ProjectCardLight
                 key={index}
@@ -160,8 +166,9 @@ export default function ARProject(): ReactElement {
               />
             ))}
           </div>
-        </div>
-      </ScrollReveal> 
+        </section>
+
+      </ScrollReveal>
     </FadeContent>
   );
 }
