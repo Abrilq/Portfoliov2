@@ -1,7 +1,7 @@
 [build]
   base = "my-react-app"
   command = "npm run build"
-  publish = "build"   # use "build" if Create React App
+  publish = "build"
 
 [[redirects]]
   from = "/*"
