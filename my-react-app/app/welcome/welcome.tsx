@@ -101,7 +101,7 @@ export function Welcome() {
             </div>
             <div className='flex justify-end'>
               <BlurText
-                text="A Software Developer."
+                text="A Web Developer."
                 delay={200}
                 animateBy="words"
                 direction="top"
