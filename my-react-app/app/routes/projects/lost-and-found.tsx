@@ -31,9 +31,8 @@ export default function ProjectPage(): ReactElement {
 ];
 
   return (
-    // <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
-      <div className="overflow-hidden bg-slate-950">
-
+    <div className="overflow-hidden bg-slate-950">
+      <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
         {/* Hero Section */}
         <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
@@ -429,8 +428,7 @@ export default function ProjectPage(): ReactElement {
           © {new Date().getFullYear()} John Clarence A. Legaspi
         </footer>
 
-
-      </div>
-    // </FadeContent>
+      </FadeContent>
+    </div>
   );
 }
