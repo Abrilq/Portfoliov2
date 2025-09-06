@@ -20,15 +20,17 @@ const FadeContent: React.FC<FadeContentProps> = ({
   easing = "ease-out",
   delay = 0,
   threshold = 0.1,
-  initialOpacity = 0,
+  initialOpacity = 1,
   className = "",
   inView: controlledInView,
 }) => {
   const [autoInView, setAutoInView] = useState(false);
+  const [isFirstRender, setIsFirstRender] = useState(true);
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = controlledInView !== undefined ? controlledInView : autoInView;
 
   useEffect(() => {
+    setIsFirstRender(false);
     if (controlledInView !== undefined) return;
 
     const element = ref.current;
@@ -37,28 +39,29 @@ const FadeContent: React.FC<FadeContentProps> = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          setAutoInView(true);
           observer.unobserve(element);
-          setTimeout(() => {
-            setAutoInView(true);
-          }, delay);
         }
       },
       { threshold }
     );
 
     observer.observe(element);
-
-    return () => observer.disconnect();
-  }, [threshold, delay, controlledInView]);
+    
+    return () => {
+      observer.disconnect();
+      setAutoInView(false);
+    };
+  }, [threshold, controlledInView]);
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        opacity: inView ? 1 : initialOpacity,
-        transition: `opacity ${duration}ms ${easing}, filter ${duration}ms ${easing}`,
-        filter: blur ? (inView ? 'blur(0px)' : 'blur(10px)') : 'none',
+        opacity: isFirstRender ? initialOpacity : (inView ? 1 : initialOpacity),
+        transition: `opacity ${duration}ms ${easing} ${delay}ms, filter ${duration}ms ${easing} ${delay}ms`,
+        filter: blur ? (inView ? 'blur(0px)' : 'blur(8px)') : 'none',
       }}
     >
       {children}

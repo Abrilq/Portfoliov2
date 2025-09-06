@@ -34,9 +34,9 @@ export default function ProjectPage(): ReactElement {
     <div className="overflow-hidden bg-slate-950">
       <FadeContent 
         blur={true} 
-        duration={800} 
-        easing="ease-out" 
-        initialOpacity={0}
+        duration={600}
+        easing="cubic-bezier(0.4, 0, 0.2, 1)"
+        initialOpacity={1}
         delay={100}
       >
         {/* Hero Section */}
