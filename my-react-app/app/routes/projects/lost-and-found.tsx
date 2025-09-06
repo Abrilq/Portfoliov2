@@ -37,7 +37,9 @@ export default function ProjectPage(): ReactElement {
       easing="ease-in-out"
       initialOpacity={1}
     >
-      <div className="relative bg-slate-950 overflow-hidden">
+      <section className="relative bg-slate-950">
+
+      <div className="overflow-hidden">
         {/* Hero Section */}
         <section className="">
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
@@ -436,6 +438,8 @@ export default function ProjectPage(): ReactElement {
           </footer>
         </div>
       </div>
+
+      </section>
     </FadeContent>
 
   );
