@@ -32,16 +32,15 @@ export default function ProjectPage(): ReactElement {
 
   return (
     <FadeContent
-      blur={true}
-      duration={500}
+      blur={false}
+      duration={1000}
       easing="ease-in-out"
-      initialOpacity={1}
+      initialOpacity={0}
     >
-      <section className="relative bg-slate-950">
+      <div className="relative bg-slate-950 overflow-hidden">
 
-      <div className="overflow-hidden">
         {/* Hero Section */}
-        <section className="">
+        <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
             <CardSwap
               cardDistance={80}
@@ -185,7 +184,7 @@ export default function ProjectPage(): ReactElement {
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="py-10 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-12 text-center">Project Key Features</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
               
               {/* Users */}
               <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
@@ -437,9 +436,8 @@ export default function ProjectPage(): ReactElement {
             © {new Date().getFullYear()} John Clarence A. Legaspi
           </footer>
         </div>
-      </div>
 
-      </section>
+      </div>
     </FadeContent>
 
   );
