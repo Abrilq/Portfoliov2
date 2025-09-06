@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { useNavigate } from 'react-router-dom';
 
-import FadeContent from "../../welcome/FadeContent";
+import FadeContent from 'app/welcome/FadeContent'
 import CardSwap, { Card } from '../../welcome/CardSwap'
 import ScrollReveal from '../../welcome/ScrollReveal';
 import MagicBento from '../../welcome/MagicBento'
@@ -31,14 +31,13 @@ export default function ProjectPage(): ReactElement {
 ];
 
   return (
-  
-  <FadeContent
+    <FadeContent
       blur={true}
       duration={500}
       easing="ease-in-out"
       initialOpacity={1}
     >
-    <div className="overflow-hidden bg-slate-950">
+      <div className="bg-slate-950">
         {/* Hero Section */}
         <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
@@ -435,7 +434,7 @@ export default function ProjectPage(): ReactElement {
         </footer>
 
       </div>
-  </FadeContent>
+    </FadeContent>
 
   );
 }
