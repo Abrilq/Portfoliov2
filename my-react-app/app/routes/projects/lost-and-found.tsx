@@ -37,9 +37,9 @@ export default function ProjectPage(): ReactElement {
       easing="ease-in-out"
       initialOpacity={1}
     >
-      <div className="bg-slate-950">
+      <div className="relative bg-slate-950 overflow-hidden">
         {/* Hero Section */}
-        <section>
+        <section className="">
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
             <CardSwap
               cardDistance={80}
@@ -428,11 +428,13 @@ export default function ProjectPage(): ReactElement {
           </section>
         </ScrollReveal>
 
-        {/* Footer */}
-        <footer className="text-center py-6 text-gray-500 text-sm">
-          © {new Date().getFullYear()} John Clarence A. Legaspi
-        </footer>
-
+        {/* Make sure all sections are within this container */}
+        <div className="relative w-full">
+          {/* Footer - Update footer to ensure it's always at the bottom */}
+          <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
+            © {new Date().getFullYear()} John Clarence A. Legaspi
+          </footer>
+        </div>
       </div>
     </FadeContent>
 
