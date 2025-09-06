@@ -32,7 +32,13 @@ export default function ProjectPage(): ReactElement {
 
   return (
     <div className="overflow-hidden bg-slate-950">
-      <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
+      <FadeContent 
+        blur={true} 
+        duration={800} 
+        easing="ease-out" 
+        initialOpacity={0}
+        delay={100}
+      >
         {/* Hero Section */}
         <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
@@ -367,7 +373,7 @@ export default function ProjectPage(): ReactElement {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M12 4.5C7.305 4.5 3.223 7.61 1.5 12c1.723 4.39 5.805 7.5 10.5 7.5s8.777-3.11 10.5-7.5C20.777 7.61 16.695 4.5 12 4.5zm0 11.25a3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5z" />
+                    <path d="M12 4.5C7.305 4.5 3.223 7.61 1.5 12c1.723 4.39 5.805 7.5 10.5 7.5s8.777-3.11 10.5-7.5C20.777 7.61 16.695 4.5 12 4.5zm0 11.25a 3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5z" />
                     <circle cx="12" cy="12" r="2.25" />
                   </svg>
                 </a>
