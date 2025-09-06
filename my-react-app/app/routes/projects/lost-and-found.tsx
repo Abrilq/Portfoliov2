@@ -31,7 +31,7 @@ export default function ProjectPage(): ReactElement {
 ];
 
   return (
-    <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
+    <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
       <div className="overflow-hidden bg-slate-950">
 
         {/* Hero Section */}
