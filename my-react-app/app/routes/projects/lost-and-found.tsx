@@ -11,9 +11,8 @@ import PixelTransition from '../../welcome/PixelTransition';
 import SpotlightCard from '../../welcome/SpotlightCard';
 import BlurText from '../../welcome/BlurText'
 
-import { FaReact, FaNodeJs, FaDocker } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDocker, FaCss3Alt, FaJava, FaHtml5 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiExpress, SiMysql } from "react-icons/si";
-import { FaCss3Alt, FaJava, FaHtml5 } from "react-icons/fa";
 
 export default function ProjectPage(): ReactElement {
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ export default function ProjectPage(): ReactElement {
 ];
 
   return (
-    <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={1}>
+    <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
       <div className="overflow-hidden bg-slate-950">
 
         {/* Hero Section */}
