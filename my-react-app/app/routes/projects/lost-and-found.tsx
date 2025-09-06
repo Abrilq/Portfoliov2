@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { useNavigate } from 'react-router-dom';
 
-import FadeContent from "app/welcome/FadeContent";
+import FadeContent from "../../welcome/FadeContent";
 import CardSwap, { Card } from '../../welcome/CardSwap'
 import ScrollReveal from '../../welcome/ScrollReveal';
 import MagicBento from '../../welcome/MagicBento'
@@ -31,14 +31,10 @@ export default function ProjectPage(): ReactElement {
 ];
 
   return (
+  
+  <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+
     <div className="overflow-hidden bg-slate-950">
-      <FadeContent 
-        blur={true} 
-        duration={600}
-        easing="cubic-bezier(0.4, 0, 0.2, 1)"
-        initialOpacity={1}
-        delay={100}
-      >
         {/* Hero Section */}
         <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
@@ -434,7 +430,8 @@ export default function ProjectPage(): ReactElement {
           © {new Date().getFullYear()} John Clarence A. Legaspi
         </footer>
 
-      </FadeContent>
-    </div>
+      </div>
+  </FadeContent>
+
   );
 }
