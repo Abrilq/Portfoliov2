@@ -31,14 +31,14 @@ export default function ProjectPage(): ReactElement {
 ];
 
   return (
+
+      <div className="relative bg-slate-950 overflow-hidden">
     <FadeContent
-      blur={true}
+      blur={false}
       duration={1000}
       easing="ease-in-out"
       initialOpacity={0}
     >
-      <div className="relative bg-slate-950 overflow-hidden">
-
         {/* Hero Section */}
         <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
@@ -103,7 +103,7 @@ export default function ProjectPage(): ReactElement {
             </div>
           </div>
         </section>
-
+    </FadeContent>
         {/* Title Section */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
@@ -438,7 +438,6 @@ export default function ProjectPage(): ReactElement {
         </div>
 
       </div>
-    </FadeContent>
 
   );
 }
