@@ -32,7 +32,7 @@ export default function ProjectPage(): ReactElement {
 
   return (
     <FadeContent
-      blur={false}
+      blur={true}
       duration={1000}
       easing="ease-in-out"
       initialOpacity={0}
