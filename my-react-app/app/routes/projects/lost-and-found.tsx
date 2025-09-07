@@ -12,7 +12,7 @@ import SpotlightCard from '../../welcome/SpotlightCard';
 import BlurText from '../../welcome/BlurText'
 
 import { FaReact, FaNodeJs, FaDocker, FaCss3Alt, FaJava, FaHtml5 } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiExpress, SiMysql } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiExpress, SiMysql, SiJavascript, SiFirebase } from "react-icons/si";
 
 export default function ProjectPage(): ReactElement {
   const navigate = useNavigate();
@@ -336,7 +336,7 @@ export default function ProjectPage(): ReactElement {
               {/* Tech Icons */}
               <div className="flex flex-col items-center"><FaHtml5 className="text-5xl text-orange-600" /><p>HTML5</p></div>
               <div className="flex flex-col items-center"><FaCss3Alt className="text-5xl text-blue-500" /><p>CSS3</p></div>
-              <div className="flex flex-col items-center"><FaJava className="text-5xl text-orange-500" /><p>Java</p></div>
+              <div className="flex flex-col items-center"><SiJavascript className="text-5xl text-yellow-500" /><p>JavaScript</p></div>
               <div className="flex flex-col items-center"><FaReact className="text-5xl text-cyan-400" /><p>React</p></div>
               <div className="flex flex-col items-center"><SiMysql className="text-5xl text-blue-500" /><p>MySQL</p></div>
               <div className="flex flex-col items-center"><FaNodeJs className="text-5xl text-green-500" /><p>NodeJS</p></div>
