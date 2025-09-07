@@ -35,7 +35,7 @@ export default function ProjectPage(): ReactElement {
       blur={false}
       duration={1000}
       easing="ease-in-out"
-      initialOpacity={1}
+      initialOpacity={0}
     >
       <div className="relative bg-slate-950 overflow-hidden">
 
