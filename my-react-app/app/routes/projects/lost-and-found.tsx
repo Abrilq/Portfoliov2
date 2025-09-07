@@ -142,7 +142,7 @@ export default function ProjectPage(): ReactElement {
             {/* Full-width ScrollVelocity */}
             <div className="w-full overflow-hidden">
               <ScrollVelocity
-                texts={['Project Objectives', 'Lost & Found WebApp']}
+                texts={['Project Objectives', 'Lost & Found', 'WebApp']}
                 velocity={20}
                 className="custom-scroll-text w-full text-center"
               />
