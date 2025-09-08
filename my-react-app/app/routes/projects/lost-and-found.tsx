@@ -278,7 +278,47 @@ export default function ProjectPage(): ReactElement {
             </div>
 
             {/* Roles Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-center">
+              <PixelTransition
+                firstContent={
+                  <div className="flex items-center justify-center w-full h-full">
+                    <p className="text-white font-bold text-lg sm:text-xl text-center">
+                      Full-stack Developer
+                    </p>
+                  </div>
+                }
+                secondContent={
+                  <img
+                    src="/images/roles/fullstack.PNG"
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                }
+                gridSize={12}
+                pixelColor="#ffffff"
+                animationStepDuration={0.4}
+              />
+
+              <PixelTransition
+                firstContent={
+                  <div className="flex items-center justify-center w-full h-full">
+                    <p className="text-white font-bold text-lg sm:text-xl text-center">
+                      Team Leader
+                    </p>
+                  </div>
+                }
+                secondContent={
+                  <img
+                    src="/images/roles/teamleader.PNG"
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                }
+                gridSize={12}
+                pixelColor="#ffffff"
+                animationStepDuration={0.4}
+              />
+
               <PixelTransition
                 firstContent={
                   <div className="flex items-center justify-center w-full h-full">
@@ -299,25 +339,6 @@ export default function ProjectPage(): ReactElement {
                 animationStepDuration={0.4}
               />
 
-              <PixelTransition
-                firstContent={
-                  <div className="flex items-center justify-center w-full h-full">
-                    <p className="text-white font-bold text-lg sm:text-xl text-center">
-                      Frontend Developer
-                    </p>
-                  </div>
-                }
-                secondContent={
-                  <img
-                    src="/images/roles/frontend.PNG"
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                }
-                gridSize={12}
-                pixelColor="#ffffff"
-                animationStepDuration={0.4}
-              />
             </div>
           </section>
         </ScrollReveal>
