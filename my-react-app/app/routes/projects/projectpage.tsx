@@ -13,18 +13,18 @@ export default function ARProject(): ReactElement {
 
   const professionalProjects = [
     {
-      title: "Lost and Found WebApp",
-      roles: ["Full-stack Developer", "Team Leader", "UI/UX Designer"],
-      technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
-      imageUrl: "/images/psd/lnf.png",
-      route: "/projects/lost-and-found"
-    },
-    {
       title: "Pre-advising System",
       roles: ["UI/UX Designer", "Frontend Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)", "Firebase"],
       imageUrl: "/images/psd/dycguide.png",
       route: "/projects/pre-advising"
+    },
+    {
+      title: "Lost and Found WebApp",
+      roles: ["Full-stack Developer", "Team Leader", "UI/UX Designer"],
+      technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
+      imageUrl: "/images/psd/lnf.png",
+      route: "/projects/lost-and-found"
     },
     {
       title: "E-commerce Website",
