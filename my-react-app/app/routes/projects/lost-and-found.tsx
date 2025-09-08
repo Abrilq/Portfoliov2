@@ -66,7 +66,7 @@ export default function ProjectPage(): ReactElement {
                 className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
                 title="Go Back"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" className="stroke-blue-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" className="stroke-white">
                   <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
                 </svg>
               </button>
@@ -74,7 +74,9 @@ export default function ProjectPage(): ReactElement {
 
             {/* Hero Text */}
             <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-right px-4">
-              <h1 className="text-6xl sm:text-8xl lg:text-[14rem] leading-none bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent font-black">
+              <h1 className="text-6xl sm:text-8xl lg:text-[14rem] leading-none bg-gradient-to-r 
+              from-purple-800 via-fuchsia-800 to-pink-800 
+              bg-clip-text text-transparent font-black">
                 Findr.
               </h1>
               <h2 className="text-sm sm:text-lg lg:text-3xl italic font-light mt-2 text-white">
@@ -91,7 +93,7 @@ export default function ProjectPage(): ReactElement {
                   }}
                   className="relative inline-block px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white bg-gray-800 shadow-2xl rounded-xl cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
                 >
-                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-800 via-fuchsia-800 to-pink-800 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
                   <span className="relative z-10 flex items-center space-x-2">
                     <span className="transition-all duration-500 group-hover:translate-x-1">Explore</span>
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
@@ -108,11 +110,18 @@ export default function ProjectPage(): ReactElement {
           <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
             <div className="text-center">
               <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-                <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent">Lost</h2>
-                <span className="text-4xl sm:text-6xl lg:text-9xl font-extrabold italic">&</span>
-                <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-l from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent">Found</h2>
+                <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-r 
+                from-purple-800 via-fuchsia-800 to-pink-800 
+                bg-clip-text text-transparent">
+                  Lost</h2>
+                <span className="text-4xl sm:text-6xl lg:text-9xl font-extrabold italic">
+                  &</span>
+                <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-l 
+                from-purple-800 via-fuchsia-800 to-pink-800 
+                bg-clip-text text-transparent">
+                  Found</h2>
               </div>
-              <h2 className="uppercase text-xl sm:text-2xl lg:text-3xl font-semibold my-6">Web Application</h2>
+              <h2 className="uppercase text-xl sm:text-2xl lg:text-3xl font-semibold my-none mb-10">Web Application</h2>
                 <p className="max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-gray-200 mt-6">
                   A service-focused platform designed to help students, faculty, and administrators manage lost and found items within a school or institution. The system ensures that lost items are efficiently tracked, securely stored, and properly claimed by rightful owners. It provides real-time visibility of lost items to users while allowing faculty and administrators to manage reports, claims, and item archiving in a streamlined and structured way.
                 </p>
@@ -128,7 +137,7 @@ export default function ProjectPage(): ReactElement {
                 clickEffect={true}
                 spotlightRadius={300}
                 particleCount={12}
-                glowColor="132, 0, 255"
+                glowColor="255, 255, 255"
               />
             </div>
           </section>
@@ -160,7 +169,7 @@ export default function ProjectPage(): ReactElement {
                 ].map((line, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     {/* Custom bullet */}
-                    <span className="w-2.5 h-2.5 rounded-full bg-purple-400 shrink-0"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-white shrink-0"></span>
 
                     {/* Text */}
                     <DecryptedText
@@ -170,7 +179,7 @@ export default function ProjectPage(): ReactElement {
                       revealDirection="start"
                       speed={35}
                       className="text-gray-200 text-sm sm:text-base lg:text-2xl leading-relaxed lg:leading-loose"
-                      encryptedClassName="text-purple-400"
+                      encryptedClassName="text-green-500"
                     />
                   </li>
                 ))}
@@ -186,7 +195,7 @@ export default function ProjectPage(): ReactElement {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
               
               {/* Users */}
-              <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
+              <SpotlightCard spotlightColor="rgba(140, 0, 255, 0.2)">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🎓 Users (Students)</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2 flex flex-col items-start justify-start">
                   <li>View a list of currently lost items that have been reported.</li>
@@ -196,7 +205,7 @@ export default function ProjectPage(): ReactElement {
               </SpotlightCard>
 
               {/* Faculty */}
-              <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
+              <SpotlightCard spotlightColor="rgba(255, 0, 221, 0.2)">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🏫 Faculty</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2">
                   <li>Report newly found items into the system with details (item name, person who surrendered it, and found location).</li>
@@ -207,7 +216,7 @@ export default function ProjectPage(): ReactElement {
               </SpotlightCard>
 
               {/* Admin */}
-              <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
+              <SpotlightCard spotlightColor="rgba(140, 0, 255, 0.2)">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">🛠️ Admin</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2">
                   <li>Manage user and faculty accounts to ensure secure access.</li>

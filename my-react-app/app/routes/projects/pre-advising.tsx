@@ -66,7 +66,7 @@ export default function ProjectPage(): ReactElement {
                 className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
                 title="Go Back"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" className="stroke-blue-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" className="stroke-white">
                   <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
                 </svg>
               </button>
@@ -135,7 +135,7 @@ export default function ProjectPage(): ReactElement {
                 clickEffect={true}
                 spotlightRadius={300}
                 particleCount={12}
-                glowColor="132, 0, 255"
+                glowColor="255, 255, 255"
               />
             </div>
           </section>
@@ -167,7 +167,7 @@ export default function ProjectPage(): ReactElement {
                 ].map((line, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     {/* Custom bullet */}
-                    <span className="w-2.5 h-2.5 rounded-full bg-purple-400 shrink-0"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-white shrink-0"></span>
 
                     {/* Text */}
                     <DecryptedText
@@ -177,7 +177,7 @@ export default function ProjectPage(): ReactElement {
                       revealDirection="start"
                       speed={35}
                       className="text-gray-200 text-sm sm:text-base lg:text-2xl leading-relaxed lg:leading-loose"
-                      encryptedClassName="text-purple-400"
+                      encryptedClassName="text-green-500"
                     />
                   </li>
                 ))}

@@ -28,10 +28,24 @@ export default function ARProject(): ReactElement {
     },
     {
       title: "E-commerce Website",
-      roles: ["Project Leader", "Frontend Developer"],
+      roles: ["Team Leader", "Frontend Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
       imageUrl: "/images/psd/catpeas.png",
       route: "/projects/ecommerce"
+    },
+    {
+      title: "DaMath Educational Game",
+      roles: ["3D Designer"],
+      technologies: ["Unity", "C#", "Blender3D"],
+      imageUrl: "/images/psd/damath2.png",
+      route: "/projects/damath"
+    },
+    {
+      title: "AR Project",
+      roles: ["3D Designer", "Full-stack Developer"],
+      technologies: ["Unity", "C#", "Blender3D", "AR Core"],
+      imageUrl: "/images/psd/evoar.png",
+      route: "/projects/ar-project"
     },
     {
       title: "Ordering System Mobile Application",
@@ -39,20 +53,6 @@ export default function ARProject(): ReactElement {
       technologies: ["Flutter (Dart)"],
       imageUrl: "/images/psd/orderingsystem1.png",
       route: "/projects/ordering-system"
-    },
-    {
-      title: "DaMath Educational Game",
-      roles: ["Frontend 3D Designer"],
-      technologies: ["Unity", "C#", "Blender3D"],
-      imageUrl: "/images/psd/damath2.png",
-      route: "/projects/damath"
-    },
-    {
-      title: "AR Project",
-      roles: ["Frontend 3D Designer"],
-      technologies: ["Unity", "C#", "Blender3D"],
-      imageUrl: "/images/psd/evoar.png",
-      route: "/projects/ar-project"
     }
   ];
 
@@ -110,7 +110,7 @@ export default function ARProject(): ReactElement {
                 width="40px"
                 height="40px"
                 viewBox="0 0 24 24"
-                className="stroke-blue-300"
+                className="stroke-white"
               >
                 <path
                   strokeLinejoin="round"
