@@ -128,7 +128,7 @@ export default function ProjectPage(): ReactElement {
                 clickEffect={true}
                 spotlightRadius={300}
                 particleCount={12}
-                glowColor="255, 255, 255"132, 0, 255"
+                glowColor="255, 255, 255"
               />
             </div>
           </section>
