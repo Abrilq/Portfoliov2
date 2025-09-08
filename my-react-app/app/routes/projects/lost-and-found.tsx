@@ -216,9 +216,11 @@ export default function ProjectPage(): ReactElement {
                   <li>Add newly reported lost items into the system.</li>
                   <li>Update item details (e.g., name, surrenderer, found location).</li>
                   <li>Manage item claims:</li>
-                  <li>Record the owner’s details once claimed.</li>
-                  <li>Move items from Currently Lost → Claimed.</li>
-                  <li>Archive items that remain unclaimed after a set period.</li>
+                  <ol className="list-disc list-inside text-gray-400 text-sm space-y-1 ml-4">
+                    <li>Record the owner’s details once claimed.</li>
+                    <li>Move items from Currently Lost → Claimed.</li>
+                    <li>Archive items that remain unclaimed after a set period.</li>
+                  </ol>
                 </ul>
               </SpotlightCard>
 
@@ -458,7 +460,7 @@ export default function ProjectPage(): ReactElement {
         </ScrollReveal>
 
         </FadeContent>
-        
+
         <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
           © {new Date().getFullYear()} John Clarence A. Legaspi
         </footer>
