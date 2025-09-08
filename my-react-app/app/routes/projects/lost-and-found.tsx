@@ -235,6 +235,7 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
+
         {/* Expected Impact Section */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
@@ -243,10 +244,12 @@ export default function ProjectPage(): ReactElement {
 
               <div className="grid grid-cols-2 grid-rows-2 gap-x-6 gap-y-10 text-end">
                 {[
-                  "Students gain clarity on their academic paths, reducing confusion and errors.",
+                  "Faster and more reliable lost item recovery.",
                   "","",
-                  "Administrators save time with automated prerequisite checks and digital records.",
-                  "The institution benefits from a scalable, organized, and efficient pre-advising process.",
+                  "Reduced manual errors in recording/claiming items.",
+                  "Increased student confidence in the institution’s handling of lost property.",
+                  "","",
+                  "A scalable digital solution that can be extended to multiple campuses."
                 ].map((text, idx) => (
                   <div
                     key={idx}
