@@ -22,12 +22,12 @@ export default function ProjectPage(): ReactElement {
   };
 
   const cardImages = [
-  "/images/heroes/lnf.PNG",
-  "/images/heroes/lnf.PNG",
-  "/images/heroes/lnf.PNG",
-  "/images/heroes/lnf.PNG",
-  "/images/heroes/lnf.PNG",
-  "/images/heroes/lnf.PNG",
+  "/images/mobile/dycguide.PNG",
+  "/images/mobile/dycguide.PNG",
+  "/images/mobile/dycguide.PNG",
+  "/images/mobile/dycguide.PNG",
+  "/images/mobile/dycguide.PNG",
+  "/images/mobile/dycguide.PNG",
 ];
 
   return (
@@ -74,7 +74,7 @@ export default function ProjectPage(): ReactElement {
 
             {/* Hero Text */}
             <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-right px-4">
-              <h1 className="text-6xl sm:text-8xl lg:text-[14rem] leading-none bg-gradient-to-r 
+              <h1 className="text-6xl sm:text-8xl lg:text-[8rem] leading-none bg-gradient-to-r 
               from-purple-800 via-fuchsia-800 to-pink-800 
               bg-clip-text text-transparent font-black">
                 Findr.
@@ -93,7 +93,9 @@ export default function ProjectPage(): ReactElement {
                   }}
                   className="relative inline-block px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white bg-gray-800 shadow-2xl rounded-xl cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
                 >
-                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-800 via-fuchsia-800 to-pink-800 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r 
+                  from-purple-800 via-fuchsia-800 to-pink-800 
+                  p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
                   <span className="relative z-10 flex items-center space-x-2">
                     <span className="transition-all duration-500 group-hover:translate-x-1">Explore</span>
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
@@ -111,19 +113,22 @@ export default function ProjectPage(): ReactElement {
             <div className="text-center">
               <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                 <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-r 
-                from-purple-800 via-fuchsia-800 to-pink-800 
+                from-purple-800 via-fuchsia-800 to-pink-800  
                 bg-clip-text text-transparent">
                   Lost</h2>
                 <span className="text-4xl sm:text-6xl lg:text-9xl font-extrabold italic">
                   &</span>
                 <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-l 
-                from-purple-800 via-fuchsia-800 to-pink-800 
+                from-purple-800 via-fuchsia-800 to-pink-800  
                 bg-clip-text text-transparent">
                   Found</h2>
               </div>
-              <h2 className="uppercase text-xl sm:text-2xl lg:text-3xl font-semibold my-none mb-10">Web Application</h2>
+              <h2 className="uppercase text-xl sm:text-2xl lg:text-3xl font-semibold my-6">Web Application</h2>
                 <p className="max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-gray-200 mt-6">
-                  A service-focused platform designed to help students, faculty, and administrators manage lost and found items within a school or institution. The system ensures that lost items are efficiently tracked, securely stored, and properly claimed by rightful owners. It provides real-time visibility of lost items to users while allowing faculty and administrators to manage reports, claims, and item archiving in a streamlined and structured way.
+                  A service-focused platform designed to help students, faculty, and administrators manage lost and found items within a school or institution. The system ensures that lost items are efficiently tracked, securely stored, and properly claimed by rightful owners.
+                  <br />
+                  <br />
+                  It provides real-time visibility of lost items to users while allowing faculty and administrators to manage reports, claims, and item archiving in a streamlined and structured way.
                 </p>
             </div>
             <div className="flex justify-center mt-10">
@@ -150,7 +155,7 @@ export default function ProjectPage(): ReactElement {
             {/* Full-width ScrollVelocity */}
             <div className="w-full overflow-hidden">
               <ScrollVelocity
-                texts={['Project Objectives', 'Lost & Found', 'WebApp']}
+                texts={['Project Objectives', 'DYC-GUIDE', 'Pre-advising System']}
                 velocity={20}
                 className="custom-scroll-text w-full text-center"
               />
@@ -273,47 +278,7 @@ export default function ProjectPage(): ReactElement {
             </div>
 
             {/* Roles Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-center">
-              <PixelTransition
-                firstContent={
-                  <div className="flex items-center justify-center w-full h-full">
-                    <p className="text-white font-bold text-lg sm:text-xl text-center">
-                      Full-Stack Developer
-                    </p>
-                  </div>
-                }
-                secondContent={
-                  <img
-                    src="/images/roles/fullstack.PNG"
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                }
-                gridSize={12}
-                pixelColor="#ffffff"
-                animationStepDuration={0.4}
-              />
-
-              <PixelTransition
-                firstContent={
-                  <div className="flex items-center justify-center w-full h-full">
-                    <p className="text-white font-bold text-lg sm:text-xl text-center">
-                      Team Leader
-                    </p>
-                  </div>
-                }
-                secondContent={
-                  <img
-                    src="/images/roles/teamleader.PNG"
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                }
-                gridSize={12}
-                pixelColor="#ffffff"
-                animationStepDuration={0.4}
-              />
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 justify-center">
               <PixelTransition
                 firstContent={
                   <div className="flex items-center justify-center w-full h-full">
@@ -325,6 +290,26 @@ export default function ProjectPage(): ReactElement {
                 secondContent={
                   <img
                     src="/images/roles/designer.PNG"
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                }
+                gridSize={12}
+                pixelColor="#ffffff"
+                animationStepDuration={0.4}
+              />
+
+              <PixelTransition
+                firstContent={
+                  <div className="flex items-center justify-center w-full h-full">
+                    <p className="text-white font-bold text-lg sm:text-xl text-center">
+                      Frontend Developer
+                    </p>
+                  </div>
+                }
+                secondContent={
+                  <img
+                    src="/images/roles/frontend.PNG"
                     alt=""
                     className="w-full h-full object-cover"
                   />
@@ -353,7 +338,6 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-
 
         {/* Profile Card */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>

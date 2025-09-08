@@ -111,7 +111,7 @@ export default function ProjectPage(): ReactElement {
           <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
             <div className="text-center">
               <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-                <h2 className="text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-r 
+                <h2 className="text-4xl sm:text-5xl lg:text-9xl font-extrabold italic bg-gradient-to-r 
                 from-orange-300 via-orange-500 to-orange-900 
                 bg-clip-text text-transparent">
                   DaMath</h2>
