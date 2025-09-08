@@ -127,8 +127,6 @@ export default function ProjectPage(): ReactElement {
               <h2 className="uppercase text-xl sm:text-2xl lg:text-3xl font-semibold my-6">Web Application</h2>
                 <p className="max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-gray-200 mt-6">
                   A service-focused platform designed to help students, faculty, and administrators manage lost and found items within a school or institution. The system ensures that lost items are efficiently tracked, securely stored, and properly claimed by rightful owners.
-                  <br />
-                  <br />
                   It provides real-time visibility of lost items to users while allowing faculty and administrators to manage reports, claims, and item archiving in a streamlined and structured way.
                 </p>
             </div>
@@ -204,9 +202,10 @@ export default function ProjectPage(): ReactElement {
               <SpotlightCard spotlightColor="rgba(140, 0, 255, 0.2)">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🎓 Users (Students)</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2 flex flex-col items-start justify-start">
-                  <li>View a list of currently lost items that have been reported.</li>
-                  <li>Check item details such as item name, date found, location where it was found, and the faculty in charge.</li>
-                  <li>Confirm whether the item belongs to them by reviewing the item’s image.</li>
+                  <li>View a list of currently reported lost items.</li>
+                  <li>Check item details (name, location found, date reported, etc.).</li>
+                  <li>See uploaded images of lost items to confirm ownership.</li>
+                  <li>View claim location/instructions provided by faculty.</li>
                 </ul>
               </SpotlightCard>
 
@@ -214,10 +213,12 @@ export default function ProjectPage(): ReactElement {
               <SpotlightCard spotlightColor="rgba(255, 0, 221, 0.2)">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🏫 Faculty</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2">
-                  <li>Report newly found items into the system with details (item name, person who surrendered it, and found location).</li>
-                  <li>Update item information, such as owner’s name when the item is claimed.</li>
-                  <li>Move items between statuses: from “Lost” to “Claimed” or “Archived.”</li>
-                  <li>Maintain accurate records of both active and past lost items.</li>
+                  <li>Add newly reported lost items into the system.</li>
+                  <li>Update item details (e.g., name, surrenderer, found location).</li>
+                  <li>Manage item claims:</li>
+                  <li>Record the owner’s details once claimed.</li>
+                  <li>Move items from Currently Lost → Claimed.</li>
+                  <li>Archive items that remain unclaimed after a set period.</li>
                 </ul>
               </SpotlightCard>
 
@@ -225,10 +226,23 @@ export default function ProjectPage(): ReactElement {
               <SpotlightCard spotlightColor="rgba(140, 0, 255, 0.2)">
                 <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">🛠️ Admin</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2">
-                  <li>Manage user and faculty accounts to ensure secure access.</li>
-                  <li>Oversee the entire system by monitoring lost, claimed, and archived items.</li>
-                  <li>Access dashboards with a comprehensive view of system activity.</li>
-                  <li>Perform bulk actions such as editing records, marking items as claimed, archiving old records, and deleting entries if necessary.</li>
+                    <li>Manage user and faculty accounts (add, edit, delete).</li>
+                    <li>Access an Admin Dashboard with three main views:</li>
+                      <ol className="list-disc list-inside text-gray-400 text-sm space-y-1 ml-4">
+                      <li>Currently Lost Items Table</li>
+                      <li>Claimed Items Table</li>
+                      <li>Archived Items Table</li>
+                    </ol>
+
+                    <li>Perform bulk actions on items:
+                      <ol className="list-disc list-inside text-gray-400 text-sm space-y-1 ml-4">
+                        <li>Edit details</li>
+                        <li>Mark as Claimed</li>
+                        <li>Move to Archive</li>
+                        <li>Delete</li>
+                      </ol>
+                    </li>
+  
                 </ul>
               </SpotlightCard>
 
