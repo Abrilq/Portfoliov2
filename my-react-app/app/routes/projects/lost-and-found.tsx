@@ -348,18 +348,18 @@ export default function ProjectPage(): ReactElement {
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="py-10 flex flex-col justify-center items-center">
             <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-10">Technologies Used</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 px-4">
               {/* Tech Icons */}
               <div className="flex flex-col items-center"><FaHtml5 className="text-5xl text-orange-600" /><p>HTML5</p></div>
               <div className="flex flex-col items-center"><FaCss3Alt className="text-5xl text-blue-500" /><p>CSS3</p></div>
-              <div className="flex flex-col items-center"><SiJavascript className="text-5xl text-yellow-400" /><p>JavaScript</p></div>
-              <div className="flex flex-col items-center"><SiFirebase className="text-5xl text-orange-500" /><p>Firebase</p></div>
-
-
+              <div className="flex flex-col items-center"><SiJavascript className="text-5xl text-yellow-500" /><p>JavaScript</p></div>
+              <div className="flex flex-col items-center"><FaReact className="text-5xl text-cyan-400" /><p>React</p></div>
+              <div className="flex flex-col items-center"><SiMysql className="text-5xl text-blue-500" /><p>MySQL</p></div>
+              <div className="flex flex-col items-center"><FaNodeJs className="text-5xl text-green-500" /><p>NodeJS</p></div>
+              <div className="flex flex-col items-center"><SiExpress className="text-5xl text-gray-800" /><p>Express</p></div>
             </div>
           </section>
         </ScrollReveal>
-
 
         {/* Profile Card */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
