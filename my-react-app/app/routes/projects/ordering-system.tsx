@@ -74,7 +74,7 @@ export default function ProjectPage(): ReactElement {
 
             {/* Hero Text */}
             <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-right px-4">
-              <h1 className="text-6xl sm:text-6xl lg:text-[8rem] leading-none bg-gradient-to-r 
+              <h1 className="text-6xl sm:text-5xl lg:text-[8rem] leading-none bg-gradient-to-r 
               from-cyan-600 via-sky-600 to-blue-600 
               bg-clip-text text-transparent font-black">
                 Ordering <br />System

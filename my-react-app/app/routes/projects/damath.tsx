@@ -75,7 +75,7 @@ export default function ProjectPage(): ReactElement {
 
             {/* Hero Text */}
             <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-right px-4">
-              <h1 className="text-6xl sm:text-8xl lg:text-[10rem] leading-none bg-gradient-to-r 
+              <h1 className="text-6xl sm:text-7xl lg:text-[10rem] leading-none bg-gradient-to-r 
               from-orange-300 via-orange-500 to-orange-900 
               bg-clip-text text-transparent font-black">
                 DaMath
