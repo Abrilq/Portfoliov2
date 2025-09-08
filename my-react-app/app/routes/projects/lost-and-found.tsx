@@ -456,15 +456,12 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
+ 
+        </FadeContent>
 
-        {/* Make sure all sections are within this container */}
-        <div className="relative w-full">
-          <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
-            © {new Date().getFullYear()} John Clarence A. Legaspi
-          </footer>
-        </div>
-
-      </FadeContent>
+        <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
+          © {new Date().getFullYear()} John Clarence A. Legaspi
+        </footer>
     </div>
   );
 }
