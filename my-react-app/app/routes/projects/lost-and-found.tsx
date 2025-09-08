@@ -458,12 +458,11 @@ export default function ProjectPage(): ReactElement {
         </ScrollReveal>
 
         {/* Make sure all sections are within this container */}
-        <div className="relative w-full">
-          {/* Footer - Update footer to ensure it's always at the bottom */}
+        {/* <div className="relative w-full">
           <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
             © {new Date().getFullYear()} John Clarence A. Legaspi
           </footer>
-        </div>
+        </div> */}
 
       </FadeContent>
     </div>
