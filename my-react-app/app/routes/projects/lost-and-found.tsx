@@ -75,7 +75,7 @@ export default function ProjectPage(): ReactElement {
             {/* Hero Text */}
             <div className="absolute top-1/2 left-1/3 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-right px-4">
               <h1 className="text-6xl sm:text-8xl lg:text-[8rem] leading-none bg-gradient-to-r 
-              from-indigo-800 via-yellow-500 to-yellow-700 
+              from-purple-800 via-fuchsia-800 to-pink-800 
               bg-clip-text text-transparent font-black">
                 Findr.
               </h1>
@@ -94,7 +94,7 @@ export default function ProjectPage(): ReactElement {
                   className="relative inline-block px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white bg-gray-800 shadow-2xl rounded-xl cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
                 >
                   <span className="absolute inset-0 rounded-xl bg-gradient-to-r 
-                  from-blue-950 via-slate-700 to-yellow-800 
+                  from-purple-800 via-fuchsia-800 to-pink-800 
                   p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
                   <span className="relative z-10 flex items-center space-x-2">
                     <span className="transition-all duration-500 group-hover:translate-x-1">Explore</span>
@@ -107,21 +107,29 @@ export default function ProjectPage(): ReactElement {
             </div>
           </div>
         </section>
+
         {/* Title Section */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
             <div className="text-center">
               <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-                <h1 className="text-6xl italic sm:text-8xl lg:text-[8rem] leading-none bg-gradient-to-r 
-                from-indigo-800 via-yellow-500 to-yellow-700 
-                bg-clip-text text-transparent font-black">
-                  DYC-GUIDE
-              </h1>
+                <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-r 
+                from-purple-800 via-fuchsia-800 to-pink-800  
+                bg-clip-text text-transparent">
+                  Lost</h2>
+                <span className="text-4xl sm:text-6xl lg:text-9xl font-extrabold italic">
+                  &</span>
+                <h2 className="uppercase text-4xl sm:text-6xl lg:text-9xl font-extrabold italic bg-gradient-to-l 
+                from-purple-800 via-fuchsia-800 to-pink-800  
+                bg-clip-text text-transparent">
+                  Found</h2>
               </div>
               <h2 className="uppercase text-xl sm:text-2xl lg:text-3xl font-semibold my-6">Web Application</h2>
                 <p className="max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-gray-200 mt-6">
-                A web-based application designed to assist students and administrators during the academic pre-enrollment process. It streamlines the selection of courses by automatically validating prerequisites, displaying eligible subjects, and maintaining accurate academic records.
-                This system aims to reduce the time and errors involved in manual advising while giving administrators control over student eligibility and subject management.
+                  A service-focused platform designed to help students, faculty, and administrators manage lost and found items within a school or institution. The system ensures that lost items are efficiently tracked, securely stored, and properly claimed by rightful owners.
+                  <br />
+                  <br />
+                  It provides real-time visibility of lost items to users while allowing faculty and administrators to manage reports, claims, and item archiving in a streamlined and structured way.
                 </p>
             </div>
             <div className="flex justify-center mt-10">
@@ -140,7 +148,6 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-
         {/* Objectives */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="w-full min-h-[60vh] py-10 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
