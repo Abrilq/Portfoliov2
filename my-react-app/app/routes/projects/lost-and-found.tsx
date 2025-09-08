@@ -148,6 +148,7 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
+
         {/* Objectives */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="w-full min-h-[60vh] py-10 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
@@ -166,11 +167,11 @@ export default function ProjectPage(): ReactElement {
               {/* Responsive Flex List */}
               <ul className="mt-10 max-w-3xl mx-auto space-y-6 sm:space-y-8">
                 {[
-                  "Provide students with a clear view of their eligible subjects based on course, year, and semester.",
-                  "Automate prerequisite checking to prevent incorrect subject enrollment.",
-                  "Allow administrators to manage users, courses, and subject offerings.",
-                  "Maintain a reliable system of academic records and reports.",
-                  "Increase efficiency and accuracy in the pre-advising process."
+                  "Provide students with a simple way to view lost items online.",
+                  "Allow faculty to record, update, and manage lost items.",
+                  "Enable administrators to oversee the entire process, including account and item management.",
+                  "Maintain a clear item lifecycle: Reported → Verified → Claimed → Archived.",
+                  "Reduce manual paperwork and increase efficiency in handling lost and found items."
                 ].map((line, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     {/* Custom bullet */}
@@ -192,7 +193,7 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-
+        
         {/* Features */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="py-10 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
