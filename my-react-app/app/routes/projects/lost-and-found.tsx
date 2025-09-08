@@ -156,7 +156,7 @@ export default function ProjectPage(): ReactElement {
             {/* Full-width ScrollVelocity */}
             <div className="w-full overflow-hidden">
               <ScrollVelocity
-                texts={['Project Objectives', 'DYC-GUIDE', 'Pre-advising System']}
+                texts={['Project Objectives', 'Lost & Found', 'WebApp']}
                 velocity={20}
                 className="custom-scroll-text w-full text-center"
               />
@@ -193,42 +193,48 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-        
+
         {/* Features */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="py-10 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-12 text-center">Project Key Features</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
               
               {/* Users */}
-              <SpotlightCard spotlightColor="rgba(255, 196, 0, 0.30)">
-                <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🎓 Students</h3>
+              <SpotlightCard spotlightColor="rgba(140, 0, 255, 0.2)">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🎓 Users (Students)</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2 flex flex-col items-start justify-start">
-                  <li>Secure login and registration using student ID + password.</li>
-                  <li>View available subjects for their course, year, and semester.</li>
-                  <li>Automatically see only eligible subjects (based on prerequisites).</li>
-                  <li>Submit preferred subjects for pre-advising..</li>
-                  <li>Access academic history and pre-advised subjects.</li>
-
+                  <li>View a list of currently lost items that have been reported.</li>
+                  <li>Check item details such as item name, date found, location where it was found, and the faculty in charge.</li>
+                  <li>Confirm whether the item belongs to them by reviewing the item’s image.</li>
                 </ul>
               </SpotlightCard>
 
               {/* Faculty */}
-              <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
-                <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👨‍💼 Administrators</h3>
+              <SpotlightCard spotlightColor="rgba(255, 0, 221, 0.2)">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">👩‍🏫 Faculty</h3>
                 <ul className="list-disc list-inside text-gray-400 text-sm space-y-2">
-                  <li>Manage student accounts (add, update, or deactivate).</li>
-                  <li>Add, edit, or delete subject records (code, units, prerequisites, semester, year level).</li>
-                  <li>Oversee the pre-advising flow, including flagged issues with prerequisites.</li>
+                  <li>Report newly found items into the system with details (item name, person who surrendered it, and found location).</li>
+                  <li>Update item information, such as owner’s name when the item is claimed.</li>
+                  <li>Move items between statuses: from “Lost” to “Claimed” or “Archived.”</li>
                   <li>Maintain accurate records of both active and past lost items.</li>
-                  <li>Generate student reports for record-keeping and submission.</li>
+                </ul>
+              </SpotlightCard>
+
+              {/* Admin */}
+              <SpotlightCard spotlightColor="rgba(140, 0, 255, 0.2)">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-white">🛠️ Admin</h3>
+                <ul className="list-disc list-inside text-gray-400 text-sm space-y-2">
+                  <li>Manage user and faculty accounts to ensure secure access.</li>
+                  <li>Oversee the entire system by monitoring lost, claimed, and archived items.</li>
+                  <li>Access dashboards with a comprehensive view of system activity.</li>
+                  <li>Perform bulk actions such as editing records, marking items as claimed, archiving old records, and deleting entries if necessary.</li>
                 </ul>
               </SpotlightCard>
 
             </div>
           </section>
         </ScrollReveal>
-
         {/* Expected Impact Section */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
