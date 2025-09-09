@@ -36,21 +36,21 @@ export default function ARProject(): ReactElement {
     {
       title: "DaMath Educational Game",
       roles: ["3D Designer"],
-      technologies: ["Unity", "C#", "Blender3D"],
+      technologies: ["Unity", "C#", "Blender"],
       imageUrl: "/images/psd/damath2.png",
       route: "/projects/damath"
     },
     {
       title: "AR Project",
       roles: ["3D Designer", "Full-stack Developer"],
-      technologies: ["Unity", "C#", "Blender3D", "AR Core"],
+      technologies: ["Unity", "C#", "Blender", "AR Core"],
       imageUrl: "/images/psd/evoar.png",
       route: "/projects/ar-project"
     },
     {
       title: "Ordering System Mobile Application",
       roles: ["UI/UX Designer"],
-      technologies: ["Flutter (Dart)"],
+      technologies: ["Flutter", "Dart", "Blender"],
       imageUrl: "/images/psd/orderingsystem1.png",
       route: "/projects/ordering-system"
     }
