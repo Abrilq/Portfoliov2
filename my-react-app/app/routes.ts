@@ -12,5 +12,6 @@ export default [
   route("projects/srt-renamer", "routes/projects/srt-renamer.tsx"),
   route("projects/projectpage", "routes/projects/projectpage.tsx"),
   route("projects/resume", "routes/projects/resume.tsx"),
+  route("projects/links", "routes/projects/links.tsx"),
 
 ] satisfies RouteConfig;

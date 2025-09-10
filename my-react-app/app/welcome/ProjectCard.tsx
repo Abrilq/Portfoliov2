@@ -58,7 +58,6 @@ export function ProjectCardDark({ title, roles, technologies, imageUrl, route }:
             duration={500}
             easing="ease-in-out"
             initialOpacity={1}
-            inView={isHovered}
           >
             <img 
               src={imageUrl}
@@ -120,7 +119,6 @@ export function ProjectCardLight({ title, roles, technologies, imageUrl, route }
             duration={500}
             easing="ease-in-out"
             initialOpacity={1}
-            inView={isHovered}
           >
             <img 
               src={imageUrl}

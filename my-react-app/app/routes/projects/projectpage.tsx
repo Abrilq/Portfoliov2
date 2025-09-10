@@ -75,6 +75,8 @@ export default function ARProject(): ReactElement {
 
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
+
+      <main className='bg-slate-950'>
         {/* Header Section */}
         <section className="w-full text-center mb-12 relative px-4 sm:px-6">
           <div className="flex justify-center mt-10 mb-6">
@@ -169,7 +171,7 @@ export default function ARProject(): ReactElement {
         <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
           © {new Date().getFullYear()} John Clarence A. Legaspi
         </footer>
+      </main>
     </FadeContent>
-    
   );
 }
