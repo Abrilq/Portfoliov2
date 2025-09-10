@@ -7,11 +7,11 @@ export default function ResumePage(): JSX.Element {
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
 
-      <main className="min-h-screen bg-slate-950 text-gray-900 px-6 py-12">
+      <main className="min-h-screen bg-slate-950 text-gray-900 px-6 py-20">
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
 
           {/* Back Button */}
-          <div className="absolute left-5 top-5 sm:left-10 ">
+          <div className="absolute left-5 top-5 sm:left-10">
             <button 
               onClick={() => navigate(-1)}
               className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
@@ -131,7 +131,7 @@ export default function ResumePage(): JSX.Element {
                 </section>
               </aside>
             </div>
-            <footer className="px-8 pt-6 pb-none bg-gray-50 text-sm text-gray-600 text-center">
+            <footer className="px-8 pt-6 pb-none text-sm text-gray-600 text-center">
               © {new Date().getFullYear()} John Clarence A. Legaspi. All rights reserved.
             </footer>
           </section>

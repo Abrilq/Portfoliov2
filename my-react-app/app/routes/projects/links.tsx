@@ -2,6 +2,7 @@ import React, { type JSX } from "react";
 import FadeContent from 'app/welcome/FadeContent'
 import { useNavigate } from "react-router-dom";
 import TiltedCard from 'app/welcome/TiltedCard';
+import TextPressure from 'app/welcome/TextPressure';
 
 export default function ResumePage(): JSX.Element {
   const navigate = useNavigate();
@@ -22,11 +23,32 @@ export default function ResumePage(): JSX.Element {
         </button>
         </div>
 
+        {/* Header Section */}
+        <section className="w-full text-center mb-12 relative px-4 sm:px-6">
+          <div className="flex justify-center mt-10 mb-6">
+            <TextPressure
+              text="Connect with me!"
+              flex={true}
+              alpha={false}
+              stroke={false}
+              width={true}
+              weight={true}
+              italic={true}
+              textColor="#ffffff"
+              strokeColor="#ff0000"
+              minFontSize={36}
+            />
+          </div>
+          <div className="flex justify-center mb-8">
+            <hr className="w-60 sm:w-80 border-t-2 border-gray-600" />
+          </div>
+        </section>
+
         <section className="p-8 sm:m-none lg:m-20">
-            <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-1">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-10">
 
                 <TiltedCard
-                imageSrc="/images/psd/dycguide.png"
+                imageSrc="/images/links/email-square.png"
                 altText=""
                 captionText="Email"
                 containerHeight="250px"
@@ -45,7 +67,7 @@ export default function ResumePage(): JSX.Element {
                 }
                 />
                 <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+                imageSrc="/images/links/jobstreet.png"
                 altText=""
                 captionText="Jobstreet Profile"
                 containerHeight="250px"
@@ -64,7 +86,7 @@ export default function ResumePage(): JSX.Element {
                 }
                 />
                 <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+                imageSrc="/images/links/linkedin.png"
                 altText=""
                 captionText="LinkedIn Profile"
                 containerHeight="250px"
@@ -83,7 +105,7 @@ export default function ResumePage(): JSX.Element {
                 }
                 />
                 <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+                imageSrc="/images/links/facebook-squareblue.png"
                 altText=""
                 captionText="Facebook Profile"
                 containerHeight="250px"

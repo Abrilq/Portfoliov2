@@ -76,7 +76,21 @@ export default function ARProject(): ReactElement {
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
 
-      <main className='bg-slate-950'>
+      <main className="min-h-screen bg-slate-950 px-6 py-12">
+        
+        {/* Back Button */}
+        <div className="absolute left-5 top-5 sm:left-10 ">
+        <button 
+            onClick={() => navigate(-1)}
+            className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
+            title="Go Back"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" className="stroke-white">
+            <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
+            </svg>
+        </button>
+        </div>
+
         {/* Header Section */}
         <section className="w-full text-center mb-12 relative px-4 sm:px-6">
           <div className="flex justify-center mt-10 mb-6">
@@ -101,27 +115,6 @@ export default function ARProject(): ReactElement {
         {/* Professional Projects Section */}
         <section className="w-full text-center mb-12 px-4 sm:px-6 relative">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8">
-            {/* Back Button */}
-            <button
-              onClick={() => navigate(-1)}
-              className="cursor-pointer duration-200 hover:scale-110 active:scale-95"
-              title="Go Back"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40px"
-                height="40px"
-                viewBox="0 0 24 24"
-                className="stroke-white"
-              >
-                <path
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="1.5"
-                  d="M11 6L5 12M5 12L11 18M5 12H19"
-                ></path>
-              </svg>
-            </button>
 
             {/* Section Title */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white">
