@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 import { ProjectCardDark } from './ProjectCard';
@@ -12,12 +12,26 @@ import FlowingMenu from './FlowingMenu';
 import BlurText from './BlurText';
 
 export function Welcome() {
+  useEffect(() => {
+    const savedPosition = sessionStorage.getItem('scrollPosition');
+    if (savedPosition) {
+      window.scrollTo(0, parseInt(savedPosition));
+      sessionStorage.removeItem('scrollPosition');
+    }
+
+    const handleBeforeUnload = () => {
+      sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, []);
 
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
   };
   const demoItems = [
-    { link: '', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
+    { link: '/projects/resume', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
     { link: '#', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
     { link: '/projects/projectpage', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' }, // Fixed path
     { link: '#', text: 'My Links', image: './images/flowingmenu/Links-nobg.PNG' }

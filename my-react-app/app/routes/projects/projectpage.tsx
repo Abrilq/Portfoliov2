@@ -165,6 +165,11 @@ export default function ARProject(): ReactElement {
             ))}
           </div>
         </section>
+
+        <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-auto">
+          © {new Date().getFullYear()} John Clarence A. Legaspi
+        </footer>
     </FadeContent>
+    
   );
 }
