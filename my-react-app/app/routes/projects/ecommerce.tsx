@@ -234,7 +234,7 @@ export default function ProjectPage(): ReactElement {
                   "","",
                   "Showcases ability to build interactive frontend features without heavy backend reliance.",
                   "","",
-                  "Acts as a foundation for a full-stack e-commerce system if expanded in the future."
+                  "Acts as a foundation for a Full-Stack e-commerce system if expanded in the future."
                 ].map((text, idx) => (
                   <div
                     key={idx}

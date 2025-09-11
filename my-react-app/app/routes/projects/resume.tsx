@@ -7,7 +7,7 @@ export default function ResumePage(): JSX.Element {
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
 
-      <main className="min-h-screen bg-slate-950 text-gray-900 px-6 py-20">
+      <main className="min-h-screen bg-slate-950 text-gray-900 px-6 py-20 font-sans">
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
 
           {/* Back Button */}
@@ -44,7 +44,7 @@ export default function ResumePage(): JSX.Element {
                 <section>
                   <h2 className="text-xl font-semibold mb-2">Professional Summary</h2>
                   <p className="text-gray-700">
-                    Recent Information Technology graduate with hands-on experience in web development, game development, and UI/UX design.
+                    An Information Technology graduate with hands-on experience in web development, game development, and UI/UX design.
                     Skilled in frontend and backend technologies, with leadership experience in team-based projects. Holds certifications in Cybersecurity, Agile Project Management, and Network Fundamentals. Passionate about building scalable, user-friendly solutions.
                   </p>
                 </section>
@@ -57,7 +57,15 @@ export default function ResumePage(): JSX.Element {
                     <ul className="list-disc ml-5 text-gray-700">
                       <li>Led a 3-member team to develop a web application for lost-and-found web application.</li>
                       <li>Designed user, staff, and admin workflows for reporting and tracking items.</li>
-                      <li>Built scalable full-stack architecture, improving accountability in schools and workplaces.</li>
+                      <li>Built scalable Full-Stack architecture, improving accountability in schools and workplaces.</li>
+                    </ul>
+                  </article>
+
+                  <article className="mb-4">
+                    <h3 className="font-semibold"> Pre-advising System — <span className="italic">UI/UX Designer, Frontend Developer</span></h3>
+                    <ul className="list-disc ml-5 text-gray-700">
+                      <li>Designed and developed a web-based pre-advising system to help students view, select, and manage subjects based on course, year level, and semester.</li>
+                      <li>Focused on making the web pages clear and efficient for students and adviser’s navigation</li>
                     </ul>
                   </article>
 
@@ -86,9 +94,11 @@ export default function ResumePage(): JSX.Element {
                   </article>
 
                   <article className="mb-4">
-                    <h3 className="font-semibold">Basic Banking System — <span className="italic">Solo Developer</span></h3>
+                    <h3 className="font-semibold">Augmented Reality Project — <span className="italic">3D Designer, Full-Stack Developer</span></h3>
                     <ul className="list-disc ml-5 text-gray-700">
-                      <li>Developed a local banking application using Visual Basic & MySQL, implementing full CRUD operations.</li>
+                      <li>Developed an augmented reality mobile application using ARCore and C#</li>
+                      <li>Designed and animated 3D models and assets in Blender to create an interactive computer history timeline.</li>
+                      <li>Integrated ARCore functionalities to deliver a fully functional and engaging AR learning experience.</li>
                     </ul>
                   </article>
 
@@ -108,7 +118,7 @@ export default function ResumePage(): JSX.Element {
                     <li><strong>Programming:</strong> TypeScript, JavaScript (ES6+), C#, HTML5, CSS3, MySQL</li>
                     <li><strong>Frameworks & Tools:</strong> React, Vite, Unity, Flutter, Blender, Figma, Git, GitHub, VS Code</li>
                     <li><strong>Web & UI/UX:</strong> Responsive design, Wireframing, User flow optimization</li>
-                    <li><strong>Other:</strong> Agile collaboration, Problem-solving, English fluency</li>
+                    <li><strong>Other:</strong> Agile collaboration, Problem-solving</li>
                   </ul>
                 </section>
 

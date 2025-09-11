@@ -300,7 +300,7 @@ export default function ProjectPage(): ReactElement {
                 firstContent={
                   <div className="flex items-center justify-center w-full h-full">
                     <p className="text-white font-bold text-lg sm:text-xl text-center">
-                      Full-stack Developer
+                      Full-Stack Developer
                     </p>
                   </div>
                 }

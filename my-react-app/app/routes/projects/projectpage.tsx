@@ -14,7 +14,7 @@ export default function ARProject(): ReactElement {
   const professionalProjects = [
     {
       title: "Lost and Found WebApp",
-      roles: ["Full-stack Developer", "Team Leader", "UI/UX Designer"],
+      roles: ["Full-Stack Developer", "Team Leader", "UI/UX Designer"],
       technologies: ["React", "CSS3", "JavaScript (ES6+)", "MySQL"],
       imageUrl: "/images/psd/lnf.png",
       route: "/projects/lost-and-found"
@@ -42,7 +42,7 @@ export default function ARProject(): ReactElement {
     },
     {
       title: "AR Project",
-      roles: ["3D Designer", "Full-stack Developer"],
+      roles: ["3D Designer", "Full-Stack Developer"],
       technologies: ["Unity", "C#", "Blender", "AR Core"],
       imageUrl: "/images/psd/evoar.png",
       route: "/projects/ar-project"
@@ -59,14 +59,14 @@ export default function ARProject(): ReactElement {
   const personalProjects = [
     {
       title: "Drinking Session",
-      roles: ["Full-stack Developer"],
+      roles: ["Full-Stack Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
       imageUrl: "/images/psd/drinking1.png",
       route: "/projects/drinking-session"
     },
     {
       title: "SRT Renamer",
-      roles: ["Full-stack Developer"],
+      roles: ["Full-Stack Developer"],
       technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
       imageUrl: "/images/psd/srt.png",
       route: "/projects/srt-renamer"
