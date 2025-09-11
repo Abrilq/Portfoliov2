@@ -38,7 +38,7 @@ export function Welcome() {
   ];
 
   return (
-    <div className="min-h-screen m-5">
+    <div className="min-h-screen m-5 bg-slate-950">
       <main className="flex items-center justify-center pt-16 pb-4">
         <div className="">
           <section>
