@@ -17,7 +17,7 @@ export const projectsConfig: ProjectsConfig = {
   lostAndFound: {
     cardImages: [
       "/images/heroes/admin.png",
-      "/images/heroes/lnf.png",
+      "/images/heroes/lnf.PNG",
       "/images/heroes/faculty.png",
       "/images/heroes/student.png",
     ],
@@ -27,7 +27,7 @@ export const projectsConfig: ProjectsConfig = {
         text: "Admin Dashboard",
       },
       {
-        image: "/images/heroes/lnf.png",
+        image: "/images/heroes/lnf.PNG",
         text: "Lost & Found System",
       },
       {
