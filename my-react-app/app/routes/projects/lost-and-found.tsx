@@ -38,8 +38,8 @@ export default function ProjectPage(): ReactElement {
         <section>
           <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20 mt-10">
             <CardSwap
-              cardDistance={90}
-              verticalDistance={125}
+              cardDistance={80}
+              verticalDistance={150}
               delay={3000}
               pauseOnHover={false}
             >
