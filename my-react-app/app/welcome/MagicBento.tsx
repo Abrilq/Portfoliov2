@@ -36,37 +36,37 @@ const cardData: BentoCardProps[] = [
     color: '#060010',
     label: 'Insights',
     description: '',
-    imageUrl: "/images/psd/lnf.png",
+    imageUrl: "/images/heroes/lnf.png",
   },
   {
     color: '#060010',
     label: 'Insights',
     description: '',
-    imageUrl: "/images/psd/lnf.png",
+    imageUrl: "/images/heroes/lnf.png",
   },
   {
     color: '#060010',
     label: 'Insights',
     description: '',
-    imageUrl: "/images/psd/lnf.png",
+    imageUrl: "/images/heroes/lnf.png",
   },
   {
     color: '#060010',
     label: 'Insights',
     description: '',
-    imageUrl: "/images/psd/lnf.png",
+    imageUrl: "/images/heroes/lnf.png",
   },
   {
     color: '#060010',
     label: 'Insights',
     description: '',
-    imageUrl: "/images/psd/lnf.png",
+    imageUrl: "/images/heroes/lnf.png",
   },
   {
     color: '#060010',
     label: 'Insights',
     description: '',
-    imageUrl: "/images/psd/lnf.png",
+    imageUrl: "/images/heroes/lnf.png",
   }
 ];
 

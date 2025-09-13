@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import { useNavigate } from 'react-router-dom';
 
+import { projectsConfig } from 'app/config/projectsConfig';
 import FadeContent from 'app/welcome/FadeContent'
 import CardSwap, { Card } from '../../welcome/CardSwap'
 import ScrollReveal from '../../welcome/ScrollReveal';
@@ -10,6 +11,7 @@ import DecryptedText from '../../welcome/DecryptedText';
 import PixelTransition from '../../welcome/PixelTransition';
 import SpotlightCard from '../../welcome/SpotlightCard';
 import BlurText from '../../welcome/BlurText'
+import CircularGallery from '../../welcome/CircularGallery'
 
 import { FaReact, FaNodeJs, FaDocker, FaCss3Alt, FaJava, FaHtml5 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiExpress, SiMysql, SiJavascript, SiFirebase } from "react-icons/si";
@@ -21,19 +23,12 @@ export default function ProjectPage(): ReactElement {
     console.log('All letters have animated!');
   };
 
-  const cardImages = [
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-];
+  const { cardImages, galleryImages } = projectsConfig.lostAndFound;
 
   return (
 
     <div className="relative bg-slate-950 overflow-hidden">
-      <FadeContent
+      <FadeContent  
         blur={false}
         duration={1000}
         easing="ease-in-out"
@@ -41,10 +36,10 @@ export default function ProjectPage(): ReactElement {
       >
         {/* Hero Section */}
         <section>
-          <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20">
+          <div className="relative min-h-[100vh] sm:min-h-[screen] lg:min-h-[700px] mb-20 mt-10">
             <CardSwap
-              cardDistance={80}
-              verticalDistance={150}
+              cardDistance={90}
+              verticalDistance={125}
               delay={3000}
               pauseOnHover={false}
             >
@@ -130,20 +125,22 @@ export default function ProjectPage(): ReactElement {
                   It provides real-time visibility of lost items to users while allowing faculty and administrators to manage reports, claims, and item archiving in a streamlined and structured way.
                 </p>
             </div>
-            <div className="flex justify-center mt-10">
-              <MagicBento 
-                textAutoHide={true}
-                enableStars={true}
-                enableSpotlight={true}
-                enableBorderGlow={true}
-                enableTilt={true}
-                enableMagnetism={true}
-                clickEffect={true}
-                spotlightRadius={300}
-                particleCount={12}
-                glowColor="255, 255, 255"
-              />
-            </div>
+
+ 
+            <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
+
+              <div style={{ height: '600px', position: 'relative' }}>
+                <CircularGallery 
+                  items={galleryImages}
+                  bend={3} 
+                  textColor="#ffffff" 
+                  borderRadius={0.05} 
+                  scrollEase={0.02}
+                />
+              </div>
+
+            </ScrollReveal>
+
           </section>
         </ScrollReveal>
 
