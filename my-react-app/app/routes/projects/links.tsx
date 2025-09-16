@@ -124,6 +124,9 @@ export default function ResumePage(): JSX.Element {
                 }
                 />
             </div>
+          <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-10">
+            © {new Date().getFullYear()} John Clarence A. Legaspi
+          </footer>
         </section>
       </main>
     </FadeContent>
