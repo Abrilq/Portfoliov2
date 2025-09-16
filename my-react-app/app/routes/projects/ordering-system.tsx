@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import { useNavigate } from 'react-router-dom';
 
+import { projectsConfig } from 'app/config/projectsConfig';
 import FadeContent from 'app/welcome/FadeContent'
 import CardSwap, { Card } from '../../welcome/CardSwap'
 import ScrollReveal from '../../welcome/ScrollReveal';
@@ -10,6 +11,7 @@ import DecryptedText from '../../welcome/DecryptedText';
 import PixelTransition from '../../welcome/PixelTransition';
 import SpotlightCard from '../../welcome/SpotlightCard';
 import BlurText from '../../welcome/BlurText'
+import CircularGallery from '../../welcome/CircularGallery'
 
 import { FaReact, FaNodeJs, FaDocker, FaCss3Alt, FaJava, FaHtml5 } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiExpress, SiMysql, SiJavascript, SiFirebase, SiDart, SiFlutter } from "react-icons/si";
@@ -21,14 +23,7 @@ export default function ProjectPage(): ReactElement {
     console.log('All letters have animated!');
   };
 
-  const cardImages = [
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-  "/images/mobile/dycguide.PNG",
-];
+  const { cardImages, galleryImages } = projectsConfig.orderingsystem;
 
   return (
 
@@ -125,20 +120,21 @@ export default function ProjectPage(): ReactElement {
                   This project emphasized UI/UX design principles and the implementation of ordering logic, giving users a smooth and interactive shopping experience.
                 </p>
             </div>
-            <div className="flex justify-center mt-10">
-              <MagicBento 
-                textAutoHide={true}
-                enableStars={true}
-                enableSpotlight={true}
-                enableBorderGlow={true}
-                enableTilt={true}
-                enableMagnetism={true}
-                clickEffect={true}
-                spotlightRadius={300}
-                particleCount={12}
-                glowColor="255, 255, 255"
-              />
-            </div>
+
+            <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
+
+              <div style={{ height: '600px', position: 'relative' }}>
+                <CircularGallery 
+                  items={galleryImages}
+                  bend={3} 
+                  textColor="#ffffff" 
+                  borderRadius={0.05} 
+                  scrollEase={0.02}
+                />
+              </div>
+
+            </ScrollReveal>
+                        
           </section>
         </ScrollReveal>
 
@@ -230,38 +226,6 @@ export default function ProjectPage(): ReactElement {
             </div>
           </section>
         </ScrollReveal>
-
-        {/* Expected Impact Section */}
-        {/* <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
-          <section className="w-full min-h-[60vh] py-10 sm:py-20 px-4 sm:px-6 bg-slate-950 mt-10 mb-5">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-12 text-center">Expected Impact</h2>
-
-              <div className="grid grid-cols-2 grid-rows-2 gap-x-6 gap-y-10 text-end">
-                {[
-                  "Students gain clarity on their academic paths, reducing confusion and errors.",
-                  "","",
-                  "Administrators save time with automated prerequisite checks and digital records.",
-                  "The institution benefits from a scalable, organized, and efficient pre-advising process.",
-                ].map((text, idx) => (
-                  <div
-                    key={idx}
-                    className={idx % 2 === 0 ? "justify-self-start" : "justify-self-end"}
-                  >
-                    <BlurText
-                      text={text}
-                      delay={150}
-                      animateBy="words"
-                      direction="top"
-                      onAnimationComplete={handleAnimationComplete}
-                      className="text-2xl"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal> */}
 
         {/* My Roles */}
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
