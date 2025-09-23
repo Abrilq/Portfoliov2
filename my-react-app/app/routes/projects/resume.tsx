@@ -72,7 +72,7 @@ export default function ResumePage(): JSX.Element {
                   <article className="mb-4">
                     <h3 className="font-semibold">E-Commerce Website — <span className="italic">Project Leader, Frontend Developer</span></h3>
                     <ul className="list-disc ml-5 text-gray-700">
-                      <li>Directed frontend development of an eyewear e-commerce site with product variants and dynamic dropdowns.</li>
+                      <li>Directed frontend development of an eyewear e-commerce site with different product variants.</li>
                       <li>Built intuitive browsing experience with responsive product displays.</li>
                       <li>Ensured project security by limiting backend exposure during development.</li>
                     </ul>
