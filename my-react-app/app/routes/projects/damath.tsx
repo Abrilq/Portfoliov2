@@ -49,7 +49,7 @@ export default function ProjectPage(): ReactElement {
                   <img
                     src={src}
                     alt={`Project Preview ${i + 1}`}
-                    className="w-full sm:w-3/4 lg:w-[1080px] h-full object-cover rounded-xl shadow-lg mb-8 mx-auto"
+                    className="w-full sm:w-3/4 lg:w-[1080px] h-full object-contain rounded-xl shadow-lg mb-8 mx-auto"
                   />
                 </Card>
               ))}
@@ -320,7 +320,7 @@ export default function ProjectPage(): ReactElement {
                 {/* Download CV Button */}
                 <a
                   href="/ClarenceCV.pdf"
-                  download="Clarence_LegaspiCV.pdf"
+                  download="Legaspi_ClarenceCV.pdf"
                   className="justify-between duration-300 hover:bg-sky-900 border hover:text-gray-50 bg-gray-50 font-semibold text-sky-800 px-3 py-2 flex flex-row items-center gap-3"
                 >
                   Download CV

@@ -41,7 +41,7 @@ export const projectsConfig: ProjectsConfig = {
       },
       {
         image: "/images/mobile/lnf.PNG",
-        text: "Logo",
+        text: "Lost and Found Webapp Logo",
       }
     ],
   },
@@ -55,7 +55,7 @@ export const projectsConfig: ProjectsConfig = {
     galleryImages: [
       {
         image: "/images/mobile/dycguide.PNG",
-        text: "DYC-GUIDE",
+        text: "DYC-GUIDE Logo",
       },
       {
         image: "/images/heroes/pre-advising/adminhomepage.png",
@@ -91,7 +91,7 @@ export const projectsConfig: ProjectsConfig = {
       },
       {
         image: "/images/mobile/catpeas.PNG",
-        text: "Logo",
+        text: "Cat'Peas Logo",
       },
       {
         image: "/images/heroes/catpeas/login.png",
@@ -121,80 +121,125 @@ export const projectsConfig: ProjectsConfig = {
   },
   damath: {
     cardImages: [
-      "/images/mobile/dycguide.PNG",
-      "/images/heroes/pre-advising/adminhomepage.png",
-      "/images/heroes/pre-advising/login.png",
-      "/images/heroes/pre-advising/signup.png",
+      "/images/mobile/damath.PNG",
+      "/images/heroes/damath/home.jpg",
+      "/images/heroes/damath/rules.jpg",
+      "/images/heroes/damath/normal.jpg",
+      "/images/heroes/damath/halloween.jpg",
+      "/images/heroes/damath/christmas.jpg",
     ],
     galleryImages: [
       {
-        image: "/images/mobile/dycguide.PNG",
-        text: "DYC-GUIDE",
+        image: "/images/mobile/damath.PNG",
+        text: "Damath Logo",
       },
       {
-        image: "/images/heroes/pre-advising/adminhomepage.png",
-        text: "Admin Homepage",
+        image: "/images/heroes/damath/home.jpg",
+        text: "Main Menu",
       },
       {
-        image: "/images/heroes/pre-advising/login.png",
-        text: "Login Page",
+        image: "/images/heroes/damath/rules.jpg",
+        text: "Rules",
       },
       {
-        image: "/images/heroes/pre-advising/signup.png",
-        text: "Sign Up Page",
+        image: "/images/heroes/damath/normal.jpg",
+        text: "Normal Theme",
+      },
+      {
+        image: "/images/heroes/damath/halloween.jpg",
+        text: "Halloween Theme",
+      },
+      {
+        image: "/images/heroes/damath/christmas.jpg",
+        text: "Christmas Theme",
       }
     ],
   },
   evoar: {
     cardImages: [
-      "/images/mobile/dycguide.PNG",
-      "/images/heroes/pre-advising/adminhomepage.png",
-      "/images/heroes/pre-advising/login.png",
-      "/images/heroes/pre-advising/signup.png",
+      "/images/mobile/evoar.PNG",
+      "/images/heroes/evoar/intro.jpg",
+      "/images/heroes/evoar/abacus.jpg",
+      "/images/heroes/evoar/bones.jpg",
+      "/images/heroes/evoar/calc.jpg",
+      "/images/heroes/evoar/computer.jpg",
+      "/images/heroes/evoar/pascal.jpg",
+      "/images/heroes/evoar/tube.jpg",
     ],
     galleryImages: [
       {
-        image: "/images/mobile/dycguide.PNG",
-        text: "DYC-GUIDE",
+        image: "/images/mobile/evoar.PNG",
+        text: "Computer Evolution Logo",
       },
       {
-        image: "/images/heroes/pre-advising/adminhomepage.png",
-        text: "Admin Homepage",
+        image: "/images/heroes/evoar/intro.jpg",
+        text: "Unity",
       },
       {
-        image: "/images/heroes/pre-advising/login.png",
-        text: "Login Page",
+        image: "/images/heroes/evoar/abacus.jpg",
+        text: "Abacus",
       },
       {
-        image: "/images/heroes/pre-advising/signup.png",
-        text: "Sign Up Page",
-      }
+        image: "/images/heroes/evoar/bones.jpg",
+        text: "Napier's Bones",
+      },
+      {
+        image: "/images/heroes/evoar/calc.jpg",
+        text: "Leibniz Calculator",
+      },
+      {
+        image: "/images/heroes/evoar/computer.jpg",
+        text: "5th Gen Computer",
+      },
+      {
+        image: "/images/heroes/evoar/pascal.jpg",
+        text: "Pascal's Calculator",
+      },
+      {
+        image: "/images/heroes/evoar/tube.jpg",
+        text: "Vacuum Tube",
+      },
     ],
   },
   orderingsystem: {
     cardImages: [
-      "/images/mobile/dycguide.PNG",
-      "/images/heroes/pre-advising/adminhomepage.png",
-      "/images/heroes/pre-advising/login.png",
-      "/images/heroes/pre-advising/signup.png",
+      "/images/mobile/orderingsystem.PNG",
+      "/images/ordering/hk_delete_food_stocks.png",
+      "/images/ordering/hk_stocks_main_form.png",
+      "/images/ordering/user_bev_order_history.png",
+      "/images/ordering/user_food_stalls.png",
+      "/images/ordering/user_food_stalls2.png",
+      "/images/ordering/vendor_user_change_pass.png",
     ],
     galleryImages: [
       {
-        image: "/images/mobile/dycguide.PNG",
-        text: "DYC-GUIDE",
+        image: "/images/mobile/orderingsystem.PNG",
+        text: "Ordering System Logo",
       },
       {
-        image: "/images/heroes/pre-advising/adminhomepage.png",
-        text: "Admin Homepage",
+        image: "/images/ordering/hk_delete_food_stocks.png",
+        text: "Food Stocks Page",
       },
       {
-        image: "/images/heroes/pre-advising/login.png",
-        text: "Login Page",
+        image: "/images/ordering/hk_stocks_main_form.png",
+        text: "Main Form Page",
       },
       {
-        image: "/images/heroes/pre-advising/signup.png",
-        text: "Sign Up Page",
-      }
+        image: "/images/ordering/user_bev_order_history.png",
+        text: "Order History Page",
+      },
+      {
+        image: "/images/ordering/user_food_stalls.png",
+        text: "Food Stalls Page",
+      },
+      {
+        image: "/images/ordering/user_food_stalls2.png",
+        text: "Food Stalls Page",
+      },
+      {
+        image: "/images/ordering/vendor_user_change_pass.png",
+        text: "Vendor Change Password Page",
+      },
     ],
   },
   drinkingsession: {
