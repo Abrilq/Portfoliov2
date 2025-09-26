@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
-import { ProjectCardDark } from './ProjectCard';
-import { ProjectCardLight } from './ProjectCard';
-import SplashCursor from './SplashCursor'
-import DarkVeil from './DarkVeil';
-import FadeContent from './FadeContent'
-import LightRays from './LightRays';
+
 import ScrollReveal from './ScrollReveal';
 import FlowingMenu from './FlowingMenu';
 import BlurText from './BlurText';
+import Particles from './Particles';
+import LiquidEther from './LiquidEther';
+import SplashCursor from './SplashCursor'
 
 export function Welcome() {
   useEffect(() => {
@@ -39,9 +35,32 @@ export function Welcome() {
 
   return (
     <div className="min-h-screen m-5">
-      <main className="flex items-center justify-center pt-16 pb-4 text-white">
+      <SplashCursor />
+      <div className="fixed inset-0 z-0">
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={1000}
+          particleSpread={20}
+          speed={0.01}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      <main className="text-3xl relative z-10 flex items-center justify-center pt-16 pb-4 text-white">
         <div className="">
           <section>
+            <div className='flex justify-center'>
+              <BlurText
+                text="Scroll down..."
+                delay={200}
+                animateBy="letters"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="sm:text-lg md:text-3xl lg:text-5xl h-screen font-extrabold justify-start dark:text-white"
+              />
+            </div>
             <div className='flex justify-start'>
               <BlurText
                 text="Hi, I'm Clarence."
