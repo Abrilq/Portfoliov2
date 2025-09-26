@@ -104,6 +104,28 @@ export default function ResumePage(): JSX.Element {
                 />
                 </a>
 
+                <a href="https://profile.indeed.com/?hl=en_PH&co=PH&from=gnav-homepage">
+                <TiltedCard
+                imageSrc="/images/links/indeed-whitebg.png"
+                altText=""
+                captionText="Indeed Profile"
+                containerHeight="250px"
+                containerWidth="250px"
+                imageHeight="250px"
+                imageWidth="250px"
+                rotateAmplitude={20}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={
+                    <p className="font-bold tracking-wider bg-white/30 backdrop-blur-md text-black border-y border-gray-500 py-2 px-4 rounded-xl">
+                    Indeed
+                    </p>
+                }
+                />
+                </a>
+
                 <a href="https://github.com/Abrilq">
                 <TiltedCard
                 imageSrc="/images/links/github-square.png"
@@ -126,7 +148,7 @@ export default function ResumePage(): JSX.Element {
                 />
                 </a>
 
-                <a href="https://www.facebook.com/your-facebook-profile">
+                <a href="https://www.facebook.com/jclme23">
                 <TiltedCard
                 imageSrc="/images/links/facebook-squareblue.png"
                 altText=""
