@@ -6,11 +6,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { useEffect } from 'react';
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import './globals.css'
-import { Analytics } from '@vercel/analytics/react';
+import { inject } from '@vercel/analytics';
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -26,6 +27,10 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    inject();
+  }, []);
+
   return (
     <html lang="en">
       <head>
@@ -36,7 +41,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <Analytics />
         <ScrollRestoration />
         <Scripts />
       </body>
