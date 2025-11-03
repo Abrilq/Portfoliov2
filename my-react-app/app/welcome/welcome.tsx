@@ -6,7 +6,6 @@ import BlurText from './BlurText';
 import Particles from './Particles';
 import LiquidEther from './LiquidEther';
 import SplashCursor from './SplashCursor'
-import { Analytics } from "@vercel/analytics/next"
 
 export function Welcome() {
   useEffect(() => {
@@ -36,7 +35,6 @@ export function Welcome() {
 
   return (
     <div className="min-h-screen m-5">
-      <Analytics />
       <SplashCursor />
       <div className="fixed inset-0 z-0">
         <Particles
