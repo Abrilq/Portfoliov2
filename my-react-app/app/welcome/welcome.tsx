@@ -28,7 +28,7 @@ export function Welcome() {
   };
   const demoItems = [
     { link: '/projects/resume', text: 'Resume', image: './images/flowingmenu/Resume-nobg.PNG' },
-    { link: '#', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
+    { link: '/projects/certifications', text: 'Certifications', image: './images/flowingmenu/Certifications-nobg.PNG' },
     { link: '/projects/projectpage', text: 'Projects', image: './images/flowingmenu/Projects-nobg.PNG' }, // Fixed path
     { link: '/projects/links', text: 'My Links', image: './images/flowingmenu/Links-nobg.PNG' }
   ];
@@ -54,7 +54,7 @@ export function Welcome() {
             <div className='flex justify-center'>
               <BlurText
                 text="Scroll down..."
-                delay={200}
+                delay={100}
                 animateBy="letters"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}

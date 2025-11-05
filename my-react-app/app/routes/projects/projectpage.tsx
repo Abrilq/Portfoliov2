@@ -7,6 +7,8 @@ import { ProjectCardLight } from 'app/welcome/ProjectCard';
 import FadeContent from 'app/welcome/FadeContent';
 import ScrollReveal from 'app/welcome/ScrollReveal';
 import TextPressure from 'app/welcome/TextPressure';
+import LetterGlitch from 'app/welcome/LetterGlitch';
+
 
 export default function ARProject(): ReactElement {
   const navigate = useNavigate();
@@ -75,9 +77,8 @@ export default function ARProject(): ReactElement {
 
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
-
-      <main className="min-h-screen bg-slate-950 px-6 py-12">
-        
+      
+      <main className="relative min-h-screen bg-slate-950 px-6 py-10">
         {/* Back Button */}
         <div className="absolute left-5 top-5 sm:left-10 ">
         <button 
@@ -142,10 +143,13 @@ export default function ARProject(): ReactElement {
         </section>
 
         {/* Personal Projects Section */}
-        <section className="w-full text-center mb-12 px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white mb-8">
-            Personal Projects
-          </h2>
+        <section className="w-full text-center mb-12 px-4 sm:px-6 z-index-10">
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white">
+              Personal Projects
+            </h2>
+          </div>
 
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
             {personalProjects.map((project, index) => (

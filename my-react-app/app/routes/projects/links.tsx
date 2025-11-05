@@ -3,6 +3,7 @@ import FadeContent from 'app/welcome/FadeContent'
 import { useNavigate } from "react-router-dom";
 import TiltedCard from 'app/welcome/TiltedCard';
 import TextPressure from 'app/welcome/TextPressure';
+import LetterGlitch from "~/welcome/LetterGlitch";
 
 export default function ResumePage(): JSX.Element {
   const navigate = useNavigate();
@@ -23,6 +24,18 @@ export default function ResumePage(): JSX.Element {
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
 
       <main className="min-h-screen bg-slate-950 text-gray-900 px-6 py-12">
+
+        <div className="fixed inset-0 z-0 sm:h-full lg:h-screen">
+          <LetterGlitch
+            glitchSpeed={50}
+            centerVignette={false}
+            outerVignette={true}
+            smooth={true}
+            glitchColors={['#007c00ff', '#005c00ff', '#000000ff']}
+            characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ<>.;{}[]()/\|!@#$%^&*()-_=+0123456789"
+          />
+        </div>
+
         {/* Back Button */}
         <div className="absolute left-5 top-5 sm:left-10 ">
         <button 
@@ -37,8 +50,8 @@ export default function ResumePage(): JSX.Element {
         </div>
 
         {/* Header Section */}
-        <section className="w-full text-center mb-12 relative px-4 sm:px-6">
-          <div className="flex justify-center mt-10 mb-6">
+        <section className="w-full text-center mb-none relative px-4 sm:px-6">
+          <div className="flex justify-center mt-5 mb-5">
             <TextPressure
               text="Connect with me!"
               flex={true}
@@ -53,12 +66,12 @@ export default function ResumePage(): JSX.Element {
             />
           </div>
           <div className="flex justify-center mb-8">
-            <hr className="w-60 sm:w-80 border-t-2 border-gray-600" />
+            <hr className="w-60 sm:w-80 border-t-2 border-white" />
           </div>
         </section>
 
-        <section className="p-8 sm:m-none lg:m-20">
-            <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-10 justify-items-center items-center">
+        <section className="p-none sm:m-none lg:mx-30 lg:">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-6 gap-10 justify-items-center items-center">
 
                 <a href="https://ph.jobstreet.com/profile/johnclarence-legaspi-9F07RgSBL9">
                 <TiltedCard
@@ -193,7 +206,7 @@ export default function ResumePage(): JSX.Element {
                 </button>
             </div>
 
-          <footer className="relative w-full text-center py-6 text-gray-500 text-sm mt-10">
+          <footer className="relative block m-auto w-80 text-center py-6 text-gray-500 lg:bg-black sm:bg-none text-sm mt-10">
             © {new Date().getFullYear()} John Clarence A. Legaspi
           </footer>
         </section>

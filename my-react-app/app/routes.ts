@@ -13,5 +13,7 @@ export default [
   route("projects/projectpage", "routes/projects/projectpage.tsx"),
   route("projects/resume", "routes/projects/resume.tsx"),
   route("projects/links", "routes/projects/links.tsx"),
+  route("projects/certifications", "routes/projects/certifications.tsx"),
+
 
 ] satisfies RouteConfig;
