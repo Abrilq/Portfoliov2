@@ -45,7 +45,7 @@ export default function ResumePage(): JSX.Element {
                       <h2 className="text-xl font-semibold mb-2">Professional Summary</h2>
                       <p className="text-gray-700">
                         An Information Technology graduate with hands-on experience in web development, game development, and UI/UX design.
-                        Skilled in frontend and backend technologies, with leadership experience in team-based projects. Holds certifications in Cybersecurity, Agile Project Management, and Network Fundamentals. Passionate about building scalable, user-friendly solutions.
+                        Skilled in frontend and backend technologies, with leadership experience in team-based projects. Holds certifications in Cybersecurity, Predictive Project Management, and Networking Basics. Passionate about building scalable, user-friendly solutions.
                       </p>
                     </section>
 
@@ -118,7 +118,7 @@ export default function ResumePage(): JSX.Element {
                         <li><strong>Programming:</strong> TypeScript, JavaScript (ES6+), C#, HTML5, CSS3, MySQL</li>
                         <li><strong>Frameworks & Tools:</strong> React, Vite, Unity, Flutter, Blender, Figma, Git, GitHub, VS Code</li>
                         <li><strong>Web & UI/UX:</strong> Responsive design, Wireframing, User flow optimization</li>
-                        <li><strong>Other:</strong> Agile collaboration, Problem-solving</li>
+                        <li><strong>Other:</strong> Agile collaboration</li>
                       </ul>
                     </section>
 
@@ -126,8 +126,8 @@ export default function ResumePage(): JSX.Element {
                       <h2 className="text-lg font-semibold mb-3">Certifications</h2>
                       <ul className="list-disc ml-5 text-gray-700">
                         <li>Cybersecurity</li>
-                        <li>Agile Project Management</li>
-                        <li>Network Fundamentals</li>
+                        <li>Predictive Project Management</li>
+                        <li>Networking Basics</li>
                       </ul>
                     </section>
 

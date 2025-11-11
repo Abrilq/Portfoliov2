@@ -26,30 +26,30 @@ export interface CarouselProps {
 
 const DEFAULT_ITEMS: CarouselItem[] = [
   {
-    title: 'Agile Project Management',
-    description: 'Dated ?',
-    sub: 'Issued by ?',
+    title: 'Fundamentals of Predictive Project Management',
+    description: 'Issued on: 9/19/2023',
+    sub: 'From: Project Management Institute',
     id: 1,
     icon: <FiActivity className="h-[50px] w-[50px] text-white" />
   },
   {
-    title: 'Cybersecurity Fundamentals',
-    description: 'Dated ?',
-    sub: 'Issued by ?',
+    title: 'Introduction to Cybersecurity',
+    description: 'Issued on: 12/08/2023',
+    sub: 'From: Cisco',
     id: 2,
     icon: <FiShield className="h-[50px] w-[50px] text-white" />
   },
   {
     title: 'Networking Basics',
-    description: 'Dated ?',
-    sub: 'Issued by ?',
+    description: 'Issued on: 5/22/2024',
+    sub: 'From: Cisco',
     id: 4,
     icon: <FiWifi className="h-[50px] w-[50px] text-white" />
   },
   {
-    title: 'Microsoft Excel Specialist 2019',
-    description: 'Dated ?',
-    sub: 'Issued by ?',
+    title: 'Microsoft Excel Associate 2019',
+    description: 'Issued on: 6/8/2023',
+    sub: 'From: Certiport',
     id: 4,
     icon: <FiGrid className="h-[50px] w-[50px] text-white" />
   },
@@ -202,7 +202,7 @@ export default function Carousel({
                 </span>
               </div>
               <div className="p-5">
-                <div className="mb-5 font-black text-2xl text-white text-center">{item.title}</div>
+                <div className="mb-5 font-black text-xl text-white text-center">{item.title}</div>
                 <p className="text-sm text-white">{item.description}</p>
                 <p className="text-sm text-white">{item.sub}</p>
               </div>
