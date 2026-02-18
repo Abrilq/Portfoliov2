@@ -7,7 +7,7 @@ interface ProjectCardProps {
   roles: string[];
   technologies: string[];
   imageUrl: string;
-  route: string;
+  route: string | null;
 }
 
 export function ProjectCardDark({ title, roles, technologies, imageUrl, route }: ProjectCardProps) {
@@ -19,7 +19,7 @@ export function ProjectCardDark({ title, roles, technologies, imageUrl, route }:
       className="bg-gray-900 w-48 h-64 rounded-lg transition-all duration-500 ease-in-out hover:scale-110 relative cursor-pointer overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => navigate(route)}
+      onClick={() => route && navigate(route)}
     >
       {/* Window dots */}
       <div className="flex p-2 gap-1">
@@ -80,7 +80,7 @@ export function ProjectCardLight({ title, roles, technologies, imageUrl, route }
       className="bg-slate-800 w-48 h-64 rounded-lg transition-all duration-500 ease-in-out hover:scale-110 relative cursor-pointer overflow-hidden shadow-lg"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => navigate(route)}
+      onClick={() => route && navigate(route)}
     >
       {/* Window dots */}
       <div className="flex p-2 gap-1">

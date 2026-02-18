@@ -73,6 +73,13 @@ export default function ARProject(): ReactElement {
       imageUrl: "/images/psd/srt.png",
       route: "/projects/srt-renamer"
     },
+    {
+      title: "Coming Soon...",
+      roles: ["Full-Stack Developer"],
+      technologies: ["???"],
+      imageUrl: "/images/psd/comingsoon.png",
+      route: null,
+    }
   ];
 
   return (
@@ -119,7 +126,7 @@ export default function ARProject(): ReactElement {
 
             {/* Section Title */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold dark:text-white">
-              Professional Experience
+              Academic Experience
             </h2>
           </div>
 

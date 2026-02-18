@@ -73,7 +73,7 @@ export default function ResumePage(): JSX.Element {
         <section className="p-none sm:m-none lg:mx-30 lg:">
             <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-10 justify-items-center items-center">
 
-                <a href="https://ph.jobstreet.com/profile/johnclarence-legaspi-9F07RgSBL9" target="_blank" rel="noopener noreferrer">
+                <a href="https://ph.jobstreet.com/profiles/johnclarence-legaspi-9F07RgSBL9" target="_blank" rel="noopener noreferrer">
                 <TiltedCard
                 imageSrc="/images/links/jobstreet.png"
                 altText=""

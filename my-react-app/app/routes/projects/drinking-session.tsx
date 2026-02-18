@@ -96,6 +96,19 @@ export default function ProjectPage(): ReactElement {
                     </svg>
                   </span>
                 </button>
+
+              {/* Website Link */}
+                <div>
+                  <h3 className="text-white mt-4">
+                    <a href="https://shotpunov2.netlify.app/" target="_blank" rel="noopener noreferrer">
+                      Want to try it yourself?
+                      <p className="bg-gradient-to-r from-orange-600 via-yellow-500 to-pink-600 bg-clip-text text-transparent font-black">
+                        Click here!
+                      </p>                      
+                    </a>
+                  </h3>
+                </div>
+                
               </div>
             </div>
           </div>

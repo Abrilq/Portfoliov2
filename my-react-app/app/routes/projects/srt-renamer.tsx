@@ -98,6 +98,19 @@ export default function ProjectPage(): ReactElement {
                   </span>
                 </button>
               </div>
+
+              {/* Website Link */}
+                <div>
+                  <h3 className="text-white mt-4">
+                    <a href="https://shotpunov2.netlify.app/" target="_blank" rel="noopener noreferrer">
+                      Want to try it yourself?
+                      <p className="bg-gradient-to-r from-gray-500 via-gray-400 to-gray-100 bg-clip-text text-transparent font-black">
+                        Click here!
+                      </p>                      
+                    </a>
+                  </h3>
+                </div>
+
             </div>
           </div>
         </section>
@@ -124,7 +137,7 @@ export default function ProjectPage(): ReactElement {
                 The Problem?
               </h3>
                 <p className="max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-gray-200 mt-2 mb-10">
-                  When downloading series or movies with subtitles, filenames often don’t match. Media players (like <span className="italic">VLC</span>) require exact filename matches between
+                  When downloading series or movies with subtitles, file names often don’t match. Media players (like <span className="italic">VLC</span>) require exact filename matches between
                   <span className="italic">.srt</span> subtitle files and <span className="italic">.mkv/.mp4</span> video files to auto-detect them.
                   Manually renaming subtitle files is repetitive and error-prone.
                 </p>
