@@ -262,7 +262,7 @@ export default function ProjectPage(): ReactElement {
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="py-10 flex flex-col justify-center items-center">
             <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-10">Technologies Used</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 px-4">
+            <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 gap-6 px-4">
               {/* Tech Icons */}
               <div className="flex flex-col items-center"><FaHtml5 className="text-5xl text-orange-600" /><p>HTML5</p></div>
               <div className="flex flex-col items-center"><FaCss3Alt className="text-5xl text-blue-500" /><p>CSS3</p></div>

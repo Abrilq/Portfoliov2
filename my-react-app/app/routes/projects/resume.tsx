@@ -32,7 +32,7 @@ export default function ResumePage(): JSX.Element {
                   <div className="mt-4 sm:mt-0 text-sm text-right">
                     <p>1409 Canuto Villanueva St., Caingin, Bocaue, Bulacan</p>
                     <p>(+63) 961 261 4463</p>
-                    <p className="underline">legaspi.johnclarence@dyci.edu.ph</p>
+                    <p className="underline">clarence.legaspi.dev@gmail.com</p>
                   </div>
                 </div>
               </header>
@@ -42,7 +42,7 @@ export default function ResumePage(): JSX.Element {
                   {/* Left column */}
                   <div className="md:col-span-2 space-y-6">
                     <section>
-                      <h2 className="text-xl font-semibold mb-2">Professional Summary</h2>
+                      <h2 className="text-xl font-bold mb-2">Professional Summary</h2>
                       <p className="text-gray-700">
                         An Information Technology graduate with hands-on experience in web development, game development, and UI/UX design.
                         Skilled in frontend and backend technologies, with leadership experience in team-based projects. Holds certifications in Cybersecurity, Predictive Project Management, and Networking Basics. Passionate about building scalable, user-friendly solutions.
@@ -50,10 +50,10 @@ export default function ResumePage(): JSX.Element {
                     </section>
 
                     <section>
-                      <h2 className="text-xl font-semibold mb-4">Projects & Experience</h2>
+                      <h2 className="text-xl font-bold mb-4">Projects & Experience</h2>
 
                       <article className="mb-4">
-                        <h3 className="font-semibold">Lost and Found WebApp — <span className="italic">Team Leader, Full-Stack Developer</span></h3>
+                        <h3 className="font-bold">Lost and Found WebApp — <span className="italic">Team Leader, Full-Stack Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Led a 3-member team to develop a web application for lost-and-found web application.</li>
                           <li>Designed user, staff, and admin workflows for reporting and tracking items.</li>
@@ -62,7 +62,7 @@ export default function ResumePage(): JSX.Element {
                       </article>
 
                       <article className="mb-4">
-                        <h3 className="font-semibold"> Pre-advising System — <span className="italic">UI/UX Designer, Frontend Developer</span></h3>
+                        <h3 className="font-bold"> Pre-advising System — <span className="italic">UI/UX Designer, Frontend Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Designed and developed a web-based pre-advising system to help students view, select, and manage subjects based on course, year level, and semester.</li>
                           <li>Focused on making the web pages clear and efficient for students and adviser’s navigation</li>
@@ -70,7 +70,7 @@ export default function ResumePage(): JSX.Element {
                       </article>
 
                       <article className="mb-4">
-                        <h3 className="font-semibold">E-Commerce Website — <span className="italic">Project Leader, Frontend Developer</span></h3>
+                        <h3 className="font-bold">E-Commerce Website — <span className="italic">Project Leader, Frontend Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Directed frontend development of an eyewear e-commerce site with different product variants.</li>
                           <li>Built intuitive browsing experience with responsive product displays.</li>
@@ -79,7 +79,7 @@ export default function ResumePage(): JSX.Element {
                       </article>
 
                       <article className="mb-4">
-                        <h3 className="font-semibold">Ordering System Application — <span className="italic">UI/UX Designer</span></h3>
+                        <h3 className="font-bold">Ordering System Application — <span className="italic">UI/UX Designer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Designed and implemented UI/UX for a canteen ordering system using Flutter.</li>
                           <li>Optimized navigation flow for easy ordering and clear, user-friendly layouts.</li>
@@ -87,14 +87,14 @@ export default function ResumePage(): JSX.Element {
                       </article>
 
                       <article className="mb-4">
-                        <h3 className="font-semibold">DaMath Educational Game — <span className="italic">Frontend 3D Designer</span></h3>
+                        <h3 className="font-bold">DaMath Educational Game — <span className="italic">Frontend 3D Designer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Created interactive 3D chessboard and themed assets in Blender to enhance learning.</li>
                         </ul>
                       </article>
 
                       <article className="mb-4">
-                        <h3 className="font-semibold">Augmented Reality Project — <span className="italic">3D Designer, Full-Stack Developer</span></h3>
+                        <h3 className="font-bold">Augmented Reality Project — <span className="italic">3D Designer, Full-Stack Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Developed an augmented reality mobile application using ARCore and C#</li>
                           <li>Designed and animated 3D models and assets in Blender to create an interactive computer history timeline.</li>
@@ -105,7 +105,7 @@ export default function ResumePage(): JSX.Element {
                     </section>
 
                     <section className="mt-6">
-                      <h2 className="text-xl font-semibold mb-3">Education</h2>
+                      <h2 className="text-xl font-bold mb-3">Education</h2>
                       <p className="text-gray-700">Dr. Yanga’s Colleges Inc. — Bachelor of Science in Information Technology (BSIT), 2021 – 2025</p>
                     </section>
                   </div>
@@ -113,7 +113,7 @@ export default function ResumePage(): JSX.Element {
                   {/* Right column */}
                   <aside className="space-y-6">
                     <section>
-                      <h2 className="text-lg font-semibold mb-3">Technical Skills</h2>
+                      <h2 className="text-lg font-bold mb-3">Technical Skills</h2>
                       <ul className="space-y-2 text-gray-700">
                         <li><strong>Programming:</strong> TypeScript, JavaScript (ES6+), C#, HTML5, CSS3, MySQL</li>
                         <li><strong>Frameworks & Tools:</strong> React, Vite, Unity, Flutter, Blender, Figma, Git, GitHub, VS Code</li>
@@ -123,20 +123,28 @@ export default function ResumePage(): JSX.Element {
                     </section>
 
                     <section>
-                      <h2 className="text-lg font-semibold mb-3">Certifications</h2>
-                      <ul className="list-disc ml-5 text-gray-700">
-                        <li>Cybersecurity</li>
-                        <li>Predictive Project Management</li>
-                        <li>Networking Basics</li>
-                      </ul>
+                      <h2 className="text-lg font-bold mb-3">Certifications</h2>
+                      <dl className="list-disc text-gray-700">
+                        <dt className="font-semibold">Networking Basics</dt>
+                          <dd className="text-xs">Cisco</dd>
+                          <dd className="text-xs mb-3">Issued May 2024</dd>
+                        <dt className="font-semibold">Introduction to Cybersecurity</dt>
+                          <dd className="text-xs">Cisco</dd>
+                          <dd className="text-xs mb-3">Issued Dec 2023</dd>
+                        <dt className="font-semibold">Predictive Project Management</dt>
+                          <dd className="text-xs">Project Management Institute</dd>
+                          <dd className="text-xs mb-3">Issued Sep 2023</dd>
+                        <dt className="font-semibold">Microsoft Office Excel Associate</dt>
+                          <dd className="text-xs">Certiport</dd>
+                          <dd className="text-xs mb-3">Issued June 2023</dd>
+                      </dl>
                     </section>
 
                     <section>
-                      <h2 className="text-lg font-semibold mb-3">Contact</h2>
+                      <h2 className="text-lg font-bold mb-3">Contact</h2>
                       <div className="text-gray-700 text-sm">
-                        <p>Email: <a href="mailto:legaspi.johnclarence@dyci.edu.ph" className="text-sky-600 underline">legaspi.johnclarence@dyci.edu.ph</a></p>
+                        <p>Email: <a href="mailto:clarence.legaspi.dev@gmail.com" className="text-sky-600 underline">clarence.legaspi.dev@gmail.com</a></p>
                         <p>Phone: (+63) 961 261 4463</p>
-                        <p>Location: Caingin, Bocaue, Bulacan</p>
                       </div>
                     </section>
                   </aside>

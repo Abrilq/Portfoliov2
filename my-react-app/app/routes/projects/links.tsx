@@ -5,7 +5,7 @@ import TiltedCard from 'app/welcome/TiltedCard';
 import TextPressure from 'app/welcome/TextPressure';
 import LetterGlitch from "~/welcome/LetterGlitch";
 
-export default function ResumePage(): JSX.Element {
+export default function LinksPage(): JSX.Element {
   const navigate = useNavigate();
   const [tooltipText, setTooltipText] = useState("Copy Email");
 

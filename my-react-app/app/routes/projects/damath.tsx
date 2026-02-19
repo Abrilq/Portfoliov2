@@ -275,7 +275,7 @@ export default function ProjectPage(): ReactElement {
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={2}>
           <section className="py-10 flex flex-col justify-center items-center">
             <h2 className="text-2xl sm:text-3xl uppercase font-extrabold mb-10">Technologies Used</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
               {/* Tech Icons */}
               <div className="flex flex-col items-center"><SiSharp className="text-5xl text-purple-700" /><p>C#</p></div>
               <div className="flex flex-col items-center"><SiBlender className="text-5xl text-[#F5792A]" /><p>Blender</p></div>

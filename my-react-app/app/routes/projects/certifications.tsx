@@ -5,7 +5,7 @@ import PixelBlast from 'app/welcome/PixelBlast';
 import Carousel from 'app/welcome/Carousel'
 import TextPressure from "app/welcome/TextPressure";
 
-export default function ResumePage(): JSX.Element {
+export default function CertificationPage(): JSX.Element {
   const navigate = useNavigate();
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
