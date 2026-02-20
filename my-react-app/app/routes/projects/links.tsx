@@ -10,7 +10,7 @@ export default function LinksPage(): JSX.Element {
   const [tooltipText, setTooltipText] = useState("Copy Email");
 
   const handleCopyEmail = (e: React.MouseEvent) => {
-    navigator.clipboard.writeText('legaspi.johnclarence@dyci.edu.ph')
+    navigator.clipboard.writeText('clarence.legaspi.dev@gmail.com')
       .then(() => {
         setTooltipText("Email copied to clipboard!");
         setTimeout(() => setTooltipText("Copy Email"), 2000);

@@ -100,7 +100,7 @@ export default function ProjectPage(): ReactElement {
               {/* Website Link */}
                 <div>
                   <h3 className="text-white mt-4">
-                    <a href="https://shotpunov2.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://shotpuno.vercel.app/" target="_blank" rel="noopener noreferrer">
                       Want to try it yourself?
                       <p className="bg-gradient-to-r from-orange-600 via-yellow-500 to-pink-600 bg-clip-text text-transparent font-black">
                         Click here!
