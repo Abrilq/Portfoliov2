@@ -95,7 +95,7 @@ export default function LinksPage(): JSX.Element {
                 />
                 </a>
 
-                <a href="https://www.linkedin.com/in/john-clarence-legaspi-89b08934b/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/john-clarence-legaspi-8b76093b5" target="_blank" rel="noopener noreferrer">
                 <TiltedCard
                 imageSrc="/images/links/linkedin.png"
                 altText=""

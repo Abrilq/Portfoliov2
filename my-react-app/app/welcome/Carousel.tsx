@@ -49,7 +49,7 @@ const DEFAULT_ITEMS: CarouselItem[] = [
   {
     title: 'Microsoft Excel Associate 2019',
     description: 'Issued on: 6/8/2023',
-    sub: 'From: Certiport',
+    sub: 'From: Microsoft',
     id: 4,
     icon: <FiGrid className="h-[50px] w-[50px] text-white" />
   },

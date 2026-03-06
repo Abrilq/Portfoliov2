@@ -135,7 +135,7 @@ export default function ResumePage(): JSX.Element {
                           <dd className="text-xs">Project Management Institute</dd>
                           <dd className="text-xs mb-3">Issued Sep 2023</dd>
                         <dt className="font-semibold">Microsoft Office Excel Associate</dt>
-                          <dd className="text-xs">Certiport</dd>
+                          <dd className="text-xs">Microsoft</dd>
                           <dd className="text-xs mb-3">Issued June 2023</dd>
                       </dl>
                     </section>
