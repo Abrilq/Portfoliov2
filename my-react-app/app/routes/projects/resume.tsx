@@ -37,13 +37,13 @@ export default function ResumePage(): JSX.Element {
                 </div>
               </header>
 
-              <section className="p-8">
+              <section className="p-4 lg:p-10">
 
                 <div className="flex flex-col md:flex gap-8">
                   <div className="md:col-span-2 space-y-6">
                     <section>
                       <h2 className="text-lg font-bold mb-2">Professional Summary</h2>
-                      <p className="text-gray-700 mx-6 sm:mx-4">
+                      <p className="text-gray-700 mx-6 sm:m-none">
                         Information Technology graduate with experience in web development, UI/UX design, and frontend engineering.
                         Proficient in JavaScript, React, and modern web development tools, with hands-on experience delivering academic and
                         freelance projects including e-commerce solutions and full-stack web applications.
@@ -161,7 +161,7 @@ export default function ResumePage(): JSX.Element {
                     </section>
 
                     <section className="mt-6 font-semibold">
-                      <h2 className="text-lg font-bold mb-3">Education</h2>
+                      <h2 className="text-xl font-bold mb-3">Education</h2>
                       <p className="text-gray-700 mx-6 sm:mx-4">Dr. Yanga's Colleges Inc.</p>
                       <p className="text-gray-700 mx-6 sm:mx-4 font-normal">Bachelor of Science in Information Technology (BSIT)</p>
                       <p className="text-gray-700 mx-6 sm:mx-4">2021 – 2025</p>
