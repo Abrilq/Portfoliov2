@@ -81,50 +81,47 @@ export default function ResumePage(): JSX.Element {
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold">Lost and Found WebApp — <span className="italic">Team Leader, Full-Stack Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
-                          <li>Led a 3-member team to develop a web application for lost-and-found web application.</li>
-                          <li>Designed user, staff, and admin workflows for reporting and tracking items.</li>
-                          <li>Built scalable Full-Stack architecture, improving accountability in schools and workplaces.</li>
+                          <li>Led a 3-member team in developing a service-based web application</li>
+                          <li>Designed scalable system architecture and implemented role-based workflows for item tracking</li>
                         </ul>
                       </article>
 
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold"> Pre-advising System — <span className="italic">UI/UX Designer, Frontend Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
-                          <li>Designed and developed a web-based pre-advising system to help students view, select, and manage subjects based on course, year level, and semester.</li>
-                          <li>Focused on making the web pages clear and efficient for students and adviser’s navigation</li>
+                          <li>Designed a web interface for students to view and manage subjects by course, year, and semester</li>
+                          <li>Focused on intuitive navigation and clear information structure</li>
                         </ul>
                       </article>
 
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold">E-Commerce Website — <span className="italic">Project Leader, Frontend Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
-                          <li>Directed frontend development of an eyewear e-commerce site with different product variants.</li>
-                          <li>Built intuitive browsing experience with responsive product displays.</li>
-                          <li>Ensured project security by limiting backend exposure during development.</li>
+                          <li>Led frontend development of an eyewear e-commerce website</li>
+                          <li>Implemented responsive product displays and variant selection features</li>
                         </ul>
                       </article>
 
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold">Ordering System Application — <span className="italic">UI/UX Designer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
-                          <li>Designed and implemented UI/UX for a canteen ordering system using Flutter.</li>
-                          <li>Optimized navigation flow for easy ordering and clear, user-friendly layouts.</li>
+                          <li>Designed and implemented UI/UX for a canteen ordering system using Flutter</li>
+                          <li>Optimized navigation flow for easy ordering and clear, user-friendly layouts</li>
                         </ul>
                       </article>
 
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold">DaMath Educational Game — <span className="italic">Frontend 3D Designer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
-                          <li>Created interactive 3D chessboard and themed assets in Blender to enhance learning.</li>
+                          <li>Modeled interactive 3D chessboard and game assets using Blender</li>
                         </ul>
                       </article>
 
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold">Augmented Reality Project — <span className="italic">3D Designer, Full-Stack Developer</span></h3>
                         <ul className="list-disc ml-5 text-gray-700">
-                          <li>Developed an augmented reality mobile application using ARCore and C#</li>
-                          <li>Designed and animated 3D models and assets in Blender to create an interactive computer history timeline.</li>
-                          <li>Integrated ARCore functionalities to deliver a fully functional and engaging AR learning experience.</li>
+                          <li>Developed an AR mobile application using ARCore and C#</li>
+                          <li>Integrated AR features to create an interactive learning experience</li>
                         </ul>
                       </article>
 
@@ -140,22 +137,22 @@ export default function ResumePage(): JSX.Element {
                         <div className="text-gray-700">
                           <dt className="font-semibold">Networking Basics</dt>
                           <dd className="text-xs">Cisco</dd>
-                          <dd className="text-xs mb-3">Issued May 2024</dd>
+                          <dd className="text-xs mb-3">May 2024</dd>
                         </div>
                         <div className="text-gray-700">
                           <dt className="font-semibold">Introduction to Cybersecurity</dt>
                           <dd className="text-xs">Cisco</dd>
-                          <dd className="text-xs mb-3">Issued Dec 2023</dd>
+                          <dd className="text-xs mb-3">Dec 2023</dd>
                         </div>
                         <div className="text-gray-700">
                           <dt className="font-semibold">Predictive Project Management</dt>
                           <dd className="text-xs">PMI</dd>
-                          <dd className="text-xs mb-3">Issued Sep 2023</dd>
+                          <dd className="text-xs mb-3">Sep 2023</dd>
                         </div>
                         <div className="text-gray-700">
                           <dt className="font-semibold">Microsoft Office Excel Associate</dt>
                           <dd className="text-xs">Microsoft</dd>
-                          <dd className="text-xs mb-3">Issued June 2023</dd>
+                          <dd className="text-xs mb-3">June 2023</dd>
                         </div>
                       </div>
                     </section>
