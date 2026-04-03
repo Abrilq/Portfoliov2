@@ -1,6 +1,7 @@
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
 export default [
+
   index("routes/home.tsx"),
   route("projects/lost-and-found", "routes/projects/lost-and-found.tsx"),
   route("projects/pre-advising", "routes/projects/pre-advising.tsx"),
@@ -14,6 +15,6 @@ export default [
   route("projects/resume", "routes/projects/resume.tsx"),
   route("projects/links", "routes/projects/links.tsx"),
   route("projects/certifications", "routes/projects/certifications.tsx"),
-
+  route("projects/demo_spa/lost-and-found", "routes/projects/demo_spa/lost-and-found.jsx"),
 
 ] satisfies RouteConfig;
