@@ -57,7 +57,7 @@ export default function LinksPage(): JSX.Element {
             sentence="Connect with me!"
             manualMode={false}
             blurAmount={5}
-            borderColor="#058d00"
+            borderColor="#ffffff"
             animationDuration={0.5}
             pauseBetweenAnimations={1}
             />
