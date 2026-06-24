@@ -5,9 +5,7 @@ import { ProjectCardDark } from 'app/welcome/ProjectCard';
 import { ProjectCardLight } from 'app/welcome/ProjectCard';
 
 import FadeContent from 'app/welcome/FadeContent';
-import ScrollReveal from 'app/welcome/ScrollReveal';
-import TextPressure from 'app/welcome/TextPressure';
-import LetterGlitch from 'app/welcome/LetterGlitch';
+import TextType from 'app/components/TextType';
 
 
 export default function ARProject(): ReactElement {
@@ -101,18 +99,15 @@ export default function ARProject(): ReactElement {
 
         {/* Header Section */}
         <section className="w-full text-center mb-12 relative px-4 sm:px-6">
-          <div className="flex justify-center mt-10 mb-6">
-            <TextPressure
-              text="Hello there!"
-              flex={true}
-              alpha={false}
-              stroke={false}
-              width={true}
-              weight={true}
-              italic={true}
-              textColor="#ffffff"
-              strokeColor="#ff0000"
-              minFontSize={36}
+          <div className="flex justify-center mt-10 mb-6 text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white">
+            <TextType 
+              text={["Welcome to my projects!", "Good to see you here!"]}
+              typingSpeed={100}
+              pauseDuration={1500}
+              showCursor
+              cursorCharacter="|"
+              deletingSpeed={50}
+              cursorBlinkDuration={0.4}
             />
           </div>
           <div className="flex justify-center mb-8">

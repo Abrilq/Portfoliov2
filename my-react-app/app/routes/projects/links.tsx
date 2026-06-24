@@ -2,8 +2,8 @@ import React, { type JSX, useState } from "react";
 import FadeContent from 'app/welcome/FadeContent'
 import { useNavigate } from "react-router-dom";
 import TiltedCard from 'app/welcome/TiltedCard';
-import TextPressure from 'app/welcome/TextPressure';
 import LetterGlitch from "~/welcome/LetterGlitch";
+import TrueFocus from '~/components/TrueFocus';
 
 export default function LinksPage(): JSX.Element {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function LinksPage(): JSX.Element {
   return (
     <FadeContent blur={true} duration={500} easing="ease-in-out" initialOpacity={0}>
 
-      <main className="min-h-screen bg-slate-950 text-gray-900 px-6 py-12">
+      <main className="min-h-screen bg-slate-950 text-white-900 px-6 py-12">
 
         <div className="fixed inset-0 z-0 sm:h-full lg:h-screen">
           <LetterGlitch
@@ -32,7 +32,7 @@ export default function LinksPage(): JSX.Element {
             outerVignette={true}
             smooth={true}
             glitchColors={['#007c00ff', '#005c00ff', '#000000ff']}
-            characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ<>.;{}[]()/\|!@#$%^&*()-_=+0123456789"
+            characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ<>.;{}[]()/\|!@#$%^&*()-_=+0123456789abcdefghijklmnopqrstuvwxyz"
           />
         </div>
 
@@ -52,18 +52,16 @@ export default function LinksPage(): JSX.Element {
         {/* Header Section */}
         <section className="w-full text-center mb-none relative px-4 sm:px-6">
           <div className="flex justify-center mt-5 mb-5">
-            <TextPressure
-              text="Connect with me!"
-              flex={true}
-              alpha={false}
-              stroke={false}
-              width={true}
-              weight={true}
-              italic={true}
-              textColor="#ffffff"
-              strokeColor="#ff0000"
-              minFontSize={36}
+
+            <TrueFocus 
+            sentence="Connect with me!"
+            manualMode={false}
+            blurAmount={5}
+            borderColor="#058d00"
+            animationDuration={0.5}
+            pauseBetweenAnimations={1}
             />
+
           </div>
           <div className="flex justify-center mb-8">
             <hr className="w-60 sm:w-80 border-t-2 border-white" />

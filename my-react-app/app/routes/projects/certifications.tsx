@@ -3,7 +3,7 @@ import FadeContent from 'app/welcome/FadeContent'
 import { useNavigate } from "react-router-dom";
 import PixelBlast from 'app/welcome/PixelBlast';
 import Carousel from 'app/welcome/Carousel'
-import TextPressure from "app/welcome/TextPressure";
+import FuzzyText from 'app/components/FuzzyText';
 
 export default function CertificationPage(): JSX.Element {
   const navigate = useNavigate();
@@ -42,19 +42,14 @@ export default function CertificationPage(): JSX.Element {
 
             {/* Header Section - moved above Carousel */}
             <section className="w-full text-center mt-10 relative px-4 sm:px-6">
-              <div className="flex justify-center lg:mt-5 sm:mt-30 mb-5">
-                <TextPressure
-                  text="Certifications"
-                  flex={true}
-                  alpha={false}
-                  stroke={false}
-                  width={true}
-                  weight={true}
-                  italic={true}
-                  textColor="#ffffff"
-                  strokeColor="#ff0000"
-                  minFontSize={36}
-                />
+              <div className="flex justify-center lg:mt-5 sm:mt-30 mb-5">  
+                <FuzzyText 
+                  baseIntensity={0.2}
+                  hoverIntensity={0.5}
+                  enableHover
+                >
+                  Certifications
+                </FuzzyText>
               </div>
               <div className="flex justify-center">
                 <hr className="w-60 sm:w-80 border-t-2 border-white" />
