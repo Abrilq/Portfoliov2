@@ -64,12 +64,24 @@ export default function ResumePage(): JSX.Element {
 
                       <article className="mb-4 mx-6 sm:mx-4">
                         <h3 className="font-bold">Shopify E-commerce Client — <span className="italic">Freelance Web Developer</span></h3>
+                        <p className="text-sm text-gray-600">Remote | November 2025 – February 2026</p>
                         <ul className="list-disc ml-5 text-gray-700">
                           <li>Developed responsive Klaviyo email templates for e-commerce marketing campaigns</li>
                           <li>Implemented dynamic email content using Liquid variables</li>
                           <li>Built Shopify landing pages using Replo page builder</li>
                           <li>Collaborated with the client to translate design requirements into functional web components</li>
                           <li>Improved user experience through mobile-responsive design and structured UI layouts</li>
+                        </ul>
+                      </article>
+
+                      <article className="mb-4 mx-6 sm:mx-4">
+                        <h3 className="font-bold">St. Martin Cooperative — <span className="italic">IT Intern (Programmer)</span></h3>
+                        <p className="text-sm text-gray-600">On-site | March 2025 – July 2025</p>
+                        <ul className="list-disc ml-5 text-gray-700">
+                          <li>Enhanced the Service Request Form (SRF) System by implementing new features and improving existing functionality.</li>
+                          <li>Modified system settings, service request forms, and user interface components to improve usability.</li>
+                          <li>Implemented and refined a hierarchical approval workflow.</li>
+                          <li>Collaborated with the IT team to troubleshoot issues, test system updates, and support internal users.</li>
                         </ul>
                       </article>
 
