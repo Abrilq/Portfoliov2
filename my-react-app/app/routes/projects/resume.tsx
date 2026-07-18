@@ -13,7 +13,7 @@ export default function ResumePage(): JSX.Element {
               {/* Back Button */}
               <div className="absolute left-5 top-5 sm:left-10">
                 <button 
-                  onClick={() => navigate(-1)}
+                  onClick={() => navigate('/')}
                   className="cursor-pointer duration-200 hover:scale-125 active:scale-100" 
                   title="Go Back"
                 >
