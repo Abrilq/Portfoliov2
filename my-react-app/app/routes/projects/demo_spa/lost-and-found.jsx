@@ -1,208 +1,192 @@
-import { useEffect, useState } from "react";
-import "./demo_styles/lost-and-found.css";
+﻿import { useEffect, useState } from "react";
+import GooeyNav from '/app/welcome/GooeyNav.tsx'
+ 
+const DEMO_LOST_ITEMS = [
+  {
+    id: 1,
+    item: "Blue Backpack",
+    found_location: "Library 2nd Floor",
+    returned_by: "John Smith",
+    role: "faculty",
+    id_type: "Employee ID",
+    id_number: "EMP-2024-001",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 2,
+    item: "Silver Laptop",
+    found_location: "Cafeteria",
+    returned_by: "Maria Garcia",
+    role: "staff",
+    id_type: "Staff Badge",
+    id_number: "STAFF-5432",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 3,
+    item: "Reading Glasses",
+    found_location: "Auditorium Seat 42",
+    returned_by: "James Wilson",
+    role: "faculty",
+    id_type: "Faculty Card",
+    id_number: "FAC-1089",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 4,
+    item: "Brown Leather Wallet",
+    found_location: "Parking Lot A",
+    returned_by: "Sarah Chen",
+    role: "guard",
+    id_type: "Security Pass",
+    id_number: "SEC-7745",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 5,
+    item: "Red USB Drive",
+    found_location: "Computer Lab",
+    returned_by: "Michael Johnson",
+    role: "faculty",
+    id_type: "Faculty Card",
+    id_number: "FAC-2034",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 6,
+    item: "AirPods Pro",
+    found_location: "Student Lounge",
+    returned_by: "Emma Davis",
+    role: "staff",
+    id_type: "Staff Badge",
+    id_number: "STAFF-1123",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 7,
+    item: "Black Umbrella",
+    found_location: "Main Entrance",
+    returned_by: "Robert Martinez",
+    role: "guard",
+    id_type: "Security Pass",
+    id_number: "SEC-4421",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 8,
+    item: "College Textbook Set",
+    found_location: "Building B Conference Room",
+    returned_by: "Linda Anderson",
+    role: "faculty",
+    id_type: "Faculty Card",
+    id_number: "FAC-5678",
+    status: "lost",
+    image: null,
+    image_name: null,
+  },
+];
+
+const DEMO_CLAIMED_ITEMS = [
+  {
+    id: 101,
+    item: "iPhone 14",
+    found_location: "Gym Storage",
+    returned_by: "Alex Thompson",
+    role: "guard",
+    status: "claimed",
+    owner_name: "Jessica Brown",
+    owner_role: "student",
+    owner_id_type: "Student ID",
+    owner_id_number: "STU-2024-456",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 102,
+    item: "White Headphones",
+    found_location: "Locker Room",
+    returned_by: "David Lee",
+    role: "staff",
+    status: "claimed",
+    owner_name: "Thomas Weber",
+    owner_role: "faculty",
+    owner_id_type: "Faculty Card",
+    owner_id_number: "FAC-3021",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 103,
+    item: "Green Water Bottle",
+    found_location: "Sports Court",
+    returned_by: "Patricia King",
+    role: "faculty",
+    status: "claimed",
+    owner_name: "Rebecca Hayes",
+    owner_role: "student",
+    owner_id_type: "Student ID",
+    owner_id_number: "STU-2024-789",
+    image: null,
+    image_name: null,
+  },
+  {
+    id: 104,
+    item: "Gold Watch",
+    found_location: "Office Building 3",
+    returned_by: "Christopher Moore",
+    role: "guard",
+    status: "claimed",
+    owner_name: "Angela White",
+    owner_role: "faculty",
+    owner_id_type: "Faculty Card",
+    owner_id_number: "FAC-4156",
+    image: null,
+    image_name: null,
+  },
+];
+
+const userDialogues = [
+  "- Where Keys Vanish and Return… Eventually -",
+  "- A Realm of Lost Treasures and Mildly Confused Socks -",
+  "- Built on Forgotten Things and Questionable Magic -",
+  "- Where the Misplaced Become Legendary -",
+  "- Governed by Overlords, Powered by Sticky Notes -",
+  "- A Land of Scrolls, Spells, and Sunglasses from 2008 -",
+  "- United Under the Banner of 'Wait, Where'd It Go?' -",
+  "- Realm of the Found, the Forgotten, and the 'Oh That's Mine!' -",
+  "- The Magical Bureaucracy of Misplaced Marvels -",
+  "- Where Legends Are Made of Lost ID Cards -",
+];
+
+const navItems = [
+  { label: "Lost Items", href: "#" },
+  { label: "Claimed Items", href: "#" },
+];
 
 function DemoApp() {
-
-const [isLoading, setIsLoading] = useState(true);
-const [fadeOut, setFadeOut] = useState(false);
-
-// ===== HARDCODED DATA =====
-const DEMO_LOST_ITEMS = [
-    {
-      id: 1,
-      item: "Blue Backpack",
-      found_location: "Library 2nd Floor",
-      returned_by: "John Smith",
-      role: "faculty",
-      id_type: "Employee ID",
-      id_number: "EMP-2024-001",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 2,
-      item: "Silver Laptop",
-      found_location: "Cafeteria",
-      returned_by: "Maria Garcia",
-      role: "staff",
-      id_type: "Staff Badge",
-      id_number: "STAFF-5432",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 3,
-      item: "Reading Glasses",
-      found_location: "Auditorium Seat 42",
-      returned_by: "James Wilson",
-      role: "faculty",
-      id_type: "Faculty Card",
-      id_number: "FAC-1089",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 4,
-      item: "Brown Leather Wallet",
-      found_location: "Parking Lot A",
-      returned_by: "Sarah Chen",
-      role: "guard",
-      id_type: "Security Pass",
-      id_number: "SEC-7745",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 5,
-      item: "Red USB Drive",
-      found_location: "Computer Lab",
-      returned_by: "Michael Johnson",
-      role: "faculty",
-      id_type: "Faculty Card",
-      id_number: "FAC-2034",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 6,
-      item: "AirPods Pro",
-      found_location: "Student Lounge",
-      returned_by: "Emma Davis",
-      role: "staff",
-      id_type: "Staff Badge",
-      id_number: "STAFF-1123",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 7,
-      item: "Black Umbrella",
-      found_location: "Main Entrance",
-      returned_by: "Robert Martinez",
-      role: "guard",
-      id_type: "Security Pass",
-      id_number: "SEC-4421",
-      status: "lost",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 8,
-      item: "College Textbook Set",
-      found_location: "Building B Conference Room",
-      returned_by: "Linda Anderson",
-      role: "faculty",
-      id_type: "Faculty Card",
-      id_number: "FAC-5678",
-      status: "lost",
-      image: null,
-      image_name: null
-    }
-  ];
-
-  const DEMO_CLAIMED_ITEMS = [
-    {
-      id: 101,
-      item: "iPhone 14",
-      found_location: "Gym Storage",
-      returned_by: "Alex Thompson",
-      role: "guard",
-      status: "claimed",
-      owner_name: "Jessica Brown",
-      owner_role: "student",
-      owner_id_type: "Student ID",
-      owner_id_number: "STU-2024-456",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 102,
-      item: "White Headphones",
-      found_location: "Locker Room",
-      returned_by: "David Lee",
-      role: "staff",
-      status: "claimed",
-      owner_name: "Thomas Weber",
-      owner_role: "faculty",
-      owner_id_type: "Faculty Card",
-      owner_id_number: "FAC-3021",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 103,
-      item: "Green Water Bottle",
-      found_location: "Sports Court",
-      returned_by: "Patricia King",
-      role: "faculty",
-      status: "claimed",
-      owner_name: "Rebecca Hayes",
-      owner_role: "student",
-      owner_id_type: "Student ID",
-      owner_id_number: "STU-2024-789",
-      image: null,
-      image_name: null
-    },
-    {
-      id: 104,
-      item: "Gold Watch",
-      found_location: "Office Building 3",
-      returned_by: "Christopher Moore",
-      role: "guard",
-      status: "claimed",
-      owner_name: "Angela White",
-      owner_role: "faculty",
-      owner_id_type: "Faculty Card",
-      owner_id_number: "FAC-4156",
-      image: null,
-      image_name: null
-    }
-  ];
-
-  const userDialogues = [
-    "- Where Keys Vanish and Return… Eventually -",
-    "- A Realm of Lost Treasures and Mildly Confused Socks -",
-    "- Built on Forgotten Things and Questionable Magic -",
-    "- Where the Misplaced Become Legendary -",
-    "- Governed by Overlords, Powered by Sticky Notes -",
-    "- A Land of Scrolls, Spells, and Sunglasses from 2008 -",
-    "- United Under the Banner of 'Wait, Where'd It Go?' -",
-    "- Realm of the Found, the Forgotten, and the 'Oh That's Mine!' -",
-    "- The Magical Bureaucracy of Misplaced Marvels -",
-    "- Where Legends Are Made of Lost ID Cards -"
-  ];
-
-  // ===== ALL STATE DECLARATIONS (BEFORE loading check) =====
+  const [isLoading, setIsLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
   const [lostItems, setLostItems] = useState(DEMO_LOST_ITEMS);
   const [claimedItems, setClaimedItems] = useState(DEMO_CLAIMED_ITEMS);
   const [showClaimedItems, setShowClaimedItems] = useState(false);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
   const [searchTerm, setSearchTerm] = useState("");
-  const [darkTheme, setDarkTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme === 'dark';
-  });
   const [dialogueIndex, setDialogueIndex] = useState(0);
   const [fade, setFade] = useState(true);
-  
-  // ===== LOADING EFFECT =====
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setFadeOut(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 600);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // ===== OTHER MODALS STATE =====
   const [isViewOwnerModalOpen, setIsViewOwnerModalOpen] = useState(false);
   const [selectedOwner, setSelectedOwner] = useState(null);
   const [isFullDetailsModalOpen, setIsFullDetailsModalOpen] = useState(false);
@@ -210,43 +194,37 @@ const DEMO_LOST_ITEMS = [
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [selectedImageItem, setSelectedImageItem] = useState(null);
 
-  // ===== OTHER EFFECTS =====
   useEffect(() => {
-    const interval = setInterval(() => {
-      // ... rest of your effects
-    }, 1000);
-    return () => clearInterval(interval);
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+      setTimeout(() => setIsLoading(false), 600);
+    }, 1400);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  // ===== NOW CHECK LOADING STATE AFTER ALL HOOKS =====
-  if (isLoading) {
-    return (
-      <div className={`loading-screen ${fadeOut ? 'fade-out' : ''}`}>
-        <div className="loading-container">
-          <div className="spinner"></div>
-          <p>Loading Kingdom of Losttopia...</p>
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    let fadeTimer;
+    const interval = setInterval(() => {
+      setFade(false);
+      fadeTimer = setTimeout(() => {
+        setDialogueIndex((current) => (current + 1) % userDialogues.length);
+        setFade(true);
+      }, 260);
+    }, 5200);
 
-  // ===== REST OF YOUR CODE =====
-  const toggleTheme = () => {
-    const newTheme = !darkTheme;
-    setDarkTheme(newTheme);
-    document.body.classList.toggle('dark-theme');
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-  };
+    return () => {
+      clearInterval(interval);
+      clearTimeout(fadeTimer);
+    };
+  }, []);
 
-  // Sort functionality
   function sortData(items, key, direction) {
-    return items.sort((a, b) => {
-      if (!a[key] && !b[key]) return 0;
-      if (!a[key]) return 1;
-      if (!b[key]) return -1;
-
-      const aVal = typeof a[key] === 'string' ? a[key].toLowerCase() : a[key];
-      const bVal = typeof b[key] === 'string' ? b[key].toLowerCase() : b[key];
+    return [...items].sort((a, b) => {
+      const first = a[key] ?? "";
+      const second = b[key] ?? "";
+      const aVal = typeof first === "string" ? first.toLowerCase() : first;
+      const bVal = typeof second === "string" ? second.toLowerCase() : second;
 
       if (aVal < bVal) return direction === "asc" ? -1 : 1;
       if (aVal > bVal) return direction === "asc" ? 1 : -1;
@@ -254,41 +232,37 @@ const DEMO_LOST_ITEMS = [
     });
   }
 
-  // Handle sort column click
   function handleSort(key) {
-    setSortConfig(prevConfig => {
-      const direction = prevConfig.key === key 
-        ? (prevConfig.direction === "desc" ? "asc" : "desc") 
-        : "desc";
-      
+    setSortConfig((prevConfig) => {
+      const direction = prevConfig.key === key && prevConfig.direction === "desc" ? "asc" : "desc";
       if (showClaimedItems) {
-        setClaimedItems(prev => sortData([...prev], key, direction));
+        setClaimedItems((current) => sortData(current, key, direction));
       } else {
-        setLostItems(prev => sortData([...prev], key, direction));
+        setLostItems((current) => sortData(current, key, direction));
       }
-      
       return { key, direction };
     });
   }
 
-  // Filter data based on search term
   function filterData(items) {
     if (!searchTerm) return items;
-    
-    const searchableFields = showClaimedItems 
-      ? ['id', 'item', 'found_location', 'returned_by', 'owner_name', 'owner_role', 'status']
-      : ['id', 'item', 'found_location', 'returned_by', 'role', 'id_type', 'id_number', 'status'];
-    
-    return items.filter(item => {
-      return searchableFields.some(field => 
-        item[field]?.toString().toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    });
+
+    const searchableFields = showClaimedItems
+      ? ["id", "item", "found_location", "returned_by", "owner_name", "owner_role", "status"]
+      : ["id", "item", "found_location", "returned_by", "role", "id_type", "id_number", "status"];
+
+    return items.filter((item) =>
+      searchableFields.some((field) =>
+        item[field]?.toString().toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
+    );
   }
 
-  // Refresh table
+  const displayedItems = filterData(showClaimedItems ? claimedItems : lostItems).filter(
+    (item) => item.status === (showClaimedItems ? "claimed" : "lost"),
+  );
+
   function refreshTable() {
-    // In demo, this just re-renders. In real app, it would fetch from API
     if (showClaimedItems) {
       setClaimedItems([...DEMO_CLAIMED_ITEMS]);
     } else {
@@ -296,309 +270,329 @@ const DEMO_LOST_ITEMS = [
     }
   }
 
-  // Handle view owner modal
   function handleViewOwner(item) {
     setSelectedOwner({
       name: item.owner_name,
       role: item.owner_role,
       idType: item.owner_id_type,
-      idNumber: item.owner_id_number
+      idNumber: item.owner_id_number,
     });
     setIsViewOwnerModalOpen(true);
   }
 
-  // Handle view full details
   function handleFullDetails(item) {
     setSelectedItem(item);
     setIsFullDetailsModalOpen(true);
   }
 
-  // Handle view image
-  const handleViewImage = (item) => {
+  function handleViewImage(item) {
     setSelectedImageItem(item);
     setIsImageModalOpen(true);
-  };
+  }
 
-  // Render lost items or claimed items based on tab
-  const displayedItems = showClaimedItems 
-    ? filterData(claimedItems).filter((item) => item.status === "claimed")
-    : filterData(lostItems).filter((item) => item.status === "lost");
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-slate-950 text-slate-100">
+        <div className={`flex flex-col items-center gap-4 rounded-3xl bg-slate-900/90 p-10 shadow-2xl shadow-black/50 transition-opacity duration-700 ${fadeOut ? "opacity-0" : "opacity-100"}`}>
+          <div className="h-14 w-14 animate-spin rounded-full border-4 border-slate-700 border-t-4 border-t-amber-400"></div>
+          <p className="text-center text-lg font-semibold">Loading Kingdom of Losttopia...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="container center-container">
-      <h1 className="title-h1">
-        Kingdom of Losttopia{" "}
-        <span className={`rotating-dialogue${fade ? " fade-in" : " fade-out"}`}>
-          {userDialogues[dialogueIndex]}
-        </span>
-      </h1>
-
-      {/* Theme Toggle */}
-      <div className="switch-div">
-        <label className="switch">
-          <input 
-            id="input" 
-            type="checkbox" 
-            checked={darkTheme}
-            onChange={toggleTheme}
-          />
-          <div className="slider round">
-            <div className="sun-moon">
-              <svg id="moon-dot-1" className="moon-dot" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="moon-dot-2" className="moon-dot" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="moon-dot-3" className="moon-dot" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="light-ray-1" className="light-ray" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="light-ray-2" className="light-ray" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="light-ray-3" className="light-ray" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="cloud-1" className="cloud-dark" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="cloud-2" className="cloud-dark" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="cloud-3" className="cloud-dark" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="cloud-4" className="cloud-light" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="cloud-5" className="cloud-light" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <svg id="cloud-6" className="cloud-light" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-            </div>
-            <div className="stars">
-              <svg id="star-1" className="star" viewBox="0 0 20 20">
-                <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
-              </svg>
-              <svg id="star-2" className="star" viewBox="0 0 20 20">
-                <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
-              </svg>
-              <svg id="star-3" className="star" viewBox="0 0 20 20">
-                <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
-              </svg>
-              <svg id="star-4" className="star" viewBox="0 0 20 20">
-                <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
-              </svg>
-            </div>
+    <div className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl border border-slate-800 bg-slate-900/90 p-6 shadow-2xl shadow-black/20 sm:p-8">
+        <header className="space-y-4 text-center flex-col">
+          <div className="mx-auto inline-flex items-center rounded-full bg-amber-400/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-amber-300 shadow-inner shadow-black/10">
+            Lost & Found Web Application Demo
           </div>
-        </label>
-      </div>
+          <h1 className="text-3xl font-semibold text-white sm:text-4xl">Kingdom of Losttopia</h1>
+          <p className={`mx-auto max-w-3xl text-sm text-slate-400 transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}>
+            {userDialogues[dialogueIndex]}
+          </p>
+        </header>
 
-      <div className="p-container">
-        <p>Peer into the</p>
-        <span className="span-container">vault of misplacements</span>
-        <p>and</p>
-        <span className="span-container">heroic recoveries.</span> 
-      </div>
-      
-      {/* Tab Buttons */}
-      <div className="small-container">
-        <button 
-          className={`category-btn ${!showClaimedItems ? 'active' : ''}`}          
-          onClick={() => setShowClaimedItems(false)}
-        >
-          <div className="category-text">LOST ITEMS ({lostItems.length})</div>
-        </button>
-        <button 
-          className={`category-btn ${showClaimedItems ? 'active' : ''}`}          
-          onClick={() => setShowClaimedItems(true)}
-        >
-          <div className="category-text">CLAIMED ITEMS ({claimedItems.length})</div>
-        </button>
-      </div>
-
-      {/* Search & Clear */}
-      <div className="small-container" style={{gap:'0px'}}>
-        <input
-          className="search"
-          placeholder="Search items, locations, owners..." 
-          type="text" 
-          name="text" 
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button onClick={() => setSearchTerm("")} className="clear-btn">Clear</button>
-      </div>
-      
-      {/* Refresh Button */}
-      <button type="button" className="refresh-btn" onClick={refreshTable}>
-        <span className="refresh-btn__text">Refresh</span>
-        <span className="refresh-btn__icon">
-          <svg className="svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z"></path>
-            <path d="M0 0h48v48h-48z" fill="none"></path>
-          </svg>
-        </span>
-      </button>
-
-      {/* Items Table */}
-      <table border="1">
-        <thead>
-          <tr>
-            <th onClick={() => handleSort("id")}>
-              ID {sortConfig.key === "id" && (sortConfig.direction === "asc" ? "▲" : "▼")}
-            </th>
-            <th onClick={() => handleSort("item")}>
-              Item {sortConfig.key === "item" && (sortConfig.direction === "asc" ? "▲" : "▼")}
-            </th>
-            <th>Image</th>
-            <th onClick={() => handleSort("found_location")}>
-              Found Location {sortConfig.key === "found_location" && (sortConfig.direction === "asc" ? "▲" : "▼")}
-            </th>
-            <th onClick={() => handleSort("status")}>
-              Status {sortConfig.key === "status" && (sortConfig.direction === "asc" ? "▲" : "▼")}
-            </th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {displayedItems.length > 0 ? (
-            displayedItems.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.item}</td>
-                <td>
-                  {item.image ? (
-                    <button 
-                      onClick={() => handleViewImage(item)}
-                      className="view-image-btn"
-                    >
-                      View Image
-                    </button>
-                  ) : (
-                    <span style={{ color: '#999' }}>No image</span>
-                  )}
-                </td>
-                <td>{item.found_location}</td>
-                <td>
-                  <span style={item.status === 'claimed' ? { color: '#4caf50' } : { color: '#ff9800' }}>
-                    {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-                  </span>
-                </td>
-                <td>
-                  <button onClick={() => handleFullDetails(item)} style={{backgroundColor:"rgb(95, 172, 255)"}}>
-                    View Details
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="6" style={{ textAlign: 'center', padding: '20px' }}>
-                No items found
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-
-      {/* Owner Details Modal */}
-      {isViewOwnerModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Owner Details</h2>
-            <p><strong>Name:</strong> {selectedOwner.name}</p>
-            <p><strong>Role:</strong> {selectedOwner.role}</p>
-            <p><strong>ID Type:</strong> {selectedOwner.idType}</p>
-            <p><strong>ID Number:</strong> {selectedOwner.idNumber}</p>
-            <button onClick={() => setIsViewOwnerModalOpen(false)} className="close-btn">Close</button>
-          </div>
-        </div>
-      )}
-
-      {/* Full Details Modal */}
-      {isFullDetailsModalOpen && selectedItem && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Item Full Details</h2>
-            {selectedItem.image && (
-              <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <img 
-                  src={`data:image/jpeg;base64,${selectedItem.image}`}
-                  alt={selectedItem.item}
-                  style={{ maxWidth: '300px', maxHeight: '300px' }}
+        <section className="flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="w-full sm:w-auto flex-start">
+                <GooeyNav
+                  items={navItems}
+                  particleCount={15}
+                  particleDistances={[90, 10]}
+                  particleR={100}
+                  activeIndex={showClaimedItems ? 1 : 0}
+                  onIndexChange={(index) => {
+                    setShowClaimedItems(index === 1);
+                    setSearchTerm("");
+                  }}
+                  animationTime={600}
+                  timeVariance={300}
+                  colors={[1, 2, 3, 1, 2, 3, 1, 4]}
                 />
+            </div>
+
+            <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:ml-4 sm:w-auto">
+              <div className="flex w-full max-w-md items-center overflow-hidden rounded-full border border-slate-700 bg-slate-950 pr-1 shadow-inner shadow-black/10 sm:w-auto">
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Search items, locations, owners..."
+                  className="w-full bg-transparent px-4 py-3 text-sm text-slate-100 outline-none placeholder:text-slate-500"
+                />
+                <button
+                  type="button"
+                  onClick={() => setSearchTerm("")}
+                  className="rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-slate-700"
+                >
+                  Clear
+                </button>
               </div>
-            )}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-              <div><strong>ID:</strong> {selectedItem.id}</div>
-              <div><strong>Item:</strong> {selectedItem.item}</div>
-              <div><strong>Found Location:</strong> {selectedItem.found_location}</div>
-              <div><strong>Status:</strong> {selectedItem.status}</div>
-              <div><strong>Returned By:</strong> {selectedItem.returned_by || '-'}</div>
-              <div><strong>Role:</strong> {selectedItem.role || '-'}</div>
-              <div><strong>ID Type:</strong> {selectedItem.id_type || '-'}</div>
-              <div><strong>ID Number:</strong> {selectedItem.id_number || '-'}</div>
+              <button
+                type="button"
+                onClick={refreshTable}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-800 px-5 py-3 text-sm font-semibold text-amber-200 transition hover:bg-slate-700"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z" />
+                </svg>
+                Refresh
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="overflow-x-auto rounded-1xl border border-slate-800 bg-slate-950/80 p-1 shadow-inner shadow-black/10">
+          <table className="min-w-full border-collapse text-left text-sm text-slate-200 md:text-base">
+            <thead>
+              <tr className="bg-slate-900 text-slate-300">
+                {[
+                  { label: "ID", key: "id" },
+                  { label: "Item", key: "item" },
+                  { label: "Image", key: null },
+                  { label: "Found Location", key: "found_location" },
+                  { label: "Status", key: "status" },
+                  { label: "Actions", key: null },
+                ].map(({ label, key }) => (
+                  <th
+                    key={label}
+                    scope="col"
+                    className="whitespace-nowrap px-4 py-4 text-left uppercase tracking-[0.2em]"
+                    onClick={key ? () => handleSort(key) : undefined}
+                  >
+                    <div className={key ? "inline-flex cursor-pointer items-center gap-2" : "inline-flex items-center gap-2"}>
+                      {label}
+                      {sortConfig.key === key ? (sortConfig.direction === "asc" ? "▲" : "▼") : null}
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {displayedItems.length > 0 ? (
+                displayedItems.map((item) => (
+                  <tr key={item.id} className="border-t border-slate-800 even:bg-slate-950/60 odd:bg-slate-900/70">
+                    <td className="px-4 py-3">{item.id}</td>
+                    <td className="px-4 py-3 font-semibold text-slate-100">{item.item}</td>
+                    <td className="px-4 py-3">
+                      {item.image ? (
+                        <button
+                          type="button"
+                          onClick={() => handleViewImage(item)}
+                          className="rounded-full bg-amber-400 px-3 py-2 text-xs font-semibold text-slate-950 transition hover:bg-amber-300"
+                        >
+                          View Image
+                        </button>
+                      ) : (
+                        <span className="text-slate-500">No image</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3">{item.found_location}</td>
+                    <td className="px-4 py-3">
+                      <span className={`rounded-full px-3 py-1 text-xs font-semibold ${item.status === "claimed" ? "bg-emerald-500/15 text-emerald-300" : "bg-amber-500/15 text-amber-300"}`}>
+                        {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <button
+                        type="button"
+                        onClick={() => handleFullDetails(item)}
+                        className="rounded-full bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:bg-slate-700 sm:text-sm"
+                      >
+                        View Details
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6" className="px-4 py-10 text-center text-slate-400">
+                    No items found
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </section>
+
+        {isViewOwnerModalOpen && selectedOwner && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
+            <div className="w-full max-w-lg rounded-3xl bg-slate-900 p-6 shadow-2xl shadow-black/40">
+              <h2 className="mb-4 text-2xl font-semibold text-white">Owner Details</h2>
+              <div className="space-y-3 text-slate-200">
+                <p>
+                  <span className="font-semibold text-slate-100">Name:</span> {selectedOwner.name}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-100">Role:</span> {selectedOwner.role}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-100">ID Type:</span> {selectedOwner.idType}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-100">ID Number:</span> {selectedOwner.idNumber}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsViewOwnerModalOpen(false)}
+                className="mt-6 inline-flex rounded-full bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
+        {isFullDetailsModalOpen && selectedItem && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
+            <div className="w-full max-w-3xl rounded-3xl bg-slate-900 p-6 shadow-2xl shadow-black/40">
+              <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <h2 className="text-2xl font-semibold text-white">Item Full Details</h2>
+                <button
+                  type="button"
+                  onClick={() => setIsFullDetailsModalOpen(false)}
+                  className="rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-slate-700"
+                >
+                  Close
+                </button>
+              </div>
+
+              {selectedItem.image && (
+                <div className="mb-6 flex justify-center">
+                  <img
+                    src={`data:image/jpeg;base64,${selectedItem.image}`}
+                    alt={selectedItem.item}
+                    className="max-h-72 rounded-3xl object-contain shadow-xl shadow-black/30"
+                  />
+                </div>
+              )}
+
+              <div className="grid gap-3 text-slate-200 sm:grid-cols-2">
+                <div>
+                  <p className="text-sm text-slate-400">ID</p>
+                  <p className="font-semibold text-white">{selectedItem.id}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">Item</p>
+                  <p className="font-semibold text-white">{selectedItem.item}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">Found Location</p>
+                  <p className="font-semibold text-white">{selectedItem.found_location}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">Status</p>
+                  <p className="font-semibold text-white">{selectedItem.status}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">Returned By</p>
+                  <p className="font-semibold text-white">{selectedItem.returned_by || "-"}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">Role</p>
+                  <p className="font-semibold text-white">{selectedItem.role || "-"}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">ID Type</p>
+                  <p className="font-semibold text-white">{selectedItem.id_type || "-"}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-400">ID Number</p>
+                  <p className="font-semibold text-white">{selectedItem.id_number || "-"}</p>
+                </div>
+              </div>
+
               {selectedItem.owner_name && (
-                <>
-                  <div><strong>Owner Name:</strong> {selectedItem.owner_name}</div>
-                  <div><strong>Owner Role:</strong> {selectedItem.owner_role}</div>
-                  <div><strong>Owner ID Type:</strong> {selectedItem.owner_id_type}</div>
-                  <div><strong>Owner ID Number:</strong> {selectedItem.owner_id_number}</div>
-                  <button 
+                <div className="mt-6 rounded-3xl border border-slate-700 bg-slate-950/80 p-4">
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Owner Information</p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div>
+                      <p className="text-sm text-slate-400">Owner Name</p>
+                      <p className="font-semibold text-white">{selectedItem.owner_name}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-400">Owner Role</p>
+                      <p className="font-semibold text-white">{selectedItem.owner_role}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-400">Owner ID Type</p>
+                      <p className="font-semibold text-white">{selectedItem.owner_id_type}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-400">Owner ID Number</p>
+                      <p className="font-semibold text-white">{selectedItem.owner_id_number}</p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
                     onClick={() => {
                       handleViewOwner(selectedItem);
                       setIsFullDetailsModalOpen(false);
-                    }} 
-                    style={{marginTop: '10px', backgroundColor:"rgb(100, 200, 100)"}}
+                    }}
+                    className="mt-5 inline-flex rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
                   >
                     View Owner Details
                   </button>
-                </>
+                </div>
               )}
             </div>
-            <button onClick={() => setIsFullDetailsModalOpen(false)} className="close-btn">Close</button>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Image Modal */}
-      {isImageModalOpen && selectedImageItem && (
-        <div className="modal">
-          <div className="modal-content">
-            <div style={{ marginBottom: '20px' }}>
-              <h3>Item Image</h3>
-              <p><strong>ID:</strong> {selectedImageItem.id}</p>
-              <p><strong>Item:</strong> {selectedImageItem.item}</p>
+        {isImageModalOpen && selectedImageItem && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
+            <div className="w-full max-w-3xl rounded-3xl bg-slate-900 p-6 shadow-2xl shadow-black/40">
+              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">Item Image</h3>
+                  <p className="text-slate-400">{selectedImageItem.item}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsImageModalOpen(false)}
+                  className="rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-slate-700"
+                >
+                  Close
+                </button>
+              </div>
+              <div className="flex min-h-[220px] items-center justify-center rounded-3xl bg-slate-950/70 p-4">
+                {selectedImageItem.image ? (
+                  <img
+                    src={`data:image/jpeg;base64,${selectedImageItem.image}`}
+                    alt={selectedImageItem.item}
+                    className="max-h-[60vh] w-full max-w-full rounded-3xl object-contain"
+                  />
+                ) : (
+                  <p className="text-slate-400">No image available for this item</p>
+                )}
+              </div>
             </div>
-            <div className="image-container" style={{ 
-              display: 'flex', 
-              justifyContent: 'center', 
-              alignItems: 'center', 
-              marginBottom: '20px',
-              maxHeight: '70vh',
-              overflow: 'auto'
-            }}>
-              {selectedImageItem.image ? (
-                <img 
-                  src={`data:image/jpeg;base64,${selectedImageItem.image}`}
-                  alt={selectedImageItem.item}
-                  className="item-image"
-                  style={{ maxWidth: '100%', objectFit: 'contain' }}
-                />
-              ) : (
-                <p>No image available for this item</p>
-              )}
-            </div>
-            <button onClick={() => setIsImageModalOpen(false)} className="close-btn">Close</button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

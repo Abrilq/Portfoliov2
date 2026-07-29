@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}", // adjust to your project structure
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
