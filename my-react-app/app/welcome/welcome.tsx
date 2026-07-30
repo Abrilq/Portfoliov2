@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 
 import ScrollReveal from './ScrollReveal';
 import FlowingMenu from './FlowingMenu';
 import BlurText from './BlurText';
-import Particles from './Particles';
-import LiquidEther from './LiquidEther';
-import SplashCursor from './SplashCursor'
+
+const Particles = lazy(() => import('./Particles'));
+const SplashCursor = lazy(() => import('./SplashCursor'));
 
 export function Welcome() {
   useEffect(() => {
@@ -35,19 +35,25 @@ export function Welcome() {
 
   return (
     <div className="min-h-screen m-5">
-      <SplashCursor />
+      <Suspense fallback={null}>
+        <SplashCursor />
+      </Suspense>
+
       <div className="fixed inset-0 z-0">
-        <Particles
-          particleColors={['#ffffff', '#ffffff']}
-          particleCount={1000}
-          particleSpread={20}
-          speed={0.01}
-          particleBaseSize={100}
-          moveParticlesOnHover={false}
-          alphaParticles={false}
-          disableRotation={false}
-        />
+        <Suspense fallback={<div className="absolute inset-0 bg-black/20" />}>
+          <Particles
+            particleColors={['#ffffff', '#ffffff']}
+            particleCount={1000}
+            particleSpread={20}
+            speed={0.01}
+            particleBaseSize={100}
+            moveParticlesOnHover={false}
+            alphaParticles={false}
+            disableRotation={false}
+          />
+        </Suspense>
       </div>
+
       <main className="text-3xl relative z-10 flex items-center justify-center pt-16 pb-4 text-white">
         <div className="">
           <section>
