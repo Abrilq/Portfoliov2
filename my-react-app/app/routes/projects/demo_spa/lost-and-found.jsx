@@ -1,6 +1,7 @@
 ﻿import { useEffect, useState } from "react";
 import GooeyNav from '/app/welcome/GooeyNav.tsx'
- 
+import DemoLoading from "./demo-loading.jsx";
+
 const DEMO_LOST_ITEMS = [
   {
     id: 1,
@@ -177,9 +178,10 @@ const navItems = [
   { label: "Claimed Items", href: "#" },
 ];
 
-function DemoApp() {
+function DemoApp({ onBack }) {
   const [isLoading, setIsLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
   const [lostItems, setLostItems] = useState(DEMO_LOST_ITEMS);
   const [claimedItems, setClaimedItems] = useState(DEMO_CLAIMED_ITEMS);
   const [showClaimedItems, setShowClaimedItems] = useState(false);
@@ -202,6 +204,11 @@ function DemoApp() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleExit = () => {
+    setIsExiting(true);
+    window.setTimeout(onBack, 250);
+  };
 
   useEffect(() => {
     let fadeTimer;
@@ -291,25 +298,26 @@ function DemoApp() {
   }
 
   if (isLoading) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-slate-950 text-slate-100">
-        <div className={`flex flex-col items-center gap-4 rounded-3xl bg-slate-900/90 p-10 shadow-2xl shadow-black/50 transition-opacity duration-700 ${fadeOut ? "opacity-0" : "opacity-100"}`}>
-          <div className="h-14 w-14 animate-spin rounded-full border-4 border-slate-700 border-t-4 border-t-amber-400"></div>
-          <p className="text-center text-lg font-semibold">Loading Kingdom of Losttopia...</p>
-        </div>
-      </div>
-    );
+    return <DemoLoading message="Loading Kingdom of Losttopia..." isFading={fadeOut} />;
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100">
+    <div className={`min-h-screen bg-slate-950 px-4 py-8 text-slate-100 transition-opacity duration-300 ${isExiting ? "opacity-0" : "opacity-100"}`}>
       <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl border border-slate-800 bg-slate-900/90 p-6 shadow-2xl shadow-black/20 sm:p-8">
-        <header className="space-y-4 text-center flex-col">
-          <div className="mx-auto inline-flex items-center rounded-full bg-amber-400/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-amber-300 shadow-inner shadow-black/10">
-            Lost & Found Web Application Demo
+        <header className="space-y-4 flex-col">
+          <div className="flex flex-col gap-3 rounded-3xl border border-amber-400/20 bg-amber-400/10 p-4 sm:flex-row sm:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-amber-300">Student Demo</p>
+              <h1 className="text-2xl font-semibold text-white">Student Dashboard</h1>
+            </div>
+            <button type="button" onClick={handleExit} className="rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-slate-700">
+              Choose Another Role
+            </button>
           </div>
-          <h1 className="text-3xl font-semibold text-white sm:text-4xl">Kingdom of Losttopia</h1>
-          <p className={`mx-auto max-w-3xl text-sm text-slate-400 transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <h1 className="text-3xl font-semibold text-white sm:text-4xl">Kingdom of Losttopia</h1>
+          </div>
+          <p className={`mx-auto max-w-3xl text-sm text-slate-400 transition-opacity duration-500 text-center ${fade ? "opacity-100" : "opacity-0"}`}>
             {userDialogues[dialogueIndex]}
           </p>
         </header>

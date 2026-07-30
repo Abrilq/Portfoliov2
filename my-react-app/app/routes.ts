@@ -15,6 +15,6 @@ export default [
   route("projects/resume", "routes/projects/resume.tsx"),
   route("projects/links", "routes/projects/links.tsx"),
   route("projects/certifications", "routes/projects/certifications.tsx"),
-  route("projects/demo_spa/lost-and-found", "routes/projects/demo_spa/lost-and-found.jsx"),
+  route("projects/demo_spa/lost-and-found", "routes/projects/demo_spa/role-picker-demo.jsx"),
 
 ] satisfies RouteConfig;
